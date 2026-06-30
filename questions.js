@@ -263,5 +263,13 @@ const UI = {
   "lang_aria_label": {
     "en": "Language",
     "ru": "Язык"
+  },
+  "theme_to_dark": {
+    "en": "Switch to dark theme",
+    "ru": "Тёмная тема"
+  },
+  "theme_to_light": {
+    "en": "Switch to light theme",
+    "ru": "Светлая тема"
   }
 };

@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WA Motorcycle Knowledge Test</title>
 <meta name="description" content="Practice questions for the Washington State motorcycle endorsement knowledge test. Bilingual English / Russian. Based on the official WA Motorcycle Operator Manual.">
+<script>
+/* Apply the saved theme before first paint so dark mode never flashes light. Theme = button-controlled only (default light). */
+(function(){try{var t=localStorage.getItem("moto_theme");if(t!=="dark"&&t!=="light")t="light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
@@ -20,15 +24,14 @@
   --dur-fast:140ms; --dur:200ms; --ease:cubic-bezier(0.16,1,0.3,1);
   --maxw:600px;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0B0F1A; --surface:#141B2B; --surface-raised:#1B2536; --text:#E7ECF5; --muted:#9AA9C2;
-    --primary:#5B8FD4; --primary-strong:#4D7EC2; --correct:#5BD08A; --incorrect:#F08A80;
-    --accent:#56C9AB; --border:#2A364B;
-    --ok-bg:#16301F; --ok-text:#A8E6BE; --err-bg:#3A1A18; --err-text:#F2B5AE;
-    --citation-bg:#1C2A40; --focus-ring:#7FA8E0; --explain-bg:#1B2536;
-    --hover-bg:#1B2536;
-  }
+/* Theme is controlled ONLY by the header button (data-theme on <html>), not by the OS. */
+:root[data-theme="dark"]{
+  --bg:#0B0F1A; --surface:#141B2B; --surface-raised:#1B2536; --text:#E7ECF5; --muted:#9AA9C2;
+  --primary:#5B8FD4; --primary-strong:#4D7EC2; --correct:#5BD08A; --incorrect:#F08A80;
+  --accent:#56C9AB; --border:#2A364B;
+  --ok-bg:#16301F; --ok-text:#A8E6BE; --err-bg:#3A1A18; --err-text:#F2B5AE;
+  --citation-bg:#1C2A40; --focus-ring:#7FA8E0; --explain-bg:#1B2536;
+  --hover-bg:#1B2536;
 }
 *{box-sizing:border-box;}
 html{ -webkit-text-size-adjust:100%; }
@@ -80,6 +83,20 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 }
 .seg[aria-checked="true"]{ background:var(--primary); color:#fff; }
 .seg:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; border-radius:999px; }
+
+/* ---------- Theme toggle button ---------- */
+.themebtn{
+  appearance:none; flex:none; display:flex; align-items:center; justify-content:center;
+  width:40px; height:40px; min-width:40px; border:1px solid var(--border);
+  border-radius:999px; background:var(--surface); color:var(--text); cursor:pointer;
+  transition:border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.themebtn:hover{ border-color:var(--primary); color:var(--primary); }
+.themebtn:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; }
+.themebtn svg{ width:20px; height:20px; }
+.themebtn .ico-sun{ display:none; }
+:root[data-theme="dark"] .themebtn .ico-sun{ display:block; }
+:root[data-theme="dark"] .themebtn .ico-moon{ display:none; }
 
 /* ---------- Progress rail ---------- */
 .railwrap{ max-width:var(--maxw); margin-inline:auto; }
@@ -199,6 +216,10 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
     <span class="counter" id="counter"></span>
     <span class="tally" id="tally"></span>
   </div>
+  <button class="themebtn" type="button" id="themebtn" aria-label="Theme">
+    <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+  </button>
   <div class="langtoggle" role="radiogroup" id="langtoggle">
     <button class="seg" type="button" id="seg-en" data-lang="en" role="radio" aria-checked="true">EN</button>
     <button class="seg" type="button" id="seg-ru" data-lang="ru" role="radio" aria-checked="false">РУ</button>
@@ -243,7 +264,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   <div class="sronly" id="live" aria-live="polite" role="status"></div>
 </main>
 
-<script src="questions.js?v=2"></script>
+<script src="questions.js?v=3"></script>
 <script>
 (function(){
   "use strict";
@@ -251,7 +272,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   var WARMUP=2;                                  // show % from the 2nd answer (avoids a lone "0%"); raise to ~5 at 199-scale
   var SESSION_SIZE=Math.min(25,QUESTIONS.length);
   var restartArmed=false, restartTimer=null;
-  var state={ order:[], pos:0, lang:"en", answered:false, chosen:null, score:0, answeredCount:0, missed:[] };
+  var state={ order:[], pos:0, lang:"en", theme:"light", answered:false, chosen:null, score:0, answeredCount:0, missed:[] };
 
   function getId(id){ return document.getElementById(id); }
   function t(key,vars){
@@ -298,6 +319,23 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
     getId("trust-main").textContent=t("trust_strip");
     getId("trust-rnd").textContent=t("random_note");
     getId("langtoggle").setAttribute("aria-label", t("lang_aria_label"));
+    getId("themebtn").setAttribute("aria-label", t(state.theme==="dark"?"theme_to_light":"theme_to_dark"));
+  }
+
+  // ---- theme (button-only; no OS auto-switching) ----
+  function applyTheme(th){
+    state.theme=(th==="dark")?"dark":"light";
+    document.documentElement.setAttribute("data-theme", state.theme);
+    getId("themebtn").setAttribute("aria-label", t(state.theme==="dark"?"theme_to_light":"theme_to_dark"));
+  }
+  function bootTheme(){
+    var th=null; try{ th=localStorage.getItem("moto_theme"); }catch(e){}
+    applyTheme((th==="dark"||th==="light")?th:"light");   // default light; only the button changes it after
+  }
+  function toggleTheme(){
+    var th=(state.theme==="dark")?"light":"dark";
+    try{ localStorage.setItem("moto_theme", th); }catch(e){}
+    applyTheme(th);
   }
 
   function paintScore(){
@@ -452,6 +490,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   }
 
   // ---- events ----
+  getId("themebtn").addEventListener("click",toggleTheme);
   getId("seg-en").addEventListener("click",function(){ setLang("en"); });
   getId("seg-ru").addEventListener("click",function(){ setLang("ru"); });
   getId("nextbtn").addEventListener("click",next);
@@ -465,6 +504,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
     }else if(e.key==="Enter" && state.answered){ next(); }
   });
 
+  bootTheme();
   bootLang();
   setLang(state.lang);
   startAll();
