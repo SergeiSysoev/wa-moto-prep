@@ -18,7 +18,7 @@ Washington State motorcycle endorsement knowledge test.
 Practice questions are based on the official **Washington Motorcycle Operator
 Manual**. Each explanation cites the manual page it comes from.
 
-Full bank: **225 questions** — 199 text questions plus **26 picture questions**
+Full bank: **188 questions** — text questions plus **20 picture questions**
 built from the manual's figures (`img/`). Each practice session is a **topic-balanced
 25-question set** (mirrors the real WA endorsement test: 25 questions, 80% to pass),
 drawn at random so questions don't repeat within a topic until its pool is exhausted.
@@ -39,3 +39,6 @@ Append objects to `QUESTIONS` in `questions.js`:
 `answer` is the 0-based index of the correct option. EN and RU options stay
 index-aligned so the language toggle can never desync the correct answer.
 After a content change, bump `questions.js?v=N` in `index.html` to beat the CDN cache.
+
+## Clickable manual citations
+Every explanation links to the official manual at the exact page — `manual/en.pdf` for English, `manual/ru.pdf` for Russian — using a `#page=N` deep link.

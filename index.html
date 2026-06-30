@@ -173,6 +173,10 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   font-size:13px; font-weight:500; padding:4px 10px; border-radius:999px;
 }
 .citation svg{ width:13px; height:13px; }
+a.citation{ text-decoration:none; cursor:pointer; transition:background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease); }
+a.citation.is-link::after{ content:"\2197"; font-size:11px; font-weight:700; margin-left:1px; opacity:.8; }
+a.citation:hover{ background:var(--primary); color:#fff; }
+a.citation:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; }
 
 /* ---------- Action zone (inline, directly under the explanation) ---------- */
 .actionzone{ display:flex; flex-direction:column; align-items:stretch; gap:var(--s3); margin-top:var(--s4); }
@@ -277,10 +281,10 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
     <div class="explain" id="explain" hidden>
       <div class="exp-status" id="exp-status"></div>
       <p class="exp-body" id="exp-body"></p>
-      <span class="citation" id="citation">
+      <a class="citation" id="citation" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 1.5A1.5 1.5 0 0 0 1.5 3v10A1.5 1.5 0 0 0 3 14.5h10a.5.5 0 0 0 0-1H3a.5.5 0 0 1-.5-.5h10A1.5 1.5 0 0 0 14 11.5V3A1.5 1.5 0 0 0 12.5 1.5H3zm9.5 1v9H3a1.5 1.5 0 0 0-.5.085V3a.5.5 0 0 1 .5-.5h9.5z"/></svg>
         <span id="citation-text"></span>
-      </span>
+      </a>
     </div>
     <div class="actionzone" id="actions">
       <button class="nextbtn" type="button" id="nextbtn" hidden></button>
@@ -303,7 +307,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   <div class="sronly" id="live" aria-live="polite" role="status"></div>
 </main>
 
-<script src="questions.js?v=7"></script>
+<script src="questions.js?v=8"></script>
 <script>
 (function(){
   "use strict";
@@ -502,7 +506,19 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
       var lbl=document.createElement("span"); lbl.textContent=right?t("correct_label"):t("incorrect_label");
       st.appendChild(mk); st.appendChild(lbl);
       getId("exp-body").textContent=L(q.why);
-      getId("citation-text").textContent = q.page ? t("citation_chip",{PAGE:q.page}) : t("citation_practice");
+      var cit=getId("citation");
+      if(q.page){
+        getId("citation-text").textContent=t("citation_chip",{PAGE:q.page});
+        var pg = state.lang==="ru" ? (q.pdfpage_ru||1) : (q.pdfpage||1);
+        var file = state.lang==="ru" ? "manual/ru.pdf" : "manual/en.pdf";
+        cit.setAttribute("href", file+"#page="+pg);
+        cit.setAttribute("title", t("open_manual",{PAGE:q.page}));
+        cit.setAttribute("aria-label", t("open_manual",{PAGE:q.page}));
+        cit.classList.add("is-link");
+      }else{
+        getId("citation-text").textContent=t("citation_practice");
+        cit.removeAttribute("href"); cit.classList.remove("is-link");
+      }
     }else{
       exp.hidden=true; exp.className="explain";
     }

@@ -1,5 +1,5 @@
-// WA Motorcycle Knowledge Test — FINAL public bank (193 bilingual: 172 text + 21 picture, all manual-grounded)
-// 2-wheel only; deduped; unsupported questions removed. fields: id,page,topic,image,answer(0-based),q{en,ru},opts[{en,ru}]x4,why{en,ru}
+// WA Motorcycle Knowledge Test — FINAL public bank (bilingual, 2-wheel only). Clickable citations -> manual/en.pdf or manual/ru.pdf at the cited page.
+// fields: id, page (shown), pdfpage (EN PDF physical page), pdfpage_ru (RU PDF physical page), topic, image, answer, q{en,ru}, opts[{en,ru}]x4, why{en,ru}
 
 const QUESTIONS = [
  {
@@ -31,9 +31,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that a motorcycle permit or endorsement is required to legally operate a motorcycle on Washington State roadways. Source: Chapter 1, Two- and Three-Wheel Motorcycle Endorsements, p. 1-1 (manual p. 1-1, PDF p. 9).",
-   "ru": "В руководстве сказано, что для законного управления мотоциклом на дорогах штата Вашингтон необходимо иметь мотоциклетное разрешение (permit) или допуск (endorsement). Источник: глава 1, «Two- and Three-Wheel Motorcycle Endorsements», p. 1-1 (Manual p. 1-1, PDF p. 9)."
-  }
+   "en": "The manual states that a motorcycle permit or endorsement is required to legally operate a motorcycle on Washington State roadways. Source: Chapter 1, Two- and Three-Wheel Motorcycle Endorsements, p. 1-1.",
+   "ru": "В руководстве сказано, что для законного управления мотоциклом на дорогах штата Вашингтон необходимо иметь мотоциклетное разрешение (permit) или допуск (endorsement). Источник: глава 1, «Two- and Three-Wheel Motorcycle Endorsements», p. 1-1."
+  },
+  "pdfpage": 9,
+  "pdfpage_ru": 9
  },
  {
   "id": 3,
@@ -64,9 +66,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual warns that the motorcycle may be impounded and lists a minimum fine for riding without an endorsement. Source: Chapter 1, Two- and Three-Wheel Motorcycle Endorsements, p. 1-1 (manual p. 1-1, PDF p. 9).",
-   "ru": "Руководство предупреждает, что мотоцикл могут отправить на штрафстоянку (impound), и указывает минимальный штраф за езду без допуска (endorsement). Источник: глава 1, «Two- and Three-Wheel Motorcycle Endorsements», p. 1-1 (Manual p. 1-1, PDF p. 9)."
-  }
+   "en": "The manual warns that the motorcycle may be impounded and lists a minimum fine for riding without an endorsement. Source: Chapter 1, Two- and Three-Wheel Motorcycle Endorsements, p. 1-1.",
+   "ru": "Руководство предупреждает, что мотоцикл могут отправить на штрафстоянку (impound), и указывает минимальный штраф за езду без допуска (endorsement). Источник: глава 1, «Two- and Three-Wheel Motorcycle Endorsements», p. 1-1."
+  },
+  "pdfpage": 9,
+  "pdfpage_ru": 9
  },
  {
   "id": 4,
@@ -97,9 +101,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "For a 2W permit, the manual requires both a basic knowledge and a basic skills test. Source: Chapter 1, Obtaining Your Permit/Endorsement, p. 1-2 (manual p. 1-2, PDF p. 10).",
-   "ru": "Для получения разрешения (permit) на двухколёсный (2W) мотоцикл руководство требует сдать и базовый теоретический тест, и базовый тест по навыкам вождения. Источник: глава 1, «Obtaining Your Permit/Endorsement», p. 1-2 (Manual p. 1-2, PDF p. 10)."
-  }
+   "en": "For a 2W permit, the manual requires both a basic knowledge and a basic skills test. Source: Chapter 1, Obtaining Your Permit/Endorsement, p. 1-2.",
+   "ru": "Для получения разрешения (permit) на двухколёсный (2W) мотоцикл руководство требует сдать и базовый теоретический тест, и базовый тест по навыкам вождения. Источник: глава 1, «Obtaining Your Permit/Endorsement», p. 1-2."
+  },
+  "pdfpage": 10,
+  "pdfpage_ru": 10
  },
  {
   "id": 5,
@@ -130,9 +136,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that a 2W endorsement requires all four permit/endorsement tests. Source: Chapter 1, Obtaining Your Permit/Endorsement, p. 1-2 (manual p. 1-2, PDF p. 10).",
-   "ru": "В руководстве сказано, что для допуска (endorsement) на двухколёсный (2W) мотоцикл нужно сдать все четыре теста на разрешение и допуск (permit/endorsement). Источник: глава 1, «Obtaining Your Permit/Endorsement», p. 1-2 (Manual p. 1-2, PDF p. 10)."
-  }
+   "en": "The manual states that a 2W endorsement requires all four permit/endorsement tests. Source: Chapter 1, Obtaining Your Permit/Endorsement, p. 1-2.",
+   "ru": "В руководстве сказано, что для допуска (endorsement) на двухколёсный (2W) мотоцикл нужно сдать все четыре теста на разрешение и допуск (permit/endorsement). Источник: глава 1, «Obtaining Your Permit/Endorsement», p. 1-2."
+  },
+  "pdfpage": 10,
+  "pdfpage_ru": 10
  },
  {
   "id": 6,
@@ -163,9 +171,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that all motorcycle tests must be taken with one of the partner training schools. Source: Chapter 1, Obtaining Your Permit/Endorsement, p. 1-2 (manual p. 1-2, PDF p. 10).",
-   "ru": "В руководстве сказано, что все мотоциклетные тесты необходимо сдавать в одной из учебных школ-партнёров (training schools). Источник: глава 1, «Obtaining Your Permit/Endorsement», p. 1-2 (Manual p. 1-2, PDF p. 10)."
-  }
+   "en": "The manual states that all motorcycle tests must be taken with one of the partner training schools. Source: Chapter 1, Obtaining Your Permit/Endorsement, p. 1-2.",
+   "ru": "В руководстве сказано, что все мотоциклетные тесты необходимо сдавать в одной из учебных школ-партнёров (training schools). Источник: глава 1, «Obtaining Your Permit/Endorsement», p. 1-2."
+  },
+  "pdfpage": 10,
+  "pdfpage_ru": 10
  },
  {
   "id": 7,
@@ -196,9 +206,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Instruction permit riders must be at least 16 years old and have a current Washington driver license. Source: Chapter 1, Instruction Permits, p. 1-3 (manual p. 1-3, PDF p. 11).",
-   "ru": "Владельцы учебного разрешения (instruction permit) должны быть не моложе 16 лет и иметь действующие водительские права (driver license) штата Вашингтон. Источник: глава 1, «Instruction Permits», p. 1-3 (Manual p. 1-3, PDF p. 11)."
-  }
+   "en": "Instruction permit riders must be at least 16 years old and have a current Washington driver license. Source: Chapter 1, Instruction Permits, p. 1-3.",
+   "ru": "Владельцы учебного разрешения (instruction permit) должны быть не моложе 16 лет и иметь действующие водительские права (driver license) штата Вашингтон. Источник: глава 1, «Instruction Permits», p. 1-3."
+  },
+  "pdfpage": 11,
+  "pdfpage_ru": 11
  },
  {
   "id": 8,
@@ -229,9 +241,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states instruction permit holders are restricted from carrying passengers or riding at night. Source: Chapter 1, Instruction Permits, p. 1-3 (manual p. 1-3, PDF p. 11).",
-   "ru": "В руководстве сказано, что владельцам учебного разрешения (instruction permit) запрещено возить пассажиров и ездить в тёмное время суток. Источник: глава 1, «Instruction Permits», p. 1-3 (Manual p. 1-3, PDF p. 11)."
-  }
+   "en": "The manual states instruction permit holders are restricted from carrying passengers or riding at night. Source: Chapter 1, Instruction Permits, p. 1-3.",
+   "ru": "В руководстве сказано, что владельцам учебного разрешения (instruction permit) запрещено возить пассажиров и ездить в тёмное время суток. Источник: глава 1, «Instruction Permits», p. 1-3."
+  },
+  "pdfpage": 11,
+  "pdfpage_ru": 11
  },
  {
   "id": 9,
@@ -262,9 +276,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says permits expire after 180 days and may be renewed one time before expiration. Source: Chapter 1, Instruction Permits, p. 1-3 (manual p. 1-3, PDF p. 11).",
-   "ru": "В руководстве сказано, что срок действия разрешения (permit) истекает через 180 дней и его можно продлить один раз до окончания срока. Источник: глава 1, «Instruction Permits», p. 1-3 (Manual p. 1-3, PDF p. 11)."
-  }
+   "en": "The manual says permits expire after 180 days and may be renewed one time before expiration. Source: Chapter 1, Instruction Permits, p. 1-3.",
+   "ru": "В руководстве сказано, что срок действия разрешения (permit) истекает через 180 дней и его можно продлить один раз до окончания срока. Источник: глава 1, «Instruction Permits», p. 1-3."
+  },
+  "pdfpage": 11,
+  "pdfpage_ru": 11
  },
  {
   "id": 10,
@@ -295,9 +311,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that only two permits are allowed within a 5-year period. Source: Chapter 1, Instruction Permits, p. 1-3 (manual p. 1-3, PDF p. 11).",
-   "ru": "В руководстве сказано, что в течение пятилетнего периода допускается не более двух разрешений (permit). Источник: глава 1, «Instruction Permits», p. 1-3 (Manual p. 1-3, PDF p. 11)."
-  }
+   "en": "The manual states that only two permits are allowed within a 5-year period. Source: Chapter 1, Instruction Permits, p. 1-3.",
+   "ru": "В руководстве сказано, что в течение пятилетнего периода допускается не более двух разрешений (permit). Источник: глава 1, «Instruction Permits», p. 1-3."
+  },
+  "pdfpage": 11,
+  "pdfpage_ru": 11
  },
  {
   "id": 11,
@@ -328,9 +346,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual strongly encourages initial and ongoing rider training and says riders who skip official courses miss key teachings. Source: Chapter 1, Rider Training and Education, p. 1-3 (manual p. 1-3, PDF p. 11).",
-   "ru": "Руководство настоятельно рекомендует начальное и непрерывное обучение водителей и предупреждает, что те, кто пропускает официальные курсы, упускают важные знания. Источник: глава 1, «Rider Training and Education», p. 1-3 (Manual p. 1-3, PDF p. 11)."
-  }
+   "en": "The manual strongly encourages initial and ongoing rider training and says riders who skip official courses miss key teachings. Source: Chapter 1, Rider Training and Education, p. 1-3.",
+   "ru": "Руководство настоятельно рекомендует начальное и непрерывное обучение водителей и предупреждает, что те, кто пропускает официальные курсы, упускают важные знания. Источник: глава 1, «Rider Training and Education», p. 1-3."
+  },
+  "pdfpage": 11,
+  "pdfpage_ru": 11
  },
  {
   "id": 12,
@@ -361,9 +381,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that completing a motorcycle training course may qualify you for a motorcycle insurance discount. Source: Chapter 1, Rider Training and Education, p. 1-3 (manual p. 1-3, PDF p. 11).",
-   "ru": "В руководстве сказано, что прохождение курса обучения вождению мотоцикла может дать право на скидку на мотоциклетную страховку (insurance). Источник: глава 1, «Rider Training and Education», p. 1-3 (Manual p. 1-3, PDF p. 11)."
-  }
+   "en": "The manual states that completing a motorcycle training course may qualify you for a motorcycle insurance discount. Source: Chapter 1, Rider Training and Education, p. 1-3.",
+   "ru": "В руководстве сказано, что прохождение курса обучения вождению мотоцикла может дать право на скидку на мотоциклетную страховку (insurance). Источник: глава 1, «Rider Training and Education», p. 1-3."
+  },
+  "pdfpage": 11,
+  "pdfpage_ru": 11
  },
  {
   "id": 13,
@@ -394,9 +416,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual describes advanced rider courses as including advanced braking, cornering, swerving, and defensive street strategies. Source: Chapter 1, Advanced Rider Courses, p. 1-4 (manual p. 1-4, PDF p. 12).",
-   "ru": "Руководство описывает курсы для опытных водителей (advanced rider courses) как включающие продвинутое торможение, прохождение поворотов, резкий объезд препятствий и оборонительную дорожную тактику. Источник: глава 1, «Advanced Rider Courses», p. 1-4 (Manual p. 1-4, PDF p. 12)."
-  }
+   "en": "The manual describes advanced rider courses as including advanced braking, cornering, swerving, and defensive street strategies. Source: Chapter 1, Advanced Rider Courses, p. 1-4.",
+   "ru": "Руководство описывает курсы для опытных водителей (advanced rider courses) как включающие продвинутое торможение, прохождение поворотов, резкий объезд препятствий и оборонительную дорожную тактику. Источник: глава 1, «Advanced Rider Courses», p. 1-4."
+  },
+  "pdfpage": 12,
+  "pdfpage_ru": 12
  },
  {
   "id": 14,
@@ -427,9 +451,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states you do not have to take training to take permit or endorsement tests. Source: Chapter 1, Endorsement Testing, p. 1-5 (manual p. 1-5, PDF p. 13).",
-   "ru": "В руководстве сказано, что проходить обучение для сдачи тестов на разрешение или допуск (permit/endorsement) не обязательно. Источник: глава 1, «Endorsement Testing», p. 1-5 (Manual p. 1-5, PDF p. 13)."
-  }
+   "en": "The manual states you do not have to take training to take permit or endorsement tests. Source: Chapter 1, Endorsement Testing, p. 1-5.",
+   "ru": "В руководстве сказано, что проходить обучение для сдачи тестов на разрешение или допуск (permit/endorsement) не обязательно. Источник: глава 1, «Endorsement Testing», p. 1-5."
+  },
+  "pdfpage": 13,
+  "pdfpage_ru": 13
  },
  {
   "id": 15,
@@ -460,9 +486,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists lack of vehicle protection, stability differences, traction limitations, exposure, and visibility as motorcycle risk factors. Source: Chapter 2, Create Your Own Safety, p. 2-1 (manual p. 2-1, PDF p. 15).",
-   "ru": "В руководстве в качестве факторов риска для мотоцикла перечислены отсутствие защиты транспортного средства, различия в устойчивости, ограничения сцепления, незащищённость от внешних условий и заметность. Источник: глава 2, «Create Your Own Safety», p. 2-1 (Manual p. 2-1, PDF p. 15)."
-  }
+   "en": "The manual lists lack of vehicle protection, stability differences, traction limitations, exposure, and visibility as motorcycle risk factors. Source: Chapter 2, Create Your Own Safety, p. 2-1.",
+   "ru": "В руководстве в качестве факторов риска для мотоцикла перечислены отсутствие защиты транспортного средства, различия в устойчивости, ограничения сцепления, незащищённость от внешних условий и заметность. Источник: глава 2, «Create Your Own Safety», p. 2-1."
+  },
+  "pdfpage": 15,
+  "pdfpage_ru": 17
  },
  {
   "id": 16,
@@ -493,9 +521,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that your own skill and behavior is the greatest risk to you as a motorcyclist. Source: Chapter 2, Create Your Own Safety, p. 2-1 (manual p. 2-1, PDF p. 15).",
-   "ru": "В руководстве сказано, что ваши собственные навыки и поведение — это самый большой риск для вас как мотоциклиста. Источник: глава 2, «Create Your Own Safety», p. 2-1 (Manual p. 2-1, PDF p. 15)."
-  }
+   "en": "The manual states that your own skill and behavior is the greatest risk to you as a motorcyclist. Source: Chapter 2, Create Your Own Safety, p. 2-1.",
+   "ru": "В руководстве сказано, что ваши собственные навыки и поведение — это самый большой риск для вас как мотоциклиста. Источник: глава 2, «Create Your Own Safety», p. 2-1."
+  },
+  "pdfpage": 15,
+  "pdfpage_ru": 17
  },
  {
   "id": 17,
@@ -526,9 +556,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says functional gear helps manage risk by providing protection, comfort, and visibility. Source: Chapter 2, Create Your Own Safety with Functional Gear, p. 2-2 (manual p. 2-2, PDF p. 16).",
-   "ru": "В руководстве сказано, что функциональная экипировка помогает управлять рисками, обеспечивая защиту, комфорт и заметность. Источник: глава 2, «Create Your Own Safety with Functional Gear», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "The manual says functional gear helps manage risk by providing protection, comfort, and visibility. Source: Chapter 2, Create Your Own Safety with Functional Gear, p. 2-2.",
+   "ru": "В руководстве сказано, что функциональная экипировка помогает управлять рисками, обеспечивая защиту, комфорт и заметность. Источник: глава 2, «Create Your Own Safety with Functional Gear», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 18,
@@ -559,9 +591,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual identifies a quality, properly fitted, securely fastened helmet as the single most important thing to reduce risk. Source: Chapter 2, Helmets, p. 2-2 (manual p. 2-2, PDF p. 16).",
-   "ru": "В руководстве качественный, правильно подобранный и надёжно застёгнутый шлем назван самым важным средством снижения риска. Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "The manual identifies a quality, properly fitted, securely fastened helmet as the single most important thing to reduce risk. Source: Chapter 2, Helmets, p. 2-2.",
+   "ru": "В руководстве качественный, правильно подобранный и надёжно застёгнутый шлем назван самым важным средством снижения риска. Источник: глава 2, «Helmets», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 19,
@@ -592,9 +626,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Washington requires a helmet compliant with Department of Transportation guidelines. Source: Chapter 2, Helmets, p. 2-2 (manual p. 2-2, PDF p. 16).",
-   "ru": "В штате Вашингтон требуется шлем, соответствующий требованиям Министерства транспорта (Department of Transportation, DOT). Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "Washington requires a helmet compliant with Department of Transportation guidelines. Source: Chapter 2, Helmets, p. 2-2.",
+   "ru": "В штате Вашингтон требуется шлем, соответствующий требованиям Министерства транспорта (Department of Transportation, DOT). Источник: глава 2, «Helmets», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 20,
@@ -625,9 +661,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says DOT compliance is indicated by DOT labels on the rear exterior and interior of the helmet. Source: Chapter 2, Helmets, p. 2-2 (manual p. 2-2, PDF p. 16).",
-   "ru": "В руководстве сказано, что соответствие стандарту DOT обозначается этикетками DOT на задней наружной и внутренней частях шлема. Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "The manual says DOT compliance is indicated by DOT labels on the rear exterior and interior of the helmet. Source: Chapter 2, Helmets, p. 2-2.",
+   "ru": "В руководстве сказано, что соответствие стандарту DOT обозначается этикетками DOT на задней наружной и внутренней частях шлема. Источник: глава 2, «Helmets», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 21,
@@ -658,9 +696,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states novelty helmets are not DOT compliant and may not be worn on public roadways. Source: Chapter 2, Helmets, p. 2-2 (manual p. 2-2, PDF p. 16).",
-   "ru": "В руководстве сказано, что сувенирные шлемы (novelty helmets) не соответствуют стандарту DOT и не могут использоваться на дорогах общего пользования. Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "The manual states novelty helmets are not DOT compliant and may not be worn on public roadways. Source: Chapter 2, Helmets, p. 2-2.",
+   "ru": "В руководстве сказано, что сувенирные шлемы (novelty helmets) не соответствуют стандарту DOT и не могут использоваться на дорогах общего пользования. Источник: глава 2, «Helmets», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 22,
@@ -691,9 +731,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states full-face helmets are considered the safest because they provide the best chin and face protection. Source: Chapter 2, Helmet Types and Construction, p. 2-2 (manual p. 2-2, PDF p. 16).",
-   "ru": "В руководстве сказано, что шлемы-интегралы с полной защитой лица (full-face) считаются самыми безопасными, так как обеспечивают лучшую защиту подбородка и лица. Источник: глава 2, «Helmet Types and Construction», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "The manual states full-face helmets are considered the safest because they provide the best chin and face protection. Source: Chapter 2, Helmet Types and Construction, p. 2-2.",
+   "ru": "В руководстве сказано, что шлемы-интегралы с полной защитой лица (full-face) считаются самыми безопасными, так как обеспечивают лучшую защиту подбородка и лица. Источник: глава 2, «Helmet Types and Construction», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 23,
@@ -724,9 +766,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists an impact-resistant outer shell, impact-absorbing liner, comfort liner, and neck/chin retention system. Source: Chapter 2, Helmet Types and Construction, pp. 2-2 to 2-3 (manual p. 2-2, PDF p. 16; manual p. 2-3, PDF p. 17).",
-   "ru": "В руководстве перечислены ударопрочная внешняя оболочка, поглощающий удар внутренний слой, комфортный подклад и система фиксации на шее/подбородке. Источник: глава 2, «Helmet Types and Construction», pp. 2-2 — 2-3 (Manual p. 2-2, PDF p. 16; Manual p. 2-3, PDF p. 17)."
-  }
+   "en": "The manual lists an impact-resistant outer shell, impact-absorbing liner, comfort liner, and neck/chin retention system. Source: Chapter 2, Helmet Types and Construction, pp. 2-2 to 2-3.",
+   "ru": "В руководстве перечислены ударопрочная внешняя оболочка, поглощающий удар внутренний слой, комфортный подклад и система фиксации на шее/подбородке. Источник: глава 2, «Helmet Types and Construction», pp. 2-2 — 2-3."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 24,
@@ -757,9 +801,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says helmets should be replaced if they have defects or after a crash; many manufacturers recommend five-year replacement. Source: Chapter 2, Helmet Types and Construction, p. 2-3 (manual p. 2-3, PDF p. 17).",
-   "ru": "В руководстве сказано, что шлем следует заменить при наличии дефектов или после аварии; многие производители рекомендуют замену каждые пять лет. Источник: глава 2, «Helmet Types and Construction», p. 2-3 (Manual p. 2-3, PDF p. 17)."
-  }
+   "en": "The manual says helmets should be replaced if they have defects or after a crash; many manufacturers recommend five-year replacement. Source: Chapter 2, Helmet Types and Construction, p. 2-3.",
+   "ru": "В руководстве сказано, что шлем следует заменить при наличии дефектов или после аварии; многие производители рекомендуют замену каждые пять лет. Источник: глава 2, «Helmet Types and Construction», p. 2-3."
+  },
+  "pdfpage": 17,
+  "pdfpage_ru": 19
  },
  {
   "id": 25,
@@ -790,9 +836,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says properly fitted DOT-compliant helmets will not block or obstruct central or peripheral vision. Source: Chapter 2, Helmet Fit, p. 2-4 (manual p. 2-4, PDF p. 18).",
-   "ru": "В руководстве сказано, что правильно подобранные шлемы, соответствующие стандарту DOT, не перекрывают и не загораживают центральное или периферийное зрение. Источник: глава 2, «Helmet Fit», p. 2-4 (Manual p. 2-4, PDF p. 18)."
-  }
+   "en": "The manual says properly fitted DOT-compliant helmets will not block or obstruct central or peripheral vision. Source: Chapter 2, Helmet Fit, p. 2-4.",
+   "ru": "В руководстве сказано, что правильно подобранные шлемы, соответствующие стандарту DOT, не перекрывают и не загораживают центральное или периферийное зрение. Источник: глава 2, «Helmet Fit», p. 2-4."
+  },
+  "pdfpage": 18,
+  "pdfpage_ru": 20
  },
  {
   "id": 26,
@@ -823,9 +871,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states Washington law requires eye protection unless the motorcycle is equipped with a windshield. Source: Chapter 2, Eye Protection, p. 2-4 (manual p. 2-4, PDF p. 18).",
-   "ru": "В руководстве сказано, что по закону штата Вашингтон защита глаз обязательна, если мотоцикл не оборудован ветровым стеклом (windshield). Источник: глава 2, «Eye Protection», p. 2-4 (manual p. 2-4, PDF p. 18)."
-  }
+   "en": "The manual states Washington law requires eye protection unless the motorcycle is equipped with a windshield. Source: Chapter 2, Eye Protection, p. 2-4.",
+   "ru": "В руководстве сказано, что по закону штата Вашингтон защита глаз обязательна, если мотоцикл не оборудован ветровым стеклом (windshield). Источник: глава 2, «Eye Protection», p. 2-4."
+  },
+  "pdfpage": 18,
+  "pdfpage_ru": 20
  },
  {
   "id": 27,
@@ -856,9 +906,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states a shatter-resistant face shield offers the most protection for eyes and can help protect the face. Source: Chapter 2, Eye Protection, p. 2-4 (manual p. 2-4, PDF p. 18).",
-   "ru": "В руководстве сказано, что ударопрочный лицевой щиток (face shield) обеспечивает наилучшую защиту глаз и помогает защитить лицо. Источник: глава 2, «Eye Protection», p. 2-4 (manual p. 2-4, PDF p. 18)."
-  }
+   "en": "The manual states a shatter-resistant face shield offers the most protection for eyes and can help protect the face. Source: Chapter 2, Eye Protection, p. 2-4.",
+   "ru": "В руководстве сказано, что ударопрочный лицевой щиток (face shield) обеспечивает наилучшую защиту глаз и помогает защитить лицо. Источник: глава 2, «Eye Protection», p. 2-4."
+  },
+  "pdfpage": 18,
+  "pdfpage_ru": 20
  },
  {
   "id": 28,
@@ -889,9 +941,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states tinted eye protection should not be worn during low visibility or poor weather such as fog or rain. Source: Chapter 2, Eye Protection, p. 2-5 (manual p. 2-5, PDF p. 19).",
-   "ru": "В руководстве сказано, что тонированную защиту глаз не следует использовать при плохой видимости или в плохую погоду, например в тумане или под дождём. Источник: глава 2, «Eye Protection», p. 2-5 (manual p. 2-5, PDF p. 19)."
-  }
+   "en": "The manual states tinted eye protection should not be worn during low visibility or poor weather such as fog or rain. Source: Chapter 2, Eye Protection, p. 2-5.",
+   "ru": "В руководстве сказано, что тонированную защиту глаз не следует использовать при плохой видимости или в плохую погоду, например в тумане или под дождём. Источник: глава 2, «Eye Protection», p. 2-5."
+  },
+  "pdfpage": 19,
+  "pdfpage_ru": 21
  },
  {
   "id": 29,
@@ -922,9 +976,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states the minimum legal protective gear in Washington is a DOT-approved helmet and eye protection. Source: Chapter 2, Protective Gear, p. 2-5 (manual p. 2-5, PDF p. 19).",
-   "ru": "В руководстве сказано, что минимальная по закону защитная экипировка в штате Вашингтон — это шлем, одобренный DOT (DOT-approved helmet), и защита глаз. Источник: глава 2, «Protective Gear», p. 2-5 (manual p. 2-5, PDF p. 19)."
-  }
+   "en": "The manual states the minimum legal protective gear in Washington is a DOT-approved helmet and eye protection. Source: Chapter 2, Protective Gear, p. 2-5.",
+   "ru": "В руководстве сказано, что минимальная по закону защитная экипировка в штате Вашингтон — это шлем, одобренный DOT (DOT-approved helmet), и защита глаз. Источник: глава 2, «Protective Gear», p. 2-5."
+  },
+  "pdfpage": 19,
+  "pdfpage_ru": 21
  },
  {
   "id": 30,
@@ -955,9 +1011,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says leather or sturdy abrasion-resistant material offers the best protection; denim does not provide significant abrasion protection. Source: Chapter 2, Jacket and Pants, p. 2-5 (manual p. 2-5, PDF p. 19).",
-   "ru": "В руководстве сказано, что кожа или прочный износостойкий материал обеспечивают наилучшую защиту; джинсовая ткань не даёт значительной защиты от истирания. Источник: глава 2, «Jacket and Pants», p. 2-5 (manual p. 2-5, PDF p. 19)."
-  }
+   "en": "The manual says leather or sturdy abrasion-resistant material offers the best protection; denim does not provide significant abrasion protection. Source: Chapter 2, Jacket and Pants, p. 2-5.",
+   "ru": "В руководстве сказано, что кожа или прочный износостойкий материал обеспечивают наилучшую защиту; джинсовая ткань не даёт значительной защиты от истирания. Источник: глава 2, «Jacket and Pants», p. 2-5."
+  },
+  "pdfpage": 19,
+  "pdfpage_ru": 21
  },
  {
   "id": 31,
@@ -988,9 +1046,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual defines hypothermia as body temperature becoming too low and warns it can cause loss of physical and mental function. Source: Chapter 2, Jacket and Pants, p. 2-5 (manual p. 2-5, PDF p. 19).",
-   "ru": "В руководстве гипотермия (hypothermia) определяется как чрезмерное понижение температуры тела; указано, что она может привести к потере физических и умственных функций. Источник: глава 2, «Jacket and Pants», p. 2-5 (manual p. 2-5, PDF p. 19)."
-  }
+   "en": "The manual defines hypothermia as body temperature becoming too low and warns it can cause loss of physical and mental function. Source: Chapter 2, Jacket and Pants, p. 2-5.",
+   "ru": "В руководстве гипотермия (hypothermia) определяется как чрезмерное понижение температуры тела; указано, что она может привести к потере физических и умственных функций. Источник: глава 2, «Jacket and Pants», p. 2-5."
+  },
+  "pdfpage": 19,
+  "pdfpage_ru": 21
  },
  {
   "id": 32,
@@ -1021,9 +1081,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says motorcycle-specific gloves should fit properly for grip/control and provide hand/finger protection. Source: Chapter 2, Gloves, p. 2-6 (manual p. 2-6, PDF p. 20).",
-   "ru": "В руководстве сказано, что специальные мотоциклетные перчатки должны хорошо сидеть по руке, обеспечивая захват и контроль, и защищать кисти и пальцы. Источник: глава 2, «Gloves», p. 2-6 (manual p. 2-6, PDF p. 20)."
-  }
+   "en": "The manual says motorcycle-specific gloves should fit properly for grip/control and provide hand/finger protection. Source: Chapter 2, Gloves, p. 2-6.",
+   "ru": "В руководстве сказано, что специальные мотоциклетные перчатки должны хорошо сидеть по руке, обеспечивая захват и контроль, и защищать кисти и пальцы. Источник: глава 2, «Gloves», p. 2-6."
+  },
+  "pdfpage": 20,
+  "pdfpage_ru": 22
  },
  {
   "id": 33,
@@ -1054,9 +1116,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says airflow around the helmet and road noise can cause permanent hearing damage. Source: Chapter 2, Hearing Protection, p. 2-6 (manual p. 2-6, PDF p. 20).",
-   "ru": "В руководстве сказано, что поток воздуха вокруг шлема и дорожный шум могут привести к необратимому повреждению слуха. Источник: глава 2, «Hearing Protection», p. 2-6 (manual p. 2-6, PDF p. 20)."
-  }
+   "en": "The manual says airflow around the helmet and road noise can cause permanent hearing damage. Source: Chapter 2, Hearing Protection, p. 2-6.",
+   "ru": "В руководстве сказано, что поток воздуха вокруг шлема и дорожный шум могут привести к необратимому повреждению слуха. Источник: глава 2, «Hearing Protection», p. 2-6."
+  },
+  "pdfpage": 20,
+  "pdfpage_ru": 22
  },
  {
   "id": 35,
@@ -1087,9 +1151,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says assume other drivers cannot see you and use bright/reflective gear to help them. Source: Chapter 2, Visibility, p. 2-7 (manual p. 2-7, PDF p. 21).",
-   "ru": "В руководстве сказано: исходите из того, что другие водители вас не видят, и используйте яркую и светоотражающую экипировку, чтобы помочь им вас заметить. Источник: глава 2, «Visibility», p. 2-7 (manual p. 2-7, PDF p. 21)."
-  }
+   "en": "The manual says assume other drivers cannot see you and use bright/reflective gear to help them. Source: Chapter 2, Visibility, p. 2-7.",
+   "ru": "В руководстве сказано: исходите из того, что другие водители вас не видят, и используйте яркую и светоотражающую экипировку, чтобы помочь им вас заметить. Источник: глава 2, «Visibility», p. 2-7."
+  },
+  "pdfpage": 21,
+  "pdfpage_ru": 23
  },
  {
   "id": 36,
@@ -1120,9 +1186,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states many crashes occur when a rider has less than six months of experience on the current motorcycle. Source: Chapter 2, Understanding and Inspecting Your Motorcycle, p. 2-7 (manual p. 2-7, PDF p. 21).",
-   "ru": "В руководстве сказано, что много аварий происходит, когда у водителя менее шести месяцев опыта на нынешнем мотоцикле. Источник: глава 2, «Understanding and Inspecting Your Motorcycle», p. 2-7 (manual p. 2-7, PDF p. 21)."
-  }
+   "en": "The manual states many crashes occur when a rider has less than six months of experience on the current motorcycle. Source: Chapter 2, Understanding and Inspecting Your Motorcycle, p. 2-7.",
+   "ru": "В руководстве сказано, что много аварий происходит, когда у водителя менее шести месяцев опыта на нынешнем мотоцикле. Источник: глава 2, «Understanding and Inspecting Your Motorcycle», p. 2-7."
+  },
+  "pdfpage": 21,
+  "pdfpage_ru": 23
  },
  {
   "id": 37,
@@ -1153,9 +1221,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states the motorcycle owner's manual is the primary source for specifications, operation, and maintenance. Source: Chapter 2, Checking Your Motorcycle, p. 2-8 (manual p. 2-8, PDF p. 22).",
-   "ru": "В руководстве сказано, что руководство по эксплуатации мотоцикла (owner's manual) — это основной источник информации о характеристиках, эксплуатации и обслуживании. Источник: глава 2, «Checking Your Motorcycle», p. 2-8 (manual p. 2-8, PDF p. 22)."
-  }
+   "en": "The manual states the motorcycle owner's manual is the primary source for specifications, operation, and maintenance. Source: Chapter 2, Checking Your Motorcycle, p. 2-8.",
+   "ru": "В руководстве сказано, что руководство по эксплуатации мотоцикла (owner's manual) — это основной источник информации о характеристиках, эксплуатации и обслуживании. Источник: глава 2, «Checking Your Motorcycle», p. 2-8."
+  },
+  "pdfpage": 22,
+  "pdfpage_ru": 24
  },
  {
   "id": 38,
@@ -1186,9 +1256,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Before each ride the manual recommends inspecting your motorcycle: tires/wheels, oil/fluids, levers/controls, lights, suspension/drivetrain, and stands. Source: Chapter 2, Checking Your Motorcycle, p. 2-9 (Manual p. 2-9, PDF p. 23).",
-   "ru": "Перед каждой поездкой руководство рекомендует осмотреть мотоцикл: шины и колёса, масло и жидкости, рычаги и органы управления, освещение, подвеску и трансмиссию, подставки. Источник: глава 2, «Checking Your Motorcycle», p. 2-9 (Manual p. 2-9, PDF p. 23)."
-  }
+   "en": "Before each ride the manual recommends inspecting your motorcycle: tires/wheels, oil/fluids, levers/controls, lights, suspension/drivetrain, and stands. Source: Chapter 2, Checking Your Motorcycle, p. 2-9.",
+   "ru": "Перед каждой поездкой руководство рекомендует осмотреть мотоцикл: шины и колёса, масло и жидкости, рычаги и органы управления, освещение, подвеску и трансмиссию, подставки. Источник: глава 2, «Checking Your Motorcycle», p. 2-9."
+  },
+  "pdfpage": 23,
+  "pdfpage_ru": 25
  },
  {
   "id": 40,
@@ -1219,9 +1291,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists required motorcycle equipment for public roadways in Washington. Source: Chapter 3, The Right Bike for You, p. 3-1 (manual p. 3-1, PDF p. 27).",
-   "ru": "В руководстве перечислено обязательное оборудование мотоцикла для дорог общего пользования в штате Вашингтон. Источник: глава 3, «The Right Bike for You», p. 3-1 (manual p. 3-1, PDF p. 27)."
-  }
+   "en": "The manual lists required motorcycle equipment for public roadways in Washington. Source: Chapter 3, The Right Bike for You, p. 3-1.",
+   "ru": "В руководстве перечислено обязательное оборудование мотоцикла для дорог общего пользования в штате Вашингтон. Источник: глава 3, «The Right Bike for You», p. 3-1."
+  },
+  "pdfpage": 27,
+  "pdfpage_ru": 31
  },
  {
   "id": 41,
@@ -1252,9 +1326,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says keeping head and eyes up helps with balance, control, and scanning for hazards. Source: Chapter 3, Riding Posture, p. 3-1 (manual p. 3-1, PDF p. 27).",
-   "ru": "В руководстве сказано, что поднятые голова и взгляд помогают сохранять равновесие и контроль и осматривать дорогу в поисках опасностей. Источник: глава 3, «Riding Posture», p. 3-1 (manual p. 3-1, PDF p. 27)."
-  }
+   "en": "The manual says keeping head and eyes up helps with balance, control, and scanning for hazards. Source: Chapter 3, Riding Posture, p. 3-1.",
+   "ru": "В руководстве сказано, что поднятые голова и взгляд помогают сохранять равновесие и контроль и осматривать дорогу в поисках опасностей. Источник: глава 3, «Riding Posture», p. 3-1."
+  },
+  "pdfpage": 27,
+  "pdfpage_ru": 31
  },
  {
   "id": 42,
@@ -1285,9 +1361,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says you should be positioned so your arms steer the motorcycle, not hold you up. Source: Chapter 3, Riding Posture, p. 3-2 (manual p. 3-2, PDF p. 28).",
-   "ru": "В руководстве сказано, что нужно располагаться так, чтобы руки управляли мотоциклом, а не удерживали вас. Источник: глава 3, «Riding Posture», p. 3-2 (manual p. 3-2, PDF p. 28)."
-  }
+   "en": "The manual says you should be positioned so your arms steer the motorcycle, not hold you up. Source: Chapter 3, Riding Posture, p. 3-2.",
+   "ru": "В руководстве сказано, что нужно располагаться так, чтобы руки управляли мотоциклом, а не удерживали вас. Источник: глава 3, «Riding Posture», p. 3-2."
+  },
+  "pdfpage": 28,
+  "pdfpage_ru": 32
  },
  {
   "id": 43,
@@ -1318,9 +1396,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends a flat right wrist position to reduce unintended throttle use. Source: Chapter 3, Riding Posture, p. 3-2 (manual p. 3-2, PDF p. 28).",
-   "ru": "В руководстве рекомендуется плоское положение правого запястья, чтобы уменьшить непреднамеренное использование газа (throttle). Источник: глава 3, «Riding Posture», p. 3-2 (manual p. 3-2, PDF p. 28)."
-  }
+   "en": "The manual recommends a flat right wrist position to reduce unintended throttle use. Source: Chapter 3, Riding Posture, p. 3-2.",
+   "ru": "В руководстве рекомендуется плоское положение правого запястья, чтобы уменьшить непреднамеренное использование газа (throttle). Источник: глава 3, «Riding Posture», p. 3-2."
+  },
+  "pdfpage": 28,
+  "pdfpage_ru": 32
  },
  {
   "id": 44,
@@ -1351,9 +1431,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to keep feet on footrests for balance/control and warns dragging feet can cause serious injury. Source: Chapter 3, Riding Posture, p. 3-2 (manual p. 3-2, PDF p. 28).",
-   "ru": "В руководстве сказано держать ноги на подножках (footrests) для равновесия и контроля; волочение ног может привести к серьёзной травме. Источник: глава 3, «Riding Posture», p. 3-2 (manual p. 3-2, PDF p. 28)."
-  }
+   "en": "The manual says to keep feet on footrests for balance/control and warns dragging feet can cause serious injury. Source: Chapter 3, Riding Posture, p. 3-2.",
+   "ru": "В руководстве сказано держать ноги на подножках (footrests) для равновесия и контроля; волочение ног может привести к серьёзной травме. Источник: глава 3, «Riding Posture», p. 3-2."
+  },
+  "pdfpage": 28,
+  "pdfpage_ru": 32
  },
  {
   "id": 45,
@@ -1384,9 +1466,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to practice controls in a safe environment and keep head/eyes up to anticipate hazards. Source: Chapter 3, Basic Controls and Operation, p. 3-2 (manual p. 3-2, PDF p. 28).",
-   "ru": "В руководстве сказано отрабатывать органы управления в безопасной обстановке и держать голову и взгляд поднятыми, чтобы предвидеть опасности. Источник: глава 3, «Basic Controls and Operation», p. 3-2 (manual p. 3-2, PDF p. 28)."
-  }
+   "en": "The manual says to practice controls in a safe environment and keep head/eyes up to anticipate hazards. Source: Chapter 3, Basic Controls and Operation, p. 3-2.",
+   "ru": "В руководстве сказано отрабатывать органы управления в безопасной обстановке и держать голову и взгляд поднятыми, чтобы предвидеть опасности. Источник: глава 3, «Basic Controls and Operation», p. 3-2."
+  },
+  "pdfpage": 28,
+  "pdfpage_ru": 32
  },
  {
   "id": 46,
@@ -1417,9 +1501,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends practicing shifting without looking down so your eyes stay focused on the road. Source: Chapter 3, Clutch Control and Shifting Gears, p. 3-3 (manual p. 3-3, PDF p. 29).",
-   "ru": "Руководство рекомендует отрабатывать переключение передач, не глядя вниз, чтобы взгляд оставался сосредоточенным на дороге. Источник: глава 3, «Clutch Control and Shifting Gears», p. 3-3 (Manual p. 3-3, PDF p. 29)."
-  }
+   "en": "The manual recommends practicing shifting without looking down so your eyes stay focused on the road. Source: Chapter 3, Clutch Control and Shifting Gears, p. 3-3.",
+   "ru": "Руководство рекомендует отрабатывать переключение передач, не глядя вниз, чтобы взгляд оставался сосредоточенным на дороге. Источник: глава 3, «Clutch Control and Shifting Gears», p. 3-3."
+  },
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 47,
@@ -1450,9 +1536,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says a wet clutch helps control power to the rear wheel, aiding smooth starts and low-speed maneuvering. Source: Chapter 3, Clutch Control and Shifting Gears, p. 3-3 (manual p. 3-3, PDF p. 29).",
-   "ru": "В руководстве сказано, что «мокрое» сцепление (wet clutch) помогает контролировать мощность, передаваемую на заднее колесо, что облегчает плавный старт и манёвры на малой скорости. Источник: глава 3, «Clutch Control and Shifting Gears», p. 3-3 (Manual p. 3-3, PDF p. 29)."
-  }
+   "en": "The manual says a wet clutch helps control power to the rear wheel, aiding smooth starts and low-speed maneuvering. Source: Chapter 3, Clutch Control and Shifting Gears, p. 3-3.",
+   "ru": "В руководстве сказано, что «мокрое» сцепление (wet clutch) помогает контролировать мощность, передаваемую на заднее колесо, что облегчает плавный старт и манёвры на малой скорости. Источник: глава 3, «Clutch Control and Shifting Gears», p. 3-3."
+  },
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 48,
@@ -1483,9 +1571,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says engine braking does not activate the brake light, so flash the brake light to show others you are slowing. Source: Chapter 3, Clutch Control and Shifting Gears, p. 3-3 (manual p. 3-3, PDF p. 29).",
-   "ru": "В руководстве сказано, что при торможении двигателем (engine braking) стоп-сигнал не загорается, поэтому нужно несколько раз мигнуть стоп-сигналом, чтобы показать другим, что вы замедляетесь. Источник: глава 3, «Clutch Control and Shifting Gears», p. 3-3 (Manual p. 3-3, PDF p. 29)."
-  }
+   "en": "The manual says engine braking does not activate the brake light, so flash the brake light to show others you are slowing. Source: Chapter 3, Clutch Control and Shifting Gears, p. 3-3.",
+   "ru": "В руководстве сказано, что при торможении двигателем (engine braking) стоп-сигнал не загорается, поэтому нужно несколько раз мигнуть стоп-сигналом, чтобы показать другим, что вы замедляетесь. Источник: глава 3, «Clutch Control and Shifting Gears», p. 3-3."
+  },
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 49,
@@ -1516,9 +1606,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states two-wheeled motorcycles use countersteering at approximately 12-15 mph. Source: Chapter 3, Two-Wheel Steering, p. 3-3 (manual p. 3-3, PDF p. 29).",
-   "ru": "В руководстве указано, что двухколёсные (2W) мотоциклы используют контрруление (countersteering) примерно на скорости 12–15 миль/ч (mph). Источник: глава 3, «Two-Wheel Steering», p. 3-3 (Manual p. 3-3, PDF p. 29)."
-  }
+   "en": "The manual states two-wheeled motorcycles use countersteering at approximately 12-15 mph. Source: Chapter 3, Two-Wheel Steering, p. 3-3.",
+   "ru": "В руководстве указано, что двухколёсные (2W) мотоциклы используют контрруление (countersteering) примерно на скорости 12–15 миль/ч (mph). Источник: глава 3, «Two-Wheel Steering», p. 3-3."
+  },
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 50,
@@ -1549,9 +1641,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says countersteering is pressing on the grip in the direction you want to turn. Source: Chapter 3, Two-Wheel Steering, p. 3-3 (manual p. 3-3, PDF p. 29).",
-   "ru": "В руководстве сказано, что контрруление (countersteering) — это нажатие на рукоятку (grip) в ту сторону, куда вы хотите повернуть. Источник: глава 3, «Two-Wheel Steering», p. 3-3 (Manual p. 3-3, PDF p. 29)."
-  }
+   "en": "The manual says countersteering is pressing on the grip in the direction you want to turn. Source: Chapter 3, Two-Wheel Steering, p. 3-3.",
+   "ru": "В руководстве сказано, что контрруление (countersteering) — это нажатие на рукоятку (grip) в ту сторону, куда вы хотите повернуть. Источник: глава 3, «Two-Wheel Steering», p. 3-3."
+  },
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 51,
@@ -1582,9 +1676,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says pressing the left handgrip causes the bike to lean left and turn left. Source: Chapter 3, Two-Wheel Steering, p. 3-3 (manual p. 3-3, PDF p. 29).",
-   "ru": "В руководстве сказано, что нажатие на левую рукоятку руля заставляет мотоцикл наклониться влево и повернуть влево. Источник: глава 3, «Two-Wheel Steering», p. 3-3 (Manual p. 3-3, PDF p. 29)."
-  }
+   "en": "The manual says pressing the left handgrip causes the bike to lean left and turn left. Source: Chapter 3, Two-Wheel Steering, p. 3-3.",
+   "ru": "В руководстве сказано, что нажатие на левую рукоятку руля заставляет мотоцикл наклониться влево и повернуть влево. Источник: глава 3, «Two-Wheel Steering», p. 3-3."
+  },
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 52,
@@ -1615,9 +1711,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual notes that trikes, sidecars, and reverse-trikes use direct steering: turning the bars in the desired direction. Source: Chapter 3, Two-Wheel Steering note, p. 3-3 (manual p. 3-3, PDF p. 29).",
-   "ru": "В руководстве отмечается, что трайки (trikes), мотоциклы с коляской (sidecars) и обратные трайки (reverse-trikes) используют прямое руление (direct steering): руль поворачивается в нужную сторону. Источник: глава 3, примечание к «Two-Wheel Steering», p. 3-3 (Manual p. 3-3, PDF p. 29)."
-  }
+   "en": "The manual notes that trikes, sidecars, and reverse-trikes use direct steering: turning the bars in the desired direction. Source: Chapter 3, Two-Wheel Steering note, p. 3-3.",
+   "ru": "В руководстве отмечается, что трайки (trikes), мотоциклы с коляской (sidecars) и обратные трайки (reverse-trikes) используют прямое руление (direct steering): руль поворачивается в нужную сторону. Источник: глава 3, примечание к «Two-Wheel Steering», p. 3-3."
+  },
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 53,
@@ -1648,9 +1746,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states many motorcycle fatalities in corners involve excessive speed and improper technique. Source: Chapter 3, Cornering, p. 3-4 (manual p. 3-4, PDF p. 30).",
-   "ru": "В руководстве указано, что многие смертельные аварии с мотоциклами на поворотах связаны с превышением скорости и неправильной техникой. Источник: глава 3, «Cornering», p. 3-4 (Manual p. 3-4, PDF p. 30)."
-  }
+   "en": "The manual states many motorcycle fatalities in corners involve excessive speed and improper technique. Source: Chapter 3, Cornering, p. 3-4.",
+   "ru": "В руководстве указано, что многие смертельные аварии с мотоциклами на поворотах связаны с превышением скорости и неправильной техникой. Источник: глава 3, «Cornering», p. 3-4."
+  },
+  "pdfpage": 30,
+  "pdfpage_ru": 34
  },
  {
   "id": 54,
@@ -1681,9 +1781,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual gives four cornering steps: reduce speed, look through the turn, countersteer/press, and smoothly roll on the throttle. Source: Chapter 3, Cornering Steps, pp. 3-4 to 3-5 (manual p. 3-4, PDF p. 30; manual p. 3-5, PDF p. 31).",
-   "ru": "Руководство даёт четыре шага прохождения поворота: снизить скорость, смотреть сквозь поворот, выполнить контрруление/нажатие (countersteer/press) и плавно добавить газ. Источник: глава 3, «Cornering Steps», pp. 3-4 to 3-5 (Manual p. 3-4, PDF p. 30; Manual p. 3-5, PDF p. 31)."
-  }
+   "en": "The manual gives four cornering steps: reduce speed, look through the turn, countersteer/press, and smoothly roll on the throttle. Source: Chapter 3, Cornering Steps, pp. 3-4 to 3-5.",
+   "ru": "Руководство даёт четыре шага прохождения поворота: снизить скорость, смотреть сквозь поворот, выполнить контрруление/нажатие (countersteer/press) и плавно добавить газ. Источник: глава 3, «Cornering Steps», pp. 3-4 to 3-5."
+  },
+  "pdfpage": 30,
+  "pdfpage_ru": 34
  },
  {
   "id": 55,
@@ -1714,9 +1816,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to reduce speed before the corner by rolling off the throttle and carefully applying both brakes if necessary. Source: Chapter 3, Cornering Steps, p. 3-4 (manual p. 3-4, PDF p. 30).",
-   "ru": "В руководстве сказано снижать скорость перед поворотом, отпуская газ и при необходимости аккуратно применяя оба тормоза. Источник: глава 3, «Cornering Steps», p. 3-4 (Manual p. 3-4, PDF p. 30)."
-  }
+   "en": "The manual says to reduce speed before the corner by rolling off the throttle and carefully applying both brakes if necessary. Source: Chapter 3, Cornering Steps, p. 3-4.",
+   "ru": "В руководстве сказано снижать скорость перед поворотом, отпуская газ и при необходимости аккуратно применяя оба тормоза. Источник: глава 3, «Cornering Steps», p. 3-4."
+  },
+  "pdfpage": 30,
+  "pdfpage_ru": 34
  },
  {
   "id": 56,
@@ -1747,9 +1851,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to point your head and eyes toward the end/exit of the corner throughout the corner. Source: Chapter 3, Cornering Steps, p. 3-4 (manual p. 3-4, PDF p. 30).",
-   "ru": "В руководстве сказано направлять голову и взгляд к концу/выходу из поворота на протяжении всего поворота. Источник: глава 3, «Cornering Steps», p. 3-4 (Manual p. 3-4, PDF p. 30)."
-  }
+   "en": "The manual says to point your head and eyes toward the end/exit of the corner throughout the corner. Source: Chapter 3, Cornering Steps, p. 3-4.",
+   "ru": "В руководстве сказано направлять голову и взгляд к концу/выходу из поворота на протяжении всего поворота. Источник: глава 3, «Cornering Steps», p. 3-4."
+  },
+  "pdfpage": 30,
+  "pdfpage_ru": 34
  },
  {
   "id": 57,
@@ -1780,9 +1886,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says if you go wide, focus on where you want to go, press harder, and lean more. Source: Chapter 3, Cornering Steps, pp. 3-4 to 3-5 (manual p. 3-4, PDF p. 30; manual p. 3-5, PDF p. 31).",
-   "ru": "В руководстве сказано, что при выносе наружу нужно сосредоточиться на том, куда вы хотите ехать, нажать сильнее и наклониться больше. Источник: глава 3, «Cornering Steps», pp. 3-4 to 3-5 (Manual p. 3-4, PDF p. 30; Manual p. 3-5, PDF p. 31)."
-  }
+   "en": "The manual says if you go wide, focus on where you want to go, press harder, and lean more. Source: Chapter 3, Cornering Steps, pp. 3-4 to 3-5.",
+   "ru": "В руководстве сказано, что при выносе наружу нужно сосредоточиться на том, куда вы хотите ехать, нажать сильнее и наклониться больше. Источник: глава 3, «Cornering Steps», pp. 3-4 to 3-5."
+  },
+  "pdfpage": 30,
+  "pdfpage_ru": 34
  },
  {
   "id": 58,
@@ -1813,9 +1921,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says smooth throttle after entry helps stabilize the motorcycle. Source: Chapter 3, Cornering Steps, p. 3-5 (manual p. 3-5, PDF p. 31).",
-   "ru": "В руководстве сказано, что плавная работа газом после входа в поворот помогает стабилизировать мотоцикл. Источник: глава 3, «Cornering Steps», p. 3-5 (Manual p. 3-5, PDF p. 31)."
-  }
+   "en": "The manual says smooth throttle after entry helps stabilize the motorcycle. Source: Chapter 3, Cornering Steps, p. 3-5.",
+   "ru": "В руководстве сказано, что плавная работа газом после входа в поворот помогает стабилизировать мотоцикл. Источник: глава 3, «Cornering Steps», p. 3-5."
+  },
+  "pdfpage": 31,
+  "pdfpage_ru": 35
  },
  {
   "id": 59,
@@ -1846,9 +1956,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says every lane has outside, middle, and inside positions throughout a corner. Source: Chapter 3, Cornering Lines, p. 3-5 (manual p. 3-5, PDF p. 31).",
-   "ru": "В руководстве сказано, что в каждой полосе на протяжении поворота есть внешнее, среднее и внутреннее положения. Источник: глава 3, «Cornering Lines», p. 3-5 (Manual p. 3-5, PDF p. 31)."
-  }
+   "en": "The manual says every lane has outside, middle, and inside positions throughout a corner. Source: Chapter 3, Cornering Lines, p. 3-5.",
+   "ru": "В руководстве сказано, что в каждой полосе на протяжении поворота есть внешнее, среднее и внутреннее положения. Источник: глава 3, «Cornering Lines», p. 3-5."
+  },
+  "pdfpage": 31,
+  "pdfpage_ru": 35
  },
  {
   "id": 60,
@@ -1879,9 +1991,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says the middle path is generally the safest for less experienced riders. Source: Chapter 3, Cornering Lines, p. 3-6 (manual p. 3-6, PDF p. 32).",
-   "ru": "В руководстве сказано, что средняя траектория, как правило, наиболее безопасна для менее опытных райдеров. Источник: глава 3, «Cornering Lines», p. 3-6 (Manual p. 3-6, PDF p. 32)."
-  }
+   "en": "The manual says the middle path is generally the safest for less experienced riders. Source: Chapter 3, Cornering Lines, p. 3-6.",
+   "ru": "В руководстве сказано, что средняя траектория, как правило, наиболее безопасна для менее опытных райдеров. Источник: глава 3, «Cornering Lines», p. 3-6."
+  },
+  "pdfpage": 32,
+  "pdfpage_ru": 36
  },
  {
   "id": 61,
@@ -1912,9 +2026,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says outside/inside/outside can straighten the corner, requiring less lean and giving more traction. Source: Chapter 3, Cornering Lines, p. 3-6 (manual p. 3-6, PDF p. 32).",
-   "ru": "В руководстве сказано, что траектория «внешнее/внутреннее/внешнее» может спрямить поворот, требуя меньшего наклона и давая больше сцепления с дорогой. Источник: глава 3, «Cornering Lines», p. 3-6 (Manual p. 3-6, PDF p. 32)."
-  }
+   "en": "The manual says outside/inside/outside can straighten the corner, requiring less lean and giving more traction. Source: Chapter 3, Cornering Lines, p. 3-6.",
+   "ru": "В руководстве сказано, что траектория «внешнее/внутреннее/внешнее» может спрямить поворот, требуя меньшего наклона и давая больше сцепления с дорогой. Источник: глава 3, «Cornering Lines», p. 3-6."
+  },
+  "pdfpage": 32,
+  "pdfpage_ru": 36
  },
  {
   "id": 62,
@@ -1945,9 +2061,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says starting from the outside lane position gives a good view through the corner. Source: Chapter 3, Cornering Lines, p. 3-6 (manual p. 3-6, PDF p. 32).",
-   "ru": "В руководстве сказано, что начало поворота из внешнего положения в полосе даёт хороший обзор сквозь поворот. Источник: глава 3, «Cornering Lines», p. 3-6 (Manual p. 3-6, PDF p. 32)."
-  }
+   "en": "The manual says starting from the outside lane position gives a good view through the corner. Source: Chapter 3, Cornering Lines, p. 3-6.",
+   "ru": "В руководстве сказано, что начало поворота из внешнего положения в полосе даёт хороший обзор сквозь поворот. Источник: глава 3, «Cornering Lines», p. 3-6."
+  },
+  "pdfpage": 32,
+  "pdfpage_ru": 36
  },
  {
   "id": 63,
@@ -1978,9 +2096,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual tells riders to evaluate line of sight, radius, surface condition, and slope. Source: Chapter 3, Look, Anticipate, Choose, p. 3-7 (manual p. 3-7, PDF p. 33).",
-   "ru": "Руководство советует райдерам оценивать линию видимости, радиус, состояние покрытия и уклон. Источник: глава 3, «Look, Anticipate, Choose», p. 3-7 (Manual p. 3-7, PDF p. 33)."
-  }
+   "en": "The manual tells riders to evaluate line of sight, radius, surface condition, and slope. Source: Chapter 3, Look, Anticipate, Choose, p. 3-7.",
+   "ru": "Руководство советует райдерам оценивать линию видимости, радиус, состояние покрытия и уклон. Источник: глава 3, «Look, Anticipate, Choose», p. 3-7."
+  },
+  "pdfpage": 33,
+  "pdfpage_ru": 37
  },
  {
   "id": 64,
@@ -2011,9 +2131,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists cars crossing the centerline, wildlife, ice, and gravel as potential corner hazards. Source: Chapter 3, Look, Anticipate, Choose, p. 3-7 (manual p. 3-7, PDF p. 33).",
-   "ru": "В руководстве среди возможных опасностей на поворотах перечислены машины, пересекающие осевую линию, дикие животные, лёд и гравий. Источник: глава 3, «Look, Anticipate, Choose», p. 3-7 (Manual p. 3-7, PDF p. 33)."
-  }
+   "en": "The manual lists cars crossing the centerline, wildlife, ice, and gravel as potential corner hazards. Source: Chapter 3, Look, Anticipate, Choose, p. 3-7.",
+   "ru": "В руководстве среди возможных опасностей на поворотах перечислены машины, пересекающие осевую линию, дикие животные, лёд и гравий. Источник: глава 3, «Look, Anticipate, Choose», p. 3-7."
+  },
+  "pdfpage": 33,
+  "pdfpage_ru": 37
  },
  {
   "id": 65,
@@ -2044,9 +2166,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to keep head and chin pointed toward the corner exit and focus where you want to go. Source: Chapter 3, Look, Anticipate, Choose, p. 3-8 (manual p. 3-8, PDF p. 34).",
-   "ru": "В руководстве сказано держать голову и подбородок направленными в сторону выхода из поворота и сосредотачиваться на том, куда вы хотите ехать. Источник: глава 3, «Look, Anticipate, Choose», p. 3-8 (Manual p. 3-8, PDF p. 34)."
-  }
+   "en": "The manual says to keep head and chin pointed toward the corner exit and focus where you want to go. Source: Chapter 3, Look, Anticipate, Choose, p. 3-8.",
+   "ru": "В руководстве сказано держать голову и подбородок направленными в сторону выхода из поворота и сосредотачиваться на том, куда вы хотите ехать. Источник: глава 3, «Look, Anticipate, Choose», p. 3-8."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 66,
@@ -2077,9 +2201,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says the front brake has more braking power because weight transfers forward when slowing/stopping. Source: Chapter 3, Braking in a Straight Line, p. 3-8 (manual p. 3-8, PDF p. 34).",
-   "ru": "В руководстве сказано, что передний тормоз обладает большей тормозной силой, потому что при замедлении/остановке вес переносится вперёд. Источник: глава 3, «Braking in a Straight Line», p. 3-8 (Manual p. 3-8, PDF p. 34)."
-  }
+   "en": "The manual says the front brake has more braking power because weight transfers forward when slowing/stopping. Source: Chapter 3, Braking in a Straight Line, p. 3-8.",
+   "ru": "В руководстве сказано, что передний тормоз обладает большей тормозной силой, потому что при замедлении/остановке вес переносится вперёд. Источник: глава 3, «Braking in a Straight Line», p. 3-8."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 67,
@@ -2110,9 +2236,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states the shortest and safest stops use both front and rear brakes smoothly and progressively without skidding. Source: Chapter 3, Braking in a Straight Line, p. 3-8 (manual p. 3-8, PDF p. 34).",
-   "ru": "В руководстве сказано, что самая короткая и безопасная остановка достигается одновременным использованием переднего и заднего тормоза — плавно и постепенно, без проскальзывания колёс. Источник: глава 3, «Braking in a Straight Line», p. 3-8 (Manual p. 3-8, PDF p. 34)."
-  }
+   "en": "The manual states the shortest and safest stops use both front and rear brakes smoothly and progressively without skidding. Source: Chapter 3, Braking in a Straight Line, p. 3-8.",
+   "ru": "В руководстве сказано, что самая короткая и безопасная остановка достигается одновременным использованием переднего и заднего тормоза — плавно и постепенно, без проскальзывания колёс. Источник: глава 3, «Braking in a Straight Line», p. 3-8."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 68,
@@ -2143,9 +2271,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual warns riders not to grab the front brake lever. Source: Chapter 3, Braking in a Straight Line, p. 3-8 (manual p. 3-8, PDF p. 34).",
-   "ru": "Руководство предупреждает водителей не зажимать резко рычаг переднего тормоза. Источник: глава 3, «Braking in a Straight Line», p. 3-8 (Manual p. 3-8, PDF p. 34)."
-  }
+   "en": "The manual warns riders not to grab the front brake lever. Source: Chapter 3, Braking in a Straight Line, p. 3-8.",
+   "ru": "Руководство предупреждает водителей не зажимать резко рычаг переднего тормоза. Источник: глава 3, «Braking in a Straight Line», p. 3-8."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 69,
@@ -2176,9 +2306,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to remain in first gear and check mirrors in case you need to avoid a rear-end collision. Source: Chapter 3, Braking in a Straight Line, p. 3-8 (manual p. 3-8, PDF p. 34).",
-   "ru": "В руководстве сказано оставаться на первой передаче и следить за зеркалами на случай, если потребуется уйти от удара сзади (rear-end collision). Источник: глава 3, «Braking in a Straight Line», p. 3-8 (Manual p. 3-8, PDF p. 34)."
-  }
+   "en": "The manual says to remain in first gear and check mirrors in case you need to avoid a rear-end collision. Source: Chapter 3, Braking in a Straight Line, p. 3-8.",
+   "ru": "В руководстве сказано оставаться на первой передаче и следить за зеркалами на случай, если потребуется уйти от удара сзади (rear-end collision). Источник: глава 3, «Braking in a Straight Line», p. 3-8."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 70,
@@ -2209,9 +2341,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that the greater the lean angle, the less traction is available for braking. Source: Chapter 3, Braking in a Corner, p. 3-8 (manual p. 3-8, PDF p. 34).",
-   "ru": "В руководстве сказано, что чем больше угол наклона, тем меньше сцепления (traction) остаётся для торможения. Источник: глава 3, «Braking in a Corner», p. 3-8 (Manual p. 3-8, PDF p. 34)."
-  }
+   "en": "The manual states that the greater the lean angle, the less traction is available for braking. Source: Chapter 3, Braking in a Corner, p. 3-8.",
+   "ru": "В руководстве сказано, что чем больше угол наклона, тем меньше сцепления (traction) остаётся для торможения. Источник: глава 3, «Braking in a Corner», p. 3-8."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 71,
@@ -2242,9 +2376,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to reduce lean angle, then brake, if road and traffic conditions allow it. Source: Chapter 3, Braking in a Corner, p. 3-8 (manual p. 3-8, PDF p. 34).",
-   "ru": "В руководстве сказано сначала уменьшить угол наклона, а затем тормозить, если позволяют дорожные условия и обстановка. Источник: глава 3, «Braking in a Corner», p. 3-8 (Manual p. 3-8, PDF p. 34)."
-  }
+   "en": "The manual says to reduce lean angle, then brake, if road and traffic conditions allow it. Source: Chapter 3, Braking in a Corner, p. 3-8.",
+   "ru": "В руководстве сказано сначала уменьшить угол наклона, а затем тормозить, если позволяют дорожные условия и обстановка. Источник: глава 3, «Braking in a Corner», p. 3-8."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 72,
@@ -2275,9 +2411,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says if straightening first is not possible, smoothly apply brakes as you gradually straighten. Source: Chapter 3, Braking in a Corner, pp. 3-8 to 3-9 (manual p. 3-8, PDF p. 34; manual p. 3-9, PDF p. 35).",
-   "ru": "В руководстве сказано: если выпрямиться заранее невозможно, плавно применяйте тормоза по мере того, как постепенно выпрямляете мотоцикл. Источник: глава 3, «Braking in a Corner», pp. 3-8 to 3-9 (Manual p. 3-8, PDF p. 34; Manual p. 3-9, PDF p. 35)."
-  }
+   "en": "The manual says if straightening first is not possible, smoothly apply brakes as you gradually straighten. Source: Chapter 3, Braking in a Corner, pp. 3-8 to 3-9.",
+   "ru": "В руководстве сказано: если выпрямиться заранее невозможно, плавно применяйте тормоза по мере того, как постепенно выпрямляете мотоцикл. Источник: глава 3, «Braking in a Corner», pp. 3-8 to 3-9."
+  },
+  "pdfpage": 34,
+  "pdfpage_ru": 38
  },
  {
   "id": 73,
@@ -2308,9 +2446,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to square the handlebars before a complete stop for stability and control. Source: Chapter 3, Braking in a Corner, p. 3-9 (manual p. 3-9, PDF p. 35).",
-   "ru": "В руководстве сказано выровнять руль (handlebars) перед полной остановкой — для устойчивости и контроля. Источник: глава 3, «Braking in a Corner», p. 3-9 (Manual p. 3-9, PDF p. 35)."
-  }
+   "en": "The manual says to square the handlebars before a complete stop for stability and control. Source: Chapter 3, Braking in a Corner, p. 3-9.",
+   "ru": "В руководстве сказано выровнять руль (handlebars) перед полной остановкой — для устойчивости и контроля. Источник: глава 3, «Braking in a Corner», p. 3-9."
+  },
+  "pdfpage": 35,
+  "pdfpage_ru": 39
  },
  {
   "id": 74,
@@ -2341,9 +2481,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual identifies evasive maneuvers as changing speed or changing position. Source: Chapter 3, Evasive Maneuvers, p. 3-9 (manual p. 3-9, PDF p. 35).",
-   "ru": "В руководстве манёвры уклонения (evasive maneuvers) определяются как изменение скорости или изменение положения. Источник: глава 3, «Evasive Maneuvers», p. 3-9 (Manual p. 3-9, PDF p. 35)."
-  }
+   "en": "The manual identifies evasive maneuvers as changing speed or changing position. Source: Chapter 3, Evasive Maneuvers, p. 3-9.",
+   "ru": "В руководстве манёвры уклонения (evasive maneuvers) определяются как изменение скорости или изменение положения. Источник: глава 3, «Evasive Maneuvers», p. 3-9."
+  },
+  "pdfpage": 35,
+  "pdfpage_ru": 39
  },
  {
   "id": 75,
@@ -2374,9 +2516,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says quick stops require applying both brakes fully without locking either wheel. Source: Chapter 3, Quick Stops, p. 3-9 (manual p. 3-9, PDF p. 35).",
-   "ru": "В руководстве сказано, что для быстрой остановки (quick stop) нужно применить оба тормоза в полную силу, не блокируя ни одно из колёс. Источник: глава 3, «Quick Stops», p. 3-9 (Manual p. 3-9, PDF p. 35)."
-  }
+   "en": "The manual says quick stops require applying both brakes fully without locking either wheel. Source: Chapter 3, Quick Stops, p. 3-9.",
+   "ru": "В руководстве сказано, что для быстрой остановки (quick stop) нужно применить оба тормоза в полную силу, не блокируя ни одно из колёс. Источник: глава 3, «Quick Stops», p. 3-9."
+  },
+  "pdfpage": 35,
+  "pdfpage_ru": 39
  },
  {
   "id": 76,
@@ -2407,9 +2551,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to smoothly squeeze the front brake firmly and progressively, without grabbing. Source: Chapter 3, Quick Stops, p. 3-9 (manual p. 3-9, PDF p. 35).",
-   "ru": "В руководстве сказано плавно зажимать передний тормоз — твёрдо и постепенно, без резкого хватания. Источник: глава 3, «Quick Stops», p. 3-9 (Manual p. 3-9, PDF p. 35)."
-  }
+   "en": "The manual says to smoothly squeeze the front brake firmly and progressively, without grabbing. Source: Chapter 3, Quick Stops, p. 3-9.",
+   "ru": "В руководстве сказано плавно зажимать передний тормоз — твёрдо и постепенно, без резкого хватания. Источник: глава 3, «Quick Stops», p. 3-9."
+  },
+  "pdfpage": 35,
+  "pdfpage_ru": 39
  },
  {
   "id": 77,
@@ -2440,9 +2586,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says less rear traction is available as weight transfers forward, so rear pressure should be light at first and progressively released. Source: Chapter 3, Quick Stops, p. 3-9 (manual p. 3-9, PDF p. 35).",
-   "ru": "В руководстве сказано, что по мере переноса веса вперёд сцепление (traction) заднего колеса уменьшается, поэтому давление на задний тормоз должно быть слабым в начале и постепенно ослабляться. Источник: глава 3, «Quick Stops», p. 3-9 (Manual p. 3-9, PDF p. 35)."
-  }
+   "en": "The manual says less rear traction is available as weight transfers forward, so rear pressure should be light at first and progressively released. Source: Chapter 3, Quick Stops, p. 3-9.",
+   "ru": "В руководстве сказано, что по мере переноса веса вперёд сцепление (traction) заднего колеса уменьшается, поэтому давление на задний тормоз должно быть слабым в начале и постепенно ослабляться. Источник: глава 3, «Quick Stops», p. 3-9."
+  },
+  "pdfpage": 35,
+  "pdfpage_ru": 39
  },
  {
   "id": 78,
@@ -2473,9 +2621,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to keep knees against the tank and eyes up, looking well ahead. Source: Chapter 3, Quick Stops, p. 3-9 (manual p. 3-9, PDF p. 35).",
-   "ru": "В руководстве сказано держать колени прижатыми к баку, а взгляд — поднятым и направленным далеко вперёд. Источник: глава 3, «Quick Stops», p. 3-9 (Manual p. 3-9, PDF p. 35)."
-  }
+   "en": "The manual says to keep knees against the tank and eyes up, looking well ahead. Source: Chapter 3, Quick Stops, p. 3-9.",
+   "ru": "В руководстве сказано держать колени прижатыми к баку, а взгляд — поднятым и направленным далеко вперёд. Источник: глава 3, «Quick Stops», p. 3-9."
+  },
+  "pdfpage": 35,
+  "pdfpage_ru": 39
  },
  {
   "id": 79,
@@ -2506,9 +2656,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says a quick stop is not always safe if space is limited or following vehicles cannot stop. Source: Chapter 3, Swerves, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве сказано, что быстрая остановка (quick stop) не всегда безопасна, если пространство ограничено или едущие сзади машины не могут остановиться. Источник: глава 3, «Swerves», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual says a quick stop is not always safe if space is limited or following vehicles cannot stop. Source: Chapter 3, Swerves, p. 3-10.",
+   "ru": "В руководстве сказано, что быстрая остановка (quick stop) не всегда безопасна, если пространство ограничено или едущие сзади машины не могут остановиться. Источник: глава 3, «Swerves», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 80,
@@ -2539,9 +2691,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual describes a swerve as two consecutive countersteers. Source: Chapter 3, Swerves, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве объездной манёвр (swerve) описывается как два последовательных контрруления (countersteer). Источник: глава 3, «Swerves», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual describes a swerve as two consecutive countersteers. Source: Chapter 3, Swerves, p. 3-10.",
+   "ru": "В руководстве объездной манёвр (swerve) описывается как два последовательных контрруления (countersteer). Источник: глава 3, «Swerves», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 81,
@@ -2572,9 +2726,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states to brake before or after a swerve, but never while swerving. Source: Chapter 3, Swerves, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве сказано тормозить до или после объездного манёвра (swerve), но никогда во время него. Источник: глава 3, «Swerves», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual states to brake before or after a swerve, but never while swerving. Source: Chapter 3, Swerves, p. 3-10.",
+   "ru": "В руководстве сказано тормозить до или после объездного манёвра (swerve), но никогда во время него. Источник: глава 3, «Swerves», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 82,
@@ -2605,9 +2761,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says the motorcycle should move independently underneath the rider while the upper body remains upright. Source: Chapter 3, Swerves, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве сказано, что мотоцикл должен двигаться отдельно под водителем, тогда как верхняя часть тела остаётся вертикальной. Источник: глава 3, «Swerves», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual says the motorcycle should move independently underneath the rider while the upper body remains upright. Source: Chapter 3, Swerves, p. 3-10.",
+   "ru": "В руководстве сказано, что мотоцикл должен двигаться отдельно под водителем, тогда как верхняя часть тела остаётся вертикальной. Источник: глава 3, «Swerves», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 83,
@@ -2638,9 +2796,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to search for the escape route and keep eyes and head up during swerving. Source: Chapter 3, Swerves, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве сказано искать путь объезда (escape route) и держать взгляд и голову поднятыми во время манёвра. Источник: глава 3, «Swerves», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual says to search for the escape route and keep eyes and head up during swerving. Source: Chapter 3, Swerves, p. 3-10.",
+   "ru": "В руководстве сказано искать путь объезда (escape route) и держать взгляд и голову поднятыми во время манёвра. Источник: глава 3, «Swerves», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 84,
@@ -2671,9 +2831,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states passengers and cargo change how the motorcycle handles and can require adjustments. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве сказано, что пассажир и груз меняют управляемость (handling) мотоцикла и могут потребовать корректировок. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual states passengers and cargo change how the motorcycle handles and can require adjustments. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10.",
+   "ru": "В руководстве сказано, что пассажир и груз меняют управляемость (handling) мотоцикла и могут потребовать корректировок. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 85,
@@ -2704,9 +2866,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual instructs keeping cargo low and centered to avoid raising the center of gravity and affecting handling. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве предписано держать груз низко и по центру, чтобы не поднимать центр тяжести и не ухудшать управляемость (handling). Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual instructs keeping cargo low and centered to avoid raising the center of gravity and affecting handling. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10.",
+   "ru": "В руководстве предписано держать груз низко и по центру, чтобы не поднимать центр тяжести и не ухудшать управляемость (handling). Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 86,
@@ -2737,9 +2901,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual warns cargo must be secured to avoid shifting and affecting control. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "В руководстве предупреждается, что груз должен быть надёжно закреплён, чтобы он не смещался и не влиял на управление мотоциклом. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual warns cargo must be secured to avoid shifting and affecting control. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10.",
+   "ru": "В руководстве предупреждается, что груз должен быть надёжно закреплён, чтобы он не смещался и не влиял на управление мотоциклом. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 87,
@@ -2770,9 +2936,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual directs passengers to ride with the rider and avoid making unexpected movements. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "Руководство указывает, что пассажир должен двигаться вместе с водителем и избегать неожиданных движений. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual directs passengers to ride with the rider and avoid making unexpected movements. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10.",
+   "ru": "Руководство указывает, что пассажир должен двигаться вместе с водителем и избегать неожиданных движений. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 88,
@@ -2803,9 +2971,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual instructs passengers to keep feet on footrests and hold on properly. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10 (manual p. 3-10, PDF p. 36).",
-   "ru": "Руководство предписывает пассажиру держать ноги на подножках и крепко держаться. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "The manual instructs passengers to keep feet on footrests and hold on properly. Source: Chapter 3, Carrying Passengers and Cargo, p. 3-10.",
+   "ru": "Руководство предписывает пассажиру держать ноги на подножках и крепко держаться. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 89,
@@ -2836,9 +3006,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says time allows you to see a hazard and plan a response, while space gives room to execute. Source: Chapter 5, Creating Time and Space, p. 5-5 (manual p. 5-5, PDF p. 55).",
-   "ru": "В руководстве сказано, что время позволяет заметить опасность и спланировать ответные действия, а пространство даёт место для их выполнения. Источник: глава 5, «Creating Time and Space», p. 5-5 (Manual p. 5-5, PDF p. 55)."
-  }
+   "en": "The manual says time allows you to see a hazard and plan a response, while space gives room to execute. Source: Chapter 5, Creating Time and Space, p. 5-5.",
+   "ru": "В руководстве сказано, что время позволяет заметить опасность и спланировать ответные действия, а пространство даёт место для их выполнения. Источник: глава 5, «Creating Time and Space», p. 5-5."
+  },
+  "pdfpage": 55,
+  "pdfpage_ru": 62
  },
  {
   "id": 90,
@@ -2869,9 +3041,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states to always evaluate an escape path as part of your time and space choice. Source: Chapter 5, Creating Time and Space, p. 5-5 (manual p. 5-5, PDF p. 55).",
-   "ru": "В руководстве сказано всегда оценивать запасной путь для манёвра (escape path) как часть расчёта времени и пространства. Источник: глава 5, «Creating Time and Space», p. 5-5 (Manual p. 5-5, PDF p. 55)."
-  }
+   "en": "The manual states to always evaluate an escape path as part of your time and space choice. Source: Chapter 5, Creating Time and Space, p. 5-5.",
+   "ru": "В руководстве сказано всегда оценивать запасной путь для манёвра (escape path) как часть расчёта времени и пространства. Источник: глава 5, «Creating Time and Space», p. 5-5."
+  },
+  "pdfpage": 55,
+  "pdfpage_ru": 62
  },
  {
   "id": 91,
@@ -2902,9 +3076,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual identifies perception, reaction, and execution as the three factors in total stopping distance. Source: Chapter 5, Total Stopping Distance, p. 5-5 (manual p. 5-5, PDF p. 55).",
-   "ru": "В руководстве названы три составляющие полного тормозного пути (total stopping distance): восприятие, реакция и выполнение действия. Источник: глава 5, «Total Stopping Distance», p. 5-5 (Manual p. 5-5, PDF p. 55)."
-  }
+   "en": "The manual identifies perception, reaction, and execution as the three factors in total stopping distance. Source: Chapter 5, Total Stopping Distance, p. 5-5.",
+   "ru": "В руководстве названы три составляющие полного тормозного пути (total stopping distance): восприятие, реакция и выполнение действия. Источник: глава 5, «Total Stopping Distance», p. 5-5."
+  },
+  "pdfpage": 55,
+  "pdfpage_ru": 62
  },
  {
   "id": 92,
@@ -2935,9 +3111,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual tells riders to strive to see at least 12 seconds down the road ahead. Source: Chapter 5, Look Farther Down the Road, p. 5-6 (manual p. 5-6, PDF p. 56).",
-   "ru": "Руководство советует стараться видеть дорогу как минимум на 12 секунд вперёд. Источник: глава 5, «Look Farther Down the Road», p. 5-6 (Manual p. 5-6, PDF p. 56)."
-  }
+   "en": "The manual tells riders to strive to see at least 12 seconds down the road ahead. Source: Chapter 5, Look Farther Down the Road, p. 5-6.",
+   "ru": "Руководство советует стараться видеть дорогу как минимум на 12 секунд вперёд. Источник: глава 5, «Look Farther Down the Road», p. 5-6."
+  },
+  "pdfpage": 56,
+  "pdfpage_ru": 63
  },
  {
   "id": 93,
@@ -2968,9 +3146,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends a minimum following distance of three seconds for both two- and three-wheeled motorcycles. Source: Chapter 5, Following Distance, p. 5-6 (manual p. 5-6, PDF p. 56).",
-   "ru": "Руководство рекомендует минимальную дистанцию следования (following distance) в три секунды как для двухколёсных, так и для трёхколёсных мотоциклов. Источник: глава 5, «Following Distance», p. 5-6 (Manual p. 5-6, PDF p. 56)."
-  }
+   "en": "The manual recommends a minimum following distance of three seconds for both two- and three-wheeled motorcycles. Source: Chapter 5, Following Distance, p. 5-6.",
+   "ru": "Руководство рекомендует минимальную дистанцию следования (following distance) в три секунды как для двухколёсных, так и для трёхколёсных мотоциклов. Источник: глава 5, «Following Distance», p. 5-6."
+  },
+  "pdfpage": 56,
+  "pdfpage_ru": 63
  },
  {
   "id": 94,
@@ -3001,9 +3181,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says three seconds is the absolute minimum and should be adjusted for weather, fatigue, poor surfaces, and traffic. Source: Chapter 5, Following Distance, p. 5-6 (manual p. 5-6, PDF p. 56).",
-   "ru": "В руководстве сказано, что три секунды — это абсолютный минимум, и дистанцию нужно увеличивать с учётом погоды, усталости, плохого покрытия и плотности движения. Источник: глава 5, «Following Distance», p. 5-6 (Manual p. 5-6, PDF p. 56)."
-  }
+   "en": "The manual says three seconds is the absolute minimum and should be adjusted for weather, fatigue, poor surfaces, and traffic. Source: Chapter 5, Following Distance, p. 5-6.",
+   "ru": "В руководстве сказано, что три секунды — это абсолютный минимум, и дистанцию нужно увеличивать с учётом погоды, усталости, плохого покрытия и плотности движения. Источник: глава 5, «Following Distance», p. 5-6."
+  },
+  "pdfpage": 56,
+  "pdfpage_ru": 63
  },
  {
   "id": 95,
@@ -3034,9 +3216,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says speeding up often encourages the tailgater to speed up and can trap you between vehicles. Source: Chapter 5, Being Followed, p. 5-6 (manual p. 5-6, PDF p. 56).",
-   "ru": "В руководстве сказано, что ускорение часто заставляет едущего сзади тоже ускоряться и может зажать вас между автомобилями. Источник: глава 5, «Being Followed», p. 5-6 (Manual p. 5-6, PDF p. 56)."
-  }
+   "en": "The manual says speeding up often encourages the tailgater to speed up and can trap you between vehicles. Source: Chapter 5, Being Followed, p. 5-6.",
+   "ru": "В руководстве сказано, что ускорение часто заставляет едущего сзади тоже ускоряться и может зажать вас между автомобилями. Источник: глава 5, «Being Followed», p. 5-6."
+  },
+  "pdfpage": 56,
+  "pdfpage_ru": 63
  },
  {
   "id": 96,
@@ -3067,9 +3251,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends gradually slowing to create more space between you and vehicles in front. Source: Chapter 5, Being Followed, p. 5-6 (manual p. 5-6, PDF p. 56).",
-   "ru": "Руководство рекомендует плавно снижать скорость, чтобы увеличить расстояние между вами и автомобилями впереди. Источник: глава 5, «Being Followed», p. 5-6 (Manual p. 5-6, PDF p. 56)."
-  }
+   "en": "The manual recommends gradually slowing to create more space between you and vehicles in front. Source: Chapter 5, Being Followed, p. 5-6.",
+   "ru": "Руководство рекомендует плавно снижать скорость, чтобы увеличить расстояние между вами и автомобилями впереди. Источник: глава 5, «Being Followed», p. 5-6."
+  },
+  "pdfpage": 56,
+  "pdfpage_ru": 63
  },
  {
   "id": 97,
@@ -3100,9 +3286,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says traffic and surface conditions change, so choose the lane that gives you adequate safety margin. Source: Chapter 5, Lane Choice, p. 5-2 (manual p. 5-2, PDF p. 52).",
-   "ru": "В руководстве сказано, что условия движения и состояние покрытия меняются, поэтому выбирайте ту полосу, которая обеспечивает достаточный запас безопасности. Источник: глава 5, «Lane Choice», p. 5-2 (Manual p. 5-2, PDF p. 52)."
-  }
+   "en": "The manual says traffic and surface conditions change, so choose the lane that gives you adequate safety margin. Source: Chapter 5, Lane Choice, p. 5-2.",
+   "ru": "В руководстве сказано, что условия движения и состояние покрытия меняются, поэтому выбирайте ту полосу, которая обеспечивает достаточный запас безопасности. Источник: глава 5, «Lane Choice», p. 5-2."
+  },
+  "pdfpage": 52,
+  "pdfpage_ru": 59
  },
  {
   "id": 98,
@@ -3133,9 +3321,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual notes that motorcycles are allowed to use HOV lanes at any time in Washington. Source: Chapter 5, Lane Choice note, p. 5-2 (manual p. 5-2, PDF p. 52).",
-   "ru": "В руководстве отмечается, что в штате Вашингтон мотоциклам в любое время разрешено пользоваться полосами для машин с пассажирами (HOV lanes). Источник: глава 5, «Lane Choice note», p. 5-2 (Manual p. 5-2, PDF p. 52)."
-  }
+   "en": "The manual notes that motorcycles are allowed to use HOV lanes at any time in Washington. Source: Chapter 5, Lane Choice note, p. 5-2.",
+   "ru": "В руководстве отмечается, что в штате Вашингтон мотоциклам в любое время разрешено пользоваться полосами для машин с пассажирами (HOV lanes). Источник: глава 5, «Lane Choice note», p. 5-2."
+  },
+  "pdfpage": 52,
+  "pdfpage_ru": 59
  },
  {
   "id": 99,
@@ -3166,9 +3356,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual emphasizes choosing the lane position that best supports seeing, being seen, avoiding hazards, and maintaining space. Source: Chapter 5, Lane Position, p. 5-3 (manual p. 5-3, PDF p. 53).",
-   "ru": "Руководство подчёркивает, что нужно выбирать такое положение в полосе (lane position), которое лучше всего помогает видеть, быть видимым, избегать опасностей и сохранять дистанцию. Источник: глава 5, «Lane Position», p. 5-3 (Manual p. 5-3, PDF p. 53)."
-  }
+   "en": "The manual emphasizes choosing the lane position that best supports seeing, being seen, avoiding hazards, and maintaining space. Source: Chapter 5, Lane Position, p. 5-3.",
+   "ru": "Руководство подчёркивает, что нужно выбирать такое положение в полосе (lane position), которое лучше всего помогает видеть, быть видимым, избегать опасностей и сохранять дистанцию. Источник: глава 5, «Lane Position», p. 5-3."
+  },
+  "pdfpage": 53,
+  "pdfpage_ru": 60
  },
  {
   "id": 100,
@@ -3199,9 +3391,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states the majority of motorcycle vs. vehicle collisions occur at intersections. Source: Chapter 5, Intersections, p. 5-7 (manual p. 5-7, PDF p. 57).",
-   "ru": "В руководстве сказано, что большинство столкновений мотоциклов с автомобилями происходит на перекрёстках. Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 57)."
-  }
+   "en": "The manual states the majority of motorcycle vs. vehicle collisions occur at intersections. Source: Chapter 5, Intersections, p. 5-7.",
+   "ru": "В руководстве сказано, что большинство столкновений мотоциклов с автомобилями происходит на перекрёстках. Источник: глава 5, «Intersections», p. 5-7."
+  },
+  "pdfpage": 57,
+  "pdfpage_ru": 64
  },
  {
   "id": 101,
@@ -3232,9 +3426,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual identifies left-turning cars crossing the motorcycle's path as the most common type. Source: Chapter 5, Intersections, p. 5-7 (manual p. 5-7, PDF p. 57).",
-   "ru": "В руководстве указано, что чаще всего происходит столкновение, когда поворачивающий налево автомобиль пересекает траекторию мотоцикла. Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 57)."
-  }
+   "en": "The manual identifies left-turning cars crossing the motorcycle's path as the most common type. Source: Chapter 5, Intersections, p. 5-7.",
+   "ru": "В руководстве указано, что чаще всего происходит столкновение, когда поворачивающий налево автомобиль пересекает траекторию мотоцикла. Источник: глава 5, «Intersections», p. 5-7."
+  },
+  "pdfpage": 57,
+  "pdfpage_ru": 64
  },
  {
   "id": 102,
@@ -3265,9 +3461,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says riders should look for escape routes, roadway hazards, and monitor traffic at intersections. Source: Chapter 5, Intersections, p. 5-7 (manual p. 5-7, PDF p. 57).",
-   "ru": "В руководстве сказано, что на перекрёстках водитель должен высматривать запасные пути для манёвра (escape routes), опасности на дороге и следить за движением. Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 57)."
-  }
+   "en": "The manual says riders should look for escape routes, roadway hazards, and monitor traffic at intersections. Source: Chapter 5, Intersections, p. 5-7.",
+   "ru": "В руководстве сказано, что на перекрёстках водитель должен высматривать запасные пути для манёвра (escape routes), опасности на дороге и следить за движением. Источник: глава 5, «Intersections», p. 5-7."
+  },
+  "pdfpage": 57,
+  "pdfpage_ru": 64
  },
  {
   "id": 104,
@@ -3298,9 +3496,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to make sure other road users have stopped before proceeding. Source: Chapter 5, Intersections, p. 5-7 (manual p. 5-7, PDF p. 57).",
-   "ru": "В руководстве сказано перед началом движения убедиться, что другие участники движения остановились. Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 57)."
-  }
+   "en": "The manual says to make sure other road users have stopped before proceeding. Source: Chapter 5, Intersections, p. 5-7.",
+   "ru": "В руководстве сказано перед началом движения убедиться, что другие участники движения остановились. Источник: глава 5, «Intersections», p. 5-7."
+  },
+  "pdfpage": 57,
+  "pdfpage_ru": 64
  },
  {
   "id": 105,
@@ -3331,9 +3531,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to predict that a car waiting at a green light may be waiting to turn and respond accordingly. Source: Chapter 5, Intersections, p. 5-7 (manual p. 5-7, PDF p. 57).",
-   "ru": "В руководстве сказано предполагать, что автомобиль, стоящий на зелёный сигнал, возможно, ждёт, чтобы повернуть, и реагировать соответственно. Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 57)."
-  }
+   "en": "The manual says to predict that a car waiting at a green light may be waiting to turn and respond accordingly. Source: Chapter 5, Intersections, p. 5-7.",
+   "ru": "В руководстве сказано предполагать, что автомобиль, стоящий на зелёный сигнал, возможно, ждёт, чтобы повернуть, и реагировать соответственно. Источник: глава 5, «Intersections», p. 5-7."
+  },
+  "pdfpage": 57,
+  "pdfpage_ru": 64
  },
  {
   "id": 106,
@@ -3364,9 +3566,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to cover controls so you can operate clutch, brakes, etc. quickly if necessary. Source: Chapter 5, Intersections, p. 5-7 (manual p. 5-7, PDF p. 57).",
-   "ru": "В руководстве сказано держать органы управления наготове, чтобы при необходимости быстро воспользоваться сцеплением (clutch), тормозами (brakes) и т. д. Источник: глава 5, «Intersections», p. 5-7 (manual p. 5-7, PDF p. 57)."
-  }
+   "en": "The manual says to cover controls so you can operate clutch, brakes, etc. quickly if necessary. Source: Chapter 5, Intersections, p. 5-7.",
+   "ru": "В руководстве сказано держать органы управления наготове, чтобы при необходимости быстро воспользоваться сцеплением (clutch), тормозами (brakes) и т. д. Источник: глава 5, «Intersections», p. 5-7."
+  },
+  "pdfpage": 57,
+  "pdfpage_ru": 64
  },
  {
   "id": 107,
@@ -3397,9 +3601,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists painted markings, leaves, oil, steel plates, drainage grates, and similar surfaces as slippery hazards. Source: Chapter 5, Surface Hazards, p. 5-8 (manual p. 5-8, PDF p. 59).",
-   "ru": "В руководстве к скользким опасным поверхностям отнесены дорожная разметка, листья, масло, стальные плиты, дренажные решётки и подобные участки. Источник: глава 5, «Surface Hazards», p. 5-8 (manual p. 5-8, PDF p. 59)."
-  }
+   "en": "The manual lists painted markings, leaves, oil, steel plates, drainage grates, and similar surfaces as slippery hazards. Source: Chapter 5, Surface Hazards, p. 5-8.",
+   "ru": "В руководстве к скользким опасным поверхностям отнесены дорожная разметка, листья, масло, стальные плиты, дренажные решётки и подобные участки. Источник: глава 5, «Surface Hazards», p. 5-8."
+  },
+  "pdfpage": 59,
+  "pdfpage_ru": 65
  },
  {
   "id": 108,
@@ -3430,9 +3636,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends reducing speed and making changes before reaching slippery surfaces. Source: Chapter 5, Surface Hazards, p. 5-8 (manual p. 5-8, PDF p. 59).",
-   "ru": "Руководство рекомендует снизить скорость и внести изменения заранее, до того как вы доедете до скользкого участка. Источник: глава 5, «Surface Hazards», p. 5-8 (manual p. 5-8, PDF p. 59)."
-  }
+   "en": "The manual recommends reducing speed and making changes before reaching slippery surfaces. Source: Chapter 5, Surface Hazards, p. 5-8.",
+   "ru": "Руководство рекомендует снизить скорость и внести изменения заранее, до того как вы доедете до скользкого участка. Источник: глава 5, «Surface Hazards», p. 5-8."
+  },
+  "pdfpage": 59,
+  "pdfpage_ru": 65
  },
  {
   "id": 109,
@@ -3463,9 +3671,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual emphasizes smooth, gentle control use on slippery surfaces. Source: Chapter 5, Surface Hazards, p. 5-8 (manual p. 5-8, PDF p. 59).",
-   "ru": "Руководство подчёркивает, что на скользкой поверхности органами управления нужно работать плавно и мягко. Источник: глава 5, «Surface Hazards», p. 5-8 (manual p. 5-8, PDF p. 59)."
-  }
+   "en": "The manual emphasizes smooth, gentle control use on slippery surfaces. Source: Chapter 5, Surface Hazards, p. 5-8.",
+   "ru": "Руководство подчёркивает, что на скользкой поверхности органами управления нужно работать плавно и мягко. Источник: глава 5, «Surface Hazards», p. 5-8."
+  },
+  "pdfpage": 59,
+  "pdfpage_ru": 65
  },
  {
   "id": 110,
@@ -3496,9 +3706,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual identifies these surfaces as hazards because they reduce traction, especially when wet. Source: Chapter 5, Surface Hazards, p. 5-8 (manual p. 5-8, PDF p. 59).",
-   "ru": "Руководство относит эти поверхности к опасным, потому что они снижают сцепление с дорогой, особенно во влажном состоянии. Источник: глава 5, «Surface Hazards», p. 5-8 (manual p. 5-8, PDF p. 59)."
-  }
+   "en": "The manual identifies these surfaces as hazards because they reduce traction, especially when wet. Source: Chapter 5, Surface Hazards, p. 5-8.",
+   "ru": "Руководство относит эти поверхности к опасным, потому что они снижают сцепление с дорогой, особенно во влажном состоянии. Источник: глава 5, «Surface Hazards», p. 5-8."
+  },
+  "pdfpage": 59,
+  "pdfpage_ru": 65
  },
  {
   "id": 111,
@@ -3529,9 +3741,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends crossing obstacles as close to a 90-degree angle as possible. Source: Chapter 5, Crossing an Obstacle, p. 5-10 (manual p. 5-10, PDF p. 60).",
-   "ru": "Руководство рекомендует пересекать препятствия под углом как можно ближе к 90 градусам. Источник: глава 5, «Crossing an Obstacle», p. 5-10 (manual p. 5-10, PDF p. 60)."
-  }
+   "en": "The manual recommends crossing obstacles as close to a 90-degree angle as possible. Source: Chapter 5, Crossing an Obstacle, p. 5-10.",
+   "ru": "Руководство рекомендует пересекать препятствия под углом как можно ближе к 90 градусам. Источник: глава 5, «Crossing an Obstacle», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 112,
@@ -3562,9 +3776,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends rising slightly so your legs can absorb the impact. Source: Chapter 5, Crossing an Obstacle, p. 5-10 (manual p. 5-10, PDF p. 60).",
-   "ru": "Руководство рекомендует слегка приподняться, чтобы ноги могли смягчить удар. Источник: глава 5, «Crossing an Obstacle», p. 5-10 (manual p. 5-10, PDF p. 60)."
-  }
+   "en": "The manual recommends rising slightly so your legs can absorb the impact. Source: Chapter 5, Crossing an Obstacle, p. 5-10.",
+   "ru": "Руководство рекомендует слегка приподняться, чтобы ноги могли смягчить удар. Источник: глава 5, «Crossing an Obstacle», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 113,
@@ -3595,9 +3811,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual instructs riders to keep eyes up and look ahead when crossing obstacles. Source: Chapter 5, Crossing an Obstacle, p. 5-10 (manual p. 5-10, PDF p. 60).",
-   "ru": "Руководство предписывает держать взгляд поднятым и смотреть вперёд при пересечении препятствий. Источник: глава 5, «Crossing an Obstacle», p. 5-10 (manual p. 5-10, PDF p. 60)."
-  }
+   "en": "The manual instructs riders to keep eyes up and look ahead when crossing obstacles. Source: Chapter 5, Crossing an Obstacle, p. 5-10.",
+   "ru": "Руководство предписывает держать взгляд поднятым и смотреть вперёд при пересечении препятствий. Источник: глава 5, «Crossing an Obstacle», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 114,
@@ -3628,9 +3846,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual's lane-change/passing guidance includes signaling and checking your blind spot before moving. Source: Chapter 5, Changing Lanes / Passing, p. 5-10 (manual p. 5-10, PDF p. 60).",
-   "ru": "Указания руководства по смене полосы и обгону включают подачу сигнала поворота и проверку слепой зоны (blind spot) перед манёвром. Источник: глава 5, «Changing Lanes / Passing», p. 5-10 (manual p. 5-10, PDF p. 60)."
-  }
+   "en": "The manual's lane-change/passing guidance includes signaling and checking your blind spot before moving. Source: Chapter 5, Changing Lanes / Passing, p. 5-10.",
+   "ru": "Указания руководства по смене полосы и обгону включают подачу сигнала поворота и проверку слепой зоны (blind spot) перед манёвром. Источник: глава 5, «Changing Lanes / Passing», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 115,
@@ -3661,9 +3881,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to make sure the vehicle is not about to turn and that you are in a passing zone before passing. Source: Chapter 5, Passing, p. 5-10 (manual p. 5-10, PDF p. 60).",
-   "ru": "Руководство предписывает перед обгоном убедиться, что транспортное средство не собирается поворачивать и что вы находитесь в зоне, где обгон разрешён. Источник: глава 5, «Passing», p. 5-10 (manual p. 5-10, PDF p. 60)."
-  }
+   "en": "The manual says to make sure the vehicle is not about to turn and that you are in a passing zone before passing. Source: Chapter 5, Passing, p. 5-10.",
+   "ru": "Руководство предписывает перед обгоном убедиться, что транспортное средство не собирается поворачивать и что вы находитесь в зоне, где обгон разрешён. Источник: глава 5, «Passing», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 116,
@@ -3694,9 +3916,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to cancel the signal after completing the maneuver. Source: Chapter 5, Passing, p. 5-10 (manual p. 5-10, PDF p. 60).",
-   "ru": "Руководство предписывает выключить сигнал поворота после завершения манёвра. Источник: глава 5, «Passing», p. 5-10 (manual p. 5-10, PDF p. 60)."
-  }
+   "en": "The manual says to cancel the signal after completing the maneuver. Source: Chapter 5, Passing, p. 5-10.",
+   "ru": "Руководство предписывает выключить сигнал поворота после завершения манёвра. Источник: глава 5, «Passing», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 117,
@@ -3727,9 +3951,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says motorcycle headlights are generally smaller and less powerful, making seeing and being seen harder at night. Source: Chapter 5, Riding at Night, p. 5-11 (manual p. 5-11, PDF p. 61).",
-   "ru": "В руководстве сказано, что фары мотоцикла, как правило, меньше и слабее, из-за чего ночью труднее видеть и быть замеченным. Источник: глава 5, «Riding at Night», p. 5-11 (manual p. 5-11, PDF p. 61)."
-  }
+   "en": "The manual says motorcycle headlights are generally smaller and less powerful, making seeing and being seen harder at night. Source: Chapter 5, Riding at Night, p. 5-11.",
+   "ru": "В руководстве сказано, что фары мотоцикла, как правило, меньше и слабее, из-за чего ночью труднее видеть и быть замеченным. Источник: глава 5, «Riding at Night», p. 5-11."
+  },
+  "pdfpage": 61,
+  "pdfpage_ru": 68
  },
  {
   "id": 118,
@@ -3760,9 +3986,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists reducing speed, increasing distance, and using all light sources as night-riding strategies. Source: Chapter 5, Riding at Night, p. 5-11 (manual p. 5-11, PDF p. 61).",
-   "ru": "Среди приёмов для езды ночью руководство называет снижение скорости, увеличение дистанции и использование всех источников света. Источник: глава 5, «Riding at Night», p. 5-11 (manual p. 5-11, PDF p. 61)."
-  }
+   "en": "The manual lists reducing speed, increasing distance, and using all light sources as night-riding strategies. Source: Chapter 5, Riding at Night, p. 5-11.",
+   "ru": "Среди приёмов для езды ночью руководство называет снижение скорости, увеличение дистанции и использование всех источников света. Источник: глава 5, «Riding at Night», p. 5-11."
+  },
+  "pdfpage": 61,
+  "pdfpage_ru": 68
  },
  {
   "id": 119,
@@ -3793,9 +4021,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual warns not to ride so fast at night that you cannot stop quickly enough when a hazard appears in your headlight. Source: Chapter 5, Riding at Night, p. 5-11 (manual p. 5-11, PDF p. 61).",
-   "ru": "Руководство предупреждает: ночью нельзя ехать настолько быстро, чтобы не успеть вовремя остановиться, когда в свете фар появляется опасность. Источник: глава 5, «Riding at Night», p. 5-11 (manual p. 5-11, PDF p. 61)."
-  }
+   "en": "The manual warns not to ride so fast at night that you cannot stop quickly enough when a hazard appears in your headlight. Source: Chapter 5, Riding at Night, p. 5-11.",
+   "ru": "Руководство предупреждает: ночью нельзя ехать настолько быстро, чтобы не успеть вовремя остановиться, когда в свете фар появляется опасность. Источник: глава 5, «Riding at Night», p. 5-11."
+  },
+  "pdfpage": 61,
+  "pdfpage_ru": 68
  },
  {
   "id": 120,
@@ -3826,9 +4056,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual notes that wildlife is more active between dusk and dawn. Source: Chapter 5, Riding at Night note, p. 5-11 (manual p. 5-11, PDF p. 61).",
-   "ru": "Руководство отмечает, что дикие животные более активны в период между сумерками и рассветом. Источник: глава 5, примечание «Riding at Night», p. 5-11 (manual p. 5-11, PDF p. 61)."
-  }
+   "en": "The manual notes that wildlife is more active between dusk and dawn. Source: Chapter 5, Riding at Night note, p. 5-11.",
+   "ru": "Руководство отмечает, что дикие животные более активны в период между сумерками и рассветом. Источник: глава 5, примечание «Riding at Night», p. 5-11."
+  },
+  "pdfpage": 61,
+  "pdfpage_ru": 68
  },
  {
   "id": 121,
@@ -3859,9 +4091,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says to look where you want to go, not at the hazard. Source: Chapter 5, Target Fixation, p. 5-12 (manual p. 5-12, PDF p. 62).",
-   "ru": "Руководство предписывает смотреть туда, куда вы хотите ехать, а не на саму опасность. Источник: глава 5, «Target Fixation», p. 5-12 (manual p. 5-12, PDF p. 62)."
-  }
+   "en": "The manual says to look where you want to go, not at the hazard. Source: Chapter 5, Target Fixation, p. 5-12.",
+   "ru": "Руководство предписывает смотреть туда, куда вы хотите ехать, а не на саму опасность. Источник: глава 5, «Target Fixation», p. 5-12."
+  },
+  "pdfpage": 62,
+  "pdfpage_ru": 69
  },
  {
   "id": 122,
@@ -3892,9 +4126,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says group riding can be distracting/stressful and newer riders should gain experience first. Source: Chapter 5, Group Riding, p. 5-12 (manual p. 5-12, PDF p. 62).",
-   "ru": "В руководстве сказано, что езда в группе может отвлекать и создавать стресс, поэтому начинающим мотоциклистам стоит сначала набраться опыта. Источник: глава 5, «Group Riding», p. 5-12 (manual p. 5-12, PDF p. 62)."
-  }
+   "en": "The manual says group riding can be distracting/stressful and newer riders should gain experience first. Source: Chapter 5, Group Riding, p. 5-12.",
+   "ru": "В руководстве сказано, что езда в группе может отвлекать и создавать стресс, поэтому начинающим мотоциклистам стоит сначала набраться опыта. Источник: глава 5, «Group Riding», p. 5-12."
+  },
+  "pdfpage": 62,
+  "pdfpage_ru": 69
  },
  {
   "id": 123,
@@ -3925,9 +4161,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says side-by-side riding is legal in Washington but leaves no place to go and severely impacts the time/space cushion. Source: Chapter 5, Give Each Other Space, p. 5-13 (manual p. 5-13, PDF p. 63).",
-   "ru": "В руководстве сказано, что езда бок о бок в штате Вашингтон разрешена, но не оставляет места для манёвра и сильно сокращает запас времени и пространства (time/space cushion). Источник: глава 5, «Give Each Other Space», p. 5-13 (manual p. 5-13, PDF p. 63)."
-  }
+   "en": "The manual says side-by-side riding is legal in Washington but leaves no place to go and severely impacts the time/space cushion. Source: Chapter 5, Give Each Other Space, p. 5-13.",
+   "ru": "В руководстве сказано, что езда бок о бок в штате Вашингтон разрешена, но не оставляет места для манёвра и сильно сокращает запас времени и пространства (time/space cushion). Источник: глава 5, «Give Each Other Space», p. 5-13."
+  },
+  "pdfpage": 63,
+  "pdfpage_ru": 70
  },
  {
   "id": 124,
@@ -3958,9 +4196,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says most groups choose staggered formation to remain close while maintaining adequate space. Source: Chapter 5, Staggered Formation, p. 5-13 (manual p. 5-13, PDF p. 63).",
-   "ru": "В руководстве сказано, что большинство групп выбирают шахматное построение (staggered formation), чтобы держаться рядом и при этом сохранять достаточную дистанцию. Источник: глава 5, «Staggered Formation», p. 5-13 (manual p. 5-13, PDF p. 63)."
-  }
+   "en": "The manual says most groups choose staggered formation to remain close while maintaining adequate space. Source: Chapter 5, Staggered Formation, p. 5-13.",
+   "ru": "В руководстве сказано, что большинство групп выбирают шахматное построение (staggered formation), чтобы держаться рядом и при этом сохранять достаточную дистанцию. Источник: глава 5, «Staggered Formation», p. 5-13."
+  },
+  "pdfpage": 63,
+  "pdfpage_ru": 70
  },
  {
   "id": 125,
@@ -3991,9 +4231,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says bikes should move to single file in curves, limited visibility, or areas requiring more time and space. Source: Chapter 5, Staggered Formation, p. 5-13 (manual p. 5-13, PDF p. 63).",
-   "ru": "В руководстве сказано, что мотоциклам следует перестраиваться в одну колонну на поворотах, при ограниченной видимости или на участках, где требуется больше времени и пространства. Источник: глава 5, «Staggered Formation», p. 5-13 (manual p. 5-13, PDF p. 63)."
-  }
+   "en": "The manual says bikes should move to single file in curves, limited visibility, or areas requiring more time and space. Source: Chapter 5, Staggered Formation, p. 5-13.",
+   "ru": "В руководстве сказано, что мотоциклам следует перестраиваться в одну колонну на поворотах, при ограниченной видимости или на участках, где требуется больше времени и пространства. Источник: глава 5, «Staggered Formation», p. 5-13."
+  },
+  "pdfpage": 63,
+  "pdfpage_ru": 70
  },
  {
   "id": 127,
@@ -4024,9 +4266,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says even in a group, you are responsible for your own safety and should not compromise it to keep up. Source: Chapter 5, Ride Your Own Ride, p. 5-13 (manual p. 5-13, PDF p. 63).",
-   "ru": "В руководстве сказано, что даже в группе вы отвечаете за собственную безопасность и не должны жертвовать ею, чтобы не отставать. Источник: глава 5, «Ride Your Own Ride», p. 5-13 (manual p. 5-13, PDF p. 63)."
-  }
+   "en": "The manual says even in a group, you are responsible for your own safety and should not compromise it to keep up. Source: Chapter 5, Ride Your Own Ride, p. 5-13.",
+   "ru": "В руководстве сказано, что даже в группе вы отвечаете за собственную безопасность и не должны жертвовать ею, чтобы не отставать. Источник: глава 5, «Ride Your Own Ride», p. 5-13."
+  },
+  "pdfpage": 63,
+  "pdfpage_ru": 70
  },
  {
   "id": 128,
@@ -4057,9 +4301,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists chemical, technological, emotional, physical, and group-riding impairments. Source: Chapter 6, Types of Impairments, p. 6-1 (manual p. 6-1, PDF p. 65).",
-   "ru": "В руководстве перечислены химические, технологические, эмоциональные, физические факторы и влияние группы при езде. Источник: глава 6, «Types of Impairments», p. 6-1 (manual p. 6-1, PDF p. 65)."
-  }
+   "en": "The manual lists chemical, technological, emotional, physical, and group-riding impairments. Source: Chapter 6, Types of Impairments, p. 6-1.",
+   "ru": "В руководстве перечислены химические, технологические, эмоциональные, физические факторы и влияние группы при езде. Источник: глава 6, «Types of Impairments», p. 6-1."
+  },
+  "pdfpage": 65,
+  "pdfpage_ru": 73
  },
  {
   "id": 129,
@@ -4090,9 +4336,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says alcohol quickly affects judgment, vision, attention, and fine-motor skills, and impairment begins at the first drink. Source: Chapter 6, Alcohol and Drugs, p. 6-2 (manual p. 6-2, PDF p. 66).",
-   "ru": "В руководстве сказано, что алкоголь быстро влияет на рассудительность, зрение, внимание и мелкую моторику, и его воздействие начинается с первой порции спиртного. Источник: глава 6, «Alcohol and Drugs», p. 6-2 (manual p. 6-2, PDF p. 66)."
-  }
+   "en": "The manual says alcohol quickly affects judgment, vision, attention, and fine-motor skills, and impairment begins at the first drink. Source: Chapter 6, Alcohol and Drugs, p. 6-2.",
+   "ru": "В руководстве сказано, что алкоголь быстро влияет на рассудительность, зрение, внимание и мелкую моторику, и его воздействие начинается с первой порции спиртного. Источник: глава 6, «Alcohol and Drugs», p. 6-2."
+  },
+  "pdfpage": 66,
+  "pdfpage_ru": 74
  },
  {
   "id": 130,
@@ -4123,9 +4371,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states riding under the influence of alcohol or drugs is illegal in Washington. Source: Chapter 6, Alcohol and Drugs, p. 6-2 (manual p. 6-2, PDF p. 66).",
-   "ru": "В руководстве указано, что управление в состоянии алкогольного или наркотического опьянения в штате Вашингтон незаконно. Источник: глава 6, «Alcohol and Drugs», p. 6-2 (manual p. 6-2, PDF p. 66)."
-  }
+   "en": "The manual states riding under the influence of alcohol or drugs is illegal in Washington. Source: Chapter 6, Alcohol and Drugs, p. 6-2.",
+   "ru": "В руководстве указано, что управление в состоянии алкогольного или наркотического опьянения в штате Вашингтон незаконно. Источник: глава 6, «Alcohol and Drugs», p. 6-2."
+  },
+  "pdfpage": 66,
+  "pdfpage_ru": 74
  },
  {
   "id": 131,
@@ -4156,9 +4406,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states alcohol takes an average of one hour per drink to leave your system. Source: Chapter 6, Alcohol and Drugs, p. 6-2 (manual p. 6-2, PDF p. 66).",
-   "ru": "В руководстве указано, что в среднем для вывода алкоголя из организма требуется один час на каждую порцию спиртного. Источник: глава 6, «Alcohol and Drugs», p. 6-2 (manual p. 6-2, PDF p. 66)."
-  }
+   "en": "The manual states alcohol takes an average of one hour per drink to leave your system. Source: Chapter 6, Alcohol and Drugs, p. 6-2.",
+   "ru": "В руководстве указано, что в среднем для вывода алкоголя из организма требуется один час на каждую порцию спиртного. Источник: глава 6, «Alcohol and Drugs», p. 6-2."
+  },
+  "pdfpage": 66,
+  "pdfpage_ru": 74
  },
  {
   "id": 132,
@@ -4189,9 +4441,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says only time removes alcohol or its effects; food, coffee, and cold showers do not. Source: Chapter 6, Alcohol and Drugs, p. 6-2 (manual p. 6-2, PDF p. 66).",
-   "ru": "В руководстве сказано, что только время выводит алкоголь и его воздействие; еда, кофе и холодный душ не помогают. Источник: глава 6, «Alcohol and Drugs», p. 6-2 (manual p. 6-2, PDF p. 66)."
-  }
+   "en": "The manual says only time removes alcohol or its effects; food, coffee, and cold showers do not. Source: Chapter 6, Alcohol and Drugs, p. 6-2.",
+   "ru": "В руководстве сказано, что только время выводит алкоголь и его воздействие; еда, кофе и холодный душ не помогают. Источник: глава 6, «Alcohol and Drugs», p. 6-2."
+  },
+  "pdfpage": 66,
+  "pdfpage_ru": 74
  },
  {
   "id": 133,
@@ -4222,9 +4476,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual defines one drink as a 12 oz beer, 5 oz wine, or 1.5 oz hard alcohol. Source: Chapter 6, Alcohol and Drugs, p. 6-2 (manual p. 6-2, PDF p. 66).",
-   "ru": "В руководстве одна порция спиртного определяется как 12 унций пива, 5 унций вина или 1,5 унции крепкого алкоголя. Источник: глава 6, «Alcohol and Drugs», p. 6-2 (manual p. 6-2, PDF p. 66)."
-  }
+   "en": "The manual defines one drink as a 12 oz beer, 5 oz wine, or 1.5 oz hard alcohol. Source: Chapter 6, Alcohol and Drugs, p. 6-2.",
+   "ru": "В руководстве одна порция спиртного определяется как 12 унций пива, 5 унций вина или 1,5 унции крепкого алкоголя. Источник: глава 6, «Alcohol and Drugs», p. 6-2."
+  },
+  "pdfpage": 66,
+  "pdfpage_ru": 74
  },
  {
   "id": 134,
@@ -4255,9 +4511,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says an adult with BAC of 0.08% or above is considered intoxicated in Washington. Source: Chapter 6, Alcohol and the Law, p. 6-3 (manual p. 6-3, PDF p. 67).",
-   "ru": "В руководстве сказано, что взрослый с уровнем BAC 0,08 % или выше считается в состоянии опьянения в штате Вашингтон. Источник: глава 6, «Alcohol and the Law», p. 6-3 (manual p. 6-3, PDF p. 67)."
-  }
+   "en": "The manual says an adult with BAC of 0.08% or above is considered intoxicated in Washington. Source: Chapter 6, Alcohol and the Law, p. 6-3.",
+   "ru": "В руководстве сказано, что взрослый с уровнем BAC 0,08 % или выше считается в состоянии опьянения в штате Вашингтон. Источник: глава 6, «Alcohol and the Law», p. 6-3."
+  },
+  "pdfpage": 67,
+  "pdfpage_ru": 75
  },
  {
   "id": 135,
@@ -4288,9 +4546,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states lower BAC limits of 0.02% apply for riders under 21. Source: Chapter 6, Alcohol and the Law, p. 6-3 (manual p. 6-3, PDF p. 67).",
-   "ru": "В руководстве указано, что для водителей младше 21 года действует пониженный предел BAC — 0,02 %. Источник: глава 6, «Alcohol and the Law», p. 6-3 (manual p. 6-3, PDF p. 67)."
-  }
+   "en": "The manual states lower BAC limits of 0.02% apply for riders under 21. Source: Chapter 6, Alcohol and the Law, p. 6-3.",
+   "ru": "В руководстве указано, что для водителей младше 21 года действует пониженный предел BAC — 0,02 %. Источник: глава 6, «Alcohol and the Law», p. 6-3."
+  },
+  "pdfpage": 67,
+  "pdfpage_ru": 75
  },
  {
   "id": 136,
@@ -4321,9 +4581,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states marijuana slows reactions, inhibits concentration, and distorts perception of time and distance. Source: Chapter 6, Marijuana, p. 6-3 (manual p. 6-3, PDF p. 67).",
-   "ru": "В руководстве сказано, что марихуана замедляет реакцию, ухудшает концентрацию и искажает восприятие времени и расстояния. Источник: глава 6, «Marijuana», p. 6-3 (manual p. 6-3, PDF p. 67)."
-  }
+   "en": "The manual states marijuana slows reactions, inhibits concentration, and distorts perception of time and distance. Source: Chapter 6, Marijuana, p. 6-3.",
+   "ru": "В руководстве сказано, что марихуана замедляет реакцию, ухудшает концентрацию и искажает восприятие времени и расстояния. Источник: глава 6, «Marijuana», p. 6-3."
+  },
+  "pdfpage": 67,
+  "pdfpage_ru": 75
  },
  {
   "id": 137,
@@ -4354,9 +4616,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that impairment for a person over 21 is 5 nanograms of THC blood concentration. Source: Chapter 6, Marijuana, p. 6-3 (manual p. 6-3, PDF p. 67).",
-   "ru": "В руководстве указано, что для лица старше 21 года опьянением считается концентрация THC в крови 5 нанограммов. Источник: глава 6, «Marijuana», p. 6-3 (manual p. 6-3, PDF p. 67)."
-  }
+   "en": "The manual states that impairment for a person over 21 is 5 nanograms of THC blood concentration. Source: Chapter 6, Marijuana, p. 6-3.",
+   "ru": "В руководстве указано, что для лица старше 21 года опьянением считается концентрация THC в крови 5 нанограммов. Источник: глава 6, «Marijuana», p. 6-3."
+  },
+  "pdfpage": 67,
+  "pdfpage_ru": 75
  },
  {
   "id": 138,
@@ -4387,9 +4651,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists devices and electronic controls as distractions that can degrade hazard scanning and reaction. Source: Chapter 6, Types of Impairments / Technology, pp. 6-1 and 6-4 (manual p. 6-1, PDF p. 65; manual p. 6-4, PDF p. 68).",
-   "ru": "В руководстве устройства и электронные органы управления отнесены к отвлекающим факторам, которые могут ухудшить сканирование опасностей и реакцию. Источник: глава 6, «Types of Impairments / Technology», pp. 6-1 and 6-4 (manual p. 6-1, PDF p. 65; manual p. 6-4, PDF p. 68)."
-  }
+   "en": "The manual lists devices and electronic controls as distractions that can degrade hazard scanning and reaction. Source: Chapter 6, Types of Impairments / Technology, pp. 6-1 and 6-4.",
+   "ru": "В руководстве устройства и электронные органы управления отнесены к отвлекающим факторам, которые могут ухудшить сканирование опасностей и реакцию. Источник: глава 6, «Types of Impairments / Technology», pp. 6-1 and 6-4."
+  },
+  "pdfpage": 65,
+  "pdfpage_ru": 73
  },
  {
   "id": 139,
@@ -4420,9 +4686,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says being a good rider can mean recognizing when not to ride, including when angry, ill, or tired. Source: Chapter 2, Taking Responsibility, p. 2-10; Chapter 6, Body and Emotions, p. 6-4 (manual p. 2-10, PDF p. 24; manual p. 6-4, PDF p. 68).",
-   "ru": "В руководстве сказано, что хороший мотоциклист умеет распознать, когда ехать не стоит — в том числе когда он раздражён, болен или устал. Источник: глава 2, «Taking Responsibility», p. 2-10; глава 6, «Body and Emotions», p. 6-4 (manual p. 2-10, PDF p. 24; manual p. 6-4, PDF p. 68)."
-  }
+   "en": "The manual says being a good rider can mean recognizing when not to ride, including when angry, ill, or tired. Source: Chapter 2, Taking Responsibility, p. 2-10; Chapter 6, Body and Emotions, p. 6-4.",
+   "ru": "В руководстве сказано, что хороший мотоциклист умеет распознать, когда ехать не стоит — в том числе когда он раздражён, болен или устал. Источник: глава 2, «Taking Responsibility», p. 2-10; глава 6, «Body and Emotions», p. 6-4."
+  },
+  "pdfpage": 24,
+  "pdfpage_ru": 26
  },
  {
   "id": 140,
@@ -4453,9 +4721,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual emphasizes resisting peer pressure and always riding within your skill level. Source: Chapter 6, Peer Pressure / Always Ride Within Your Skill Level, pp. 6-5 to 6-8 (manual p. 6-5, PDF p. 69; manual p. 6-8, PDF p. 72).",
-   "ru": "В руководстве подчёркивается необходимость противостоять давлению окружающих и всегда ехать в пределах своего уровня мастерства. Источник: глава 6, «Peer Pressure / Always Ride Within Your Skill Level», pp. 6-5 to 6-8 (manual p. 6-5, PDF p. 69; manual p. 6-8, PDF p. 72)."
-  }
+   "en": "The manual emphasizes resisting peer pressure and always riding within your skill level. Source: Chapter 6, Peer Pressure / Always Ride Within Your Skill Level, pp. 6-5 to 6-8.",
+   "ru": "В руководстве подчёркивается необходимость противостоять давлению окружающих и всегда ехать в пределах своего уровня мастерства. Источник: глава 6, «Peer Pressure / Always Ride Within Your Skill Level», pp. 6-5 to 6-8."
+  },
+  "pdfpage": 69,
+  "pdfpage_ru": 77
  },
  {
   "id": 141,
@@ -4486,9 +4756,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states there is only one person who can keep you safe when riding: you. Source: Chapter 6, Create Your Own Safety, p. 6-7 (manual p. 6-7, PDF p. 71).",
-   "ru": "В руководстве сказано, что есть только один человек, способный обеспечить вашу безопасность во время езды, — это вы сами. Источник: глава 6, «Create Your Own Safety», p. 6-7 (manual p. 6-7, PDF p. 71)."
-  }
+   "en": "The manual states there is only one person who can keep you safe when riding: you. Source: Chapter 6, Create Your Own Safety, p. 6-7.",
+   "ru": "В руководстве сказано, что есть только один человек, способный обеспечить вашу безопасность во время езды, — это вы сами. Источник: глава 6, «Create Your Own Safety», p. 6-7."
+  },
+  "pdfpage": 71,
+  "pdfpage_ru": 79
  },
  {
   "id": 142,
@@ -4519,9 +4791,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that riding between lanes — commonly known as 'lane splitting' — and riding on the shoulder is against the law in Washington State. Source: Chapter 5, Street Strategies, p. 5-1 (Manual p. 5-1, PDF p. 51).",
-   "ru": "В руководстве сказано, что движение между рядами (lane splitting) и движение по обочине запрещены законом в штате Вашингтон. Источник: глава 5, «Street Strategies», p. 5-1 (Manual p. 5-1, PDF p. 51)."
-  }
+   "en": "The manual states that riding between lanes — commonly known as 'lane splitting' — and riding on the shoulder is against the law in Washington State. Source: Chapter 5, Street Strategies, p. 5-1.",
+   "ru": "В руководстве сказано, что движение между рядами (lane splitting) и движение по обочине запрещены законом в штате Вашингтон. Источник: глава 5, «Street Strategies», p. 5-1."
+  },
+  "pdfpage": 51,
+  "pdfpage_ru": 58
  },
  {
   "id": 146,
@@ -4530,8 +4804,8 @@ const QUESTIONS = [
   "image": null,
   "answer": 0,
   "q": {
-   "en": "What is the best place to find the correct tire pressure for your tires?",
-   "ru": "Где лучше всего найти правильное давление в шинах (tire pressure)?"
+   "en": "Where is the best place to find the recommended tire pressure for your motorcycle?",
+   "ru": "Где лучше всего найти рекомендуемое давление в шинах (tire pressure) для вашего мотоцикла?"
   },
   "opts": [
    {
@@ -4552,9 +4826,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The Motorcycle Operator Manual says the owner's manual is the primary source for specifications and maintenance, but this exact tire-pressure question comes from practice subtitles. Source: manual p. 2-8, PDF p. 22; practice subtitle files.",
-   "ru": "В руководстве сказано, что именно руководство по эксплуатации (owner's manual) — основной источник характеристик и сведений по обслуживанию, но конкретно этот вопрос о давлении в шинах взят из учебных субтитров. Источник: manual p. 2-8, PDF p. 22; practice subtitle files."
-  }
+   "en": "The manual states that the owner's manual is the primary source of information about your motorcycle—including specifications, operation, and suggested maintenance—and that it will tell you the recommended tire pressures for your bike. Source: Chapter 2, \"Checking Your Motorcycle\", p. 2-9.",
+   "ru": "В руководстве сказано, что руководство по эксплуатации (owner's manual) — основной источник сведений о мотоцикле: характеристики, эксплуатация и рекомендуемое обслуживание, — и что именно в нём указано рекомендуемое давление в шинах (tire pressure) для вашей модели. Источник: глава 2, «Checking Your Motorcycle», p. 2-9."
+  },
+  "pdfpage": 22,
+  "pdfpage_ru": 24
  },
  {
   "id": 148,
@@ -4563,8 +4839,8 @@ const QUESTIONS = [
   "image": null,
   "answer": 0,
   "q": {
-   "en": "What is the safest blood alcohol level for motorcycle operation?",
-   "ru": "Какой уровень алкоголя в крови безопаснее всего для управления мотоциклом?"
+   "en": "What blood alcohol level is safest for operating a motorcycle?",
+   "ru": "Какой уровень алкоголя в крови (blood alcohol) безопаснее всего для управления мотоциклом?"
   },
   "opts": [
    {
@@ -4585,9 +4861,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says alcohol impairment begins at the first drink and advises never to ride impaired; the exact 0.00% wording is from the practice subtitles. Source: manual p. 6-2, PDF p. 66; practice subtitle files.",
-   "ru": "В руководстве сказано, что ухудшение состояния от алкоголя начинается с первой порции, и настоятельно рекомендуется никогда не садиться за руль в нетрезвом виде; точная формулировка 0,00% взята из учебных субтитров. Источник: manual p. 6-2, PDF p. 66; practice subtitle files."
-  }
+   "en": "The manual states that alcohol impairment begins at the first drink and that the only safe choice is to separate drinking from riding—'responsible riders choose to drink or choose to ride.' The only level that causes no impairment is 0.00%. Source: Chapter 6, \"Alcohol and Drugs\", p. 6-1.",
+   "ru": "В руководстве сказано, что ухудшение состояния от алкоголя начинается с первой порции и что единственный безопасный выбор — не совмещать алкоголь и езду: «responsible riders choose to drink or choose to ride». Не вызывает ухудшения только уровень 0,00%. Источник: глава 6, «Alcohol and Drugs», p. 6-1."
+  },
+  "pdfpage": 66,
+  "pdfpage_ru": 74
  },
  {
   "id": 149,
@@ -4618,9 +4896,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that any passenger carried on a two- or three-wheeled motorcycle in Washington State must be at least five years old. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11, PDF p. 37.",
-   "ru": "В руководстве сказано, что любой пассажир двух- или трёхколёсного мотоцикла в штате Вашингтон должен быть не младше пяти лет. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11, PDF p. 37."
-  }
+   "en": "The manual states that any passenger carried on a two- or three-wheeled motorcycle in Washington State must be at least five years old. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11.",
+   "ru": "В руководстве сказано, что любой пассажир двух- или трёхколёсного мотоцикла в штате Вашингтон должен быть не младше пяти лет. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11."
+  },
+  "pdfpage": 37,
+  "pdfpage_ru": 41
  },
  {
   "id": 150,
@@ -4651,9 +4931,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that passengers must have a passenger seat, footboards or pegs, and must wear a DOT-compliant helmet. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11, PDF p. 37.",
-   "ru": "В руководстве сказано, что у пассажира должны быть пассажирское сиденье, подножки или упоры для ног, а также шлем, соответствующий стандарту DOT. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11, PDF p. 37."
-  }
+   "en": "The manual states that passengers must have a passenger seat, footboards or pegs, and must wear a DOT-compliant helmet. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11.",
+   "ru": "В руководстве сказано, что у пассажира должны быть пассажирское сиденье, подножки или упоры для ног, а также шлем, соответствующий стандарту DOT. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11."
+  },
+  "pdfpage": 37,
+  "pdfpage_ru": 41
  },
  {
   "id": 151,
@@ -4684,9 +4966,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that a passenger should always mount after the rider to help keep the motorcycle stabilized. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11, PDF p. 37.",
-   "ru": "В руководстве сказано, что пассажир всегда должен садиться после водителя, чтобы помочь удерживать мотоцикл в устойчивом положении. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11, PDF p. 37."
-  }
+   "en": "The manual states that a passenger should always mount after the rider to help keep the motorcycle stabilized. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11.",
+   "ru": "В руководстве сказано, что пассажир всегда должен садиться после водителя, чтобы помочь удерживать мотоцикл в устойчивом положении. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11."
+  },
+  "pdfpage": 37,
+  "pdfpage_ru": 41
  },
  {
   "id": 152,
@@ -4717,9 +5001,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that a passenger should dismount before the rider to help keep the bike stabilized. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11, PDF p. 37.",
-   "ru": "В руководстве сказано, что пассажир должен сходить с мотоцикла перед водителем, чтобы помочь удерживать мотоцикл в устойчивом положении. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11, PDF p. 37."
-  }
+   "en": "The manual states that a passenger should dismount before the rider to help keep the bike stabilized. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11.",
+   "ru": "В руководстве сказано, что пассажир должен сходить с мотоцикла перед водителем, чтобы помочь удерживать мотоцикл в устойчивом положении. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11."
+  },
+  "pdfpage": 37,
+  "pdfpage_ru": 41
  },
  {
   "id": 153,
@@ -4750,9 +5036,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual instructs riders to adjust mirrors after passengers are seated. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11, PDF p. 37.",
-   "ru": "Руководство предписывает водителю отрегулировать зеркала после того, как пассажир сядет. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11, PDF p. 37."
-  }
+   "en": "The manual instructs riders to adjust mirrors after passengers are seated. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11.",
+   "ru": "Руководство предписывает водителю отрегулировать зеркала после того, как пассажир сядет. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11."
+  },
+  "pdfpage": 37,
+  "pdfpage_ru": 41
  },
  {
   "id": 154,
@@ -4783,9 +5071,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that the owner's manual tells how much weight can be safely carried and may suggest tire pressure or suspension adjustments for passengers or cargo. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11, PDF p. 37.",
-   "ru": "В руководстве сказано, что руководство по эксплуатации (owner's manual) указывает, какой вес можно безопасно перевозить, и может рекомендовать настройки давления в шинах или подвески при перевозке пассажира или груза. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11, PDF p. 37."
-  }
+   "en": "The manual states that the owner's manual tells how much weight can be safely carried and may suggest tire pressure or suspension adjustments for passengers or cargo. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11.",
+   "ru": "В руководстве сказано, что руководство по эксплуатации (owner's manual) указывает, какой вес можно безопасно перевозить, и может рекомендовать настройки давления в шинах или подвески при перевозке пассажира или груза. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11."
+  },
+  "pdfpage": 37,
+  "pdfpage_ru": 41
  },
  {
   "id": 155,
@@ -4816,9 +5106,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that when transferring an out-of-state driver license with a valid motorcycle endorsement to Washington, you must tell DOL staff that you also want to transfer the endorsement. Source: Washington Motorcycle Operator Manual, Transferring from Out-of-State, manual p. 1-6, PDF p. 14.",
-   "ru": "В руководстве сказано, что при переоформлении водительских прав другого штата с действующим мотоциклетным допуском (endorsement) в Вашингтоне нужно сообщить сотрудникам DOL, что вы хотите перенести и допуск (endorsement). Источник: Washington Motorcycle Operator Manual, «Transferring from Out-of-State», manual p. 1-6, PDF p. 14."
-  }
+   "en": "The manual states that when transferring an out-of-state driver license with a valid motorcycle endorsement to Washington, you must tell DOL staff that you also want to transfer the endorsement. Source: Washington Motorcycle Operator Manual, Transferring from Out-of-State, manual p. 1-6.",
+   "ru": "В руководстве сказано, что при переоформлении водительских прав другого штата с действующим мотоциклетным допуском (endorsement) в Вашингтоне нужно сообщить сотрудникам DOL, что вы хотите перенести и допуск (endorsement). Источник: Washington Motorcycle Operator Manual, «Transferring from Out-of-State», manual p. 1-6."
+  },
+  "pdfpage": 14,
+  "pdfpage_ru": 14
  },
  {
   "id": 156,
@@ -4849,9 +5141,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that to get a two-wheel endorsement when transferring from out of state, you must present a current and valid two-wheel motorcycle endorsement. Source: Washington Motorcycle Operator Manual, Transferring from Out-of-State, manual p. 1-6, PDF p. 14.",
-   "ru": "В руководстве сказано, что для получения допуска (endorsement) на двухколёсный мотоцикл при переоформлении из другого штата нужно предъявить действующий и актуальный допуск (endorsement) на двухколёсный (2W) мотоцикл. Источник: Washington Motorcycle Operator Manual, «Transferring from Out-of-State», manual p. 1-6, PDF p. 14."
-  }
+   "en": "The manual states that to get a two-wheel endorsement when transferring from out of state, you must present a current and valid two-wheel motorcycle endorsement. Source: Washington Motorcycle Operator Manual, Transferring from Out-of-State, manual p. 1-6.",
+   "ru": "В руководстве сказано, что для получения допуска (endorsement) на двухколёсный мотоцикл при переоформлении из другого штата нужно предъявить действующий и актуальный допуск (endorsement) на двухколёсный (2W) мотоцикл. Источник: Washington Motorcycle Operator Manual, «Transferring from Out-of-State», manual p. 1-6."
+  },
+  "pdfpage": 14,
+  "pdfpage_ru": 14
  },
  {
   "id": 157,
@@ -4882,9 +5176,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that if documentation does not show a separate and distinct three-wheel test, only a two-wheel endorsement will be offered. Source: Washington Motorcycle Operator Manual, Transferring from Out-of-State, manual p. 1-6, PDF p. 14.",
-   "ru": "В руководстве сказано, что если в документах не указан отдельный и самостоятельный тест на трёхколёсный мотоцикл, будет предложен только допуск (endorsement) на двухколёсный мотоцикл. Источник: Washington Motorcycle Operator Manual, «Transferring from Out-of-State», manual p. 1-6, PDF p. 14."
-  }
+   "en": "The manual states that if documentation does not show a separate and distinct three-wheel test, only a two-wheel endorsement will be offered. Source: Washington Motorcycle Operator Manual, Transferring from Out-of-State, manual p. 1-6.",
+   "ru": "В руководстве сказано, что если в документах не указан отдельный и самостоятельный тест на трёхколёсный мотоцикл, будет предложен только допуск (endorsement) на двухколёсный мотоцикл. Источник: Washington Motorcycle Operator Manual, «Transferring from Out-of-State», manual p. 1-6."
+  },
+  "pdfpage": 14,
+  "pdfpage_ru": 14
  },
  {
   "id": 158,
@@ -4915,75 +5211,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual explains that the clutch helps control the amount of power given to the rear wheel. Source: Washington Motorcycle Operator Manual, Clutch Control and Shifting Gears, manual p. 3-3, PDF p. 29.",
-   "ru": "В руководстве объясняется, что сцепление помогает регулировать количество мощности, подаваемой на заднее колесо. Источник: Washington Motorcycle Operator Manual, «Clutch Control and Shifting Gears», manual p. 3-3, PDF p. 29."
-  }
- },
- {
-  "id": 159,
-  "page": "3-3",
-  "topic": "cornering",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is the friction zone?",
-   "ru": "Что такое зона пробуксовки сцепления (friction zone)?"
+   "en": "The manual explains that the clutch helps control the amount of power given to the rear wheel. Source: Washington Motorcycle Operator Manual, Clutch Control and Shifting Gears, manual p. 3-3.",
+   "ru": "В руководстве объясняется, что сцепление помогает регулировать количество мощности, подаваемой на заднее колесо. Источник: Washington Motorcycle Operator Manual, «Clutch Control and Shifting Gears», manual p. 3-3."
   },
-  "opts": [
-   {
-    "en": "The point where clutch release begins transferring power to the rear wheel",
-    "ru": "Момент, когда отпускание сцепления начинает передавать мощность на заднее колесо"
-   },
-   {
-    "en": "The area where tires slide on gravel",
-    "ru": "Участок, где шины скользят по гравию"
-   },
-   {
-    "en": "The area of a helmet that absorbs impact",
-    "ru": "Часть шлема, поглощающая удар"
-   },
-   {
-    "en": "The part of a road with lane markings",
-    "ru": "Участок дороги с разметкой полос"
-   }
-  ],
-  "why": {
-   "en": "The manual discusses clutch control and how the clutch controls power to the rear wheel; the exact term 'friction zone' comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Clutch Control and Shifting Gears, manual p. 3-3, PDF p. 29; practice subtitle files.",
-   "ru": "В руководстве обсуждается управление сцеплением и то, как сцепление регулирует подачу мощности на заднее колесо; точный термин «friction zone» взят из учебных субтитров. Источник: Washington Motorcycle Operator Manual, «Clutch Control and Shifting Gears», manual p. 3-3, PDF p. 29; practice subtitle files."
-  }
- },
- {
-  "id": 160,
-  "page": "3-9",
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is threshold braking?",
-   "ru": "Что такое торможение на грани блокировки (threshold braking)?"
-  },
-  "opts": [
-   {
-    "en": "Using both brakes progressively just before wheel lock",
-    "ru": "Постепенное использование обоих тормозов прямо перед блокировкой колеса"
-   },
-   {
-    "en": "Using only the rear brake",
-    "ru": "Использование только заднего тормоза"
-   },
-   {
-    "en": "Barely touching the brakes",
-    "ru": "Едва заметное касание тормозов"
-   },
-   {
-    "en": "Using the engine cut-off switch to stop",
-    "ru": "Использование аварийного выключателя двигателя для остановки"
-   }
-  ],
-  "why": {
-   "en": "The manual supports the concept by saying to apply both brakes fully without locking either wheel; the exact term 'threshold braking' comes from practice subtitles. Source: Washington Motorcycle Operator Manual, Quick Stops, manual p. 3-9, PDF p. 35; practice subtitle files.",
-   "ru": "Руководство подтверждает эту идею, рекомендуя задействовать оба тормоза полностью, не блокируя ни одно колесо; точный термин «threshold braking» взят из учебных субтитров. Источник: Washington Motorcycle Operator Manual, «Quick Stops», manual p. 3-9, PDF p. 35; practice subtitle files."
-  }
+  "pdfpage": 29,
+  "pdfpage_ru": 33
  },
  {
   "id": 164,
@@ -4993,7 +5225,7 @@ const QUESTIONS = [
   "answer": 0,
   "q": {
    "en": "Which actions should be avoided while swerving?",
-   "ru": "Что нельзя делать во время объезда (swerve)?"
+   "ru": "Каких действий следует избегать во время объезда (swerve)?"
   },
   "opts": [
    {
@@ -5014,75 +5246,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states to never swerve and brake at the same time and to keep the body upright and centered; the full combined answer including acceleration comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Swerves, manual p. 3-10, PDF p. 36; practice subtitle files.",
-   "ru": "В руководстве сказано никогда не выполнять объезд (swerve) и торможение одновременно и держать корпус вертикально и по центру; полный объединённый ответ, включая ускорение, взят из учебных субтитров. Источник: Washington Motorcycle Operator Manual, «Swerves», manual p. 3-10, PDF p. 36; practice subtitle files."
-  }
- },
- {
-  "id": 165,
-  "page": "3-1",
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is the best way for a beginner to improve stability when starting from a stop?",
-   "ru": "Как новичку лучше всего повысить устойчивость при трогании с места?"
+   "en": "The manual says a swerve requires a lot of traction, so you must never swerve and brake at the same time, and you should keep your body upright and centered so the motorcycle can move independently beneath you. Hard braking or throttle and excessive body lean all upset the bike or reduce the traction the swerve needs. Source: Chapter 3, \"Swerves\", p. 3-10.",
+   "ru": "В руководстве сказано, что объезд (swerve) требует много сцепления с дорогой, поэтому нельзя одновременно объезжать и тормозить, а корпус нужно держать вертикально и по центру, чтобы мотоцикл свободно двигался под вами. Резкое торможение или газ и чрезмерный наклон корпуса нарушают равновесие мотоцикла или отнимают сцепление, нужное для манёвра. Источник: глава 3, «Swerves», p. 3-10."
   },
-  "opts": [
-   {
-    "en": "Power-walk if needed, keep eyes up, and ease out the clutch smoothly",
-    "ru": "При необходимости помочь себе ногами, держать взгляд поднятым и плавно отпускать сцепление"
-   },
-   {
-    "en": "Look down at the front wheel",
-    "ru": "Смотреть вниз на переднее колесо"
-   },
-   {
-    "en": "Pop the clutch quickly",
-    "ru": "Резко бросить сцепление"
-   },
-   {
-    "en": "Drag both feet at speed",
-    "ru": "Волочить обе ноги на скорости"
-   }
-  ],
-  "why": {
-   "en": "The manual supports keeping head and eyes up and practicing clutch control; the exact beginner-starting checklist comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Riding Posture, manual p. 3-1, PDF p. 27; Clutch Control, manual p. 3-3, PDF p. 29; practice subtitle files.",
-   "ru": "Руководство поддерживает рекомендацию держать голову и взгляд поднятыми и отрабатывать управление сцеплением; точный список действий для новичка при трогании взят из учебных субтитров. Источник: Washington Motorcycle Operator Manual, «Riding Posture», manual p. 3-1, PDF p. 27; «Clutch Control», manual p. 3-3, PDF p. 29; practice subtitle files."
-  }
- },
- {
-  "id": 167,
-  "page": "3-3",
-  "topic": "cornering",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is the most effective way to maintain balance at very slow speeds according to the practice subtitles?",
-   "ru": "Как наиболее эффективно удерживать равновесие на очень малой скорости согласно субтитрам практических материалов?"
-  },
-  "opts": [
-   {
-    "en": "Use controlled momentum with throttle, friction zone, and rear brake",
-    "ru": "Использовать контролируемую тягу: газ (throttle), зону пробуксовки сцепления (friction zone) и задний тормоз"
-   },
-   {
-    "en": "Keep the throttle closed and coast",
-    "ru": "Полностью закрыть газ и катиться накатом"
-   },
-   {
-    "en": "Drag both feet as the main control",
-    "ru": "Волочить обе ноги, используя их как основной способ управления"
-   },
-   {
-    "en": "Turn the handlebars hard and stop",
-    "ru": "Резко вывернуть руль и остановиться"
-   }
-  ],
-  "why": {
-   "en": "The manual supports clutch control and low-speed practice, but this exact slow-speed balance formula comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Clutch Control and Shifting Gears, manual p. 3-3, PDF p. 29; practice subtitle files.",
-   "ru": "Руководство поддерживает работу со сцеплением и тренировку на малой скорости, но именно этот приём удержания равновесия взят из субтитров практических материалов. Источник: Washington Motorcycle Operator Manual, «Clutch Control and Shifting Gears», manual p. 3-3, PDF p. 29; субтитры практических материалов (Practice subtitle files)."
-  }
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 169,
@@ -5091,8 +5259,8 @@ const QUESTIONS = [
   "image": null,
   "answer": 0,
   "q": {
-   "en": "How should a passenger sit on the motorcycle according to the practice subtitles?",
-   "ru": "Как пассажир должен сидеть на мотоцикле согласно субтитрам практических материалов?"
+   "en": "How should a passenger sit on a motorcycle?",
+   "ru": "Как пассажир должен сидеть на мотоцикле?"
   },
   "opts": [
    {
@@ -5113,9 +5281,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual says passengers should lean with the rider, keep movements to a minimum, and use the required passenger equipment; the exact sitting/holding wording comes from practice subtitles. Source: Washington Motorcycle Operator Manual, Carrying Passengers and Cargo, manual p. 3-11, PDF p. 37; practice subtitle files.",
-   "ru": "Руководство указывает, что пассажир должен наклоняться вместе с водителем, сводить движения к минимуму и использовать необходимое для пассажира снаряжение; точная формулировка про посадку и удержание взята из субтитров практических материалов. Источник: Washington Motorcycle Operator Manual, «Carrying Passengers and Cargo», manual p. 3-11, PDF p. 37; субтитры практических материалов (Practice subtitle files)."
-  }
+   "en": "The manual says passengers should lean with the rider and the bike when cornering and keep their movements to a minimum, especially at low speeds or stops, while keeping their feet on the pegs—that is, sitting close and steady without interfering with the rider's control. Source: Chapter 3, \"Carrying Passengers and Cargo\", p. 3-11.",
+   "ru": "В руководстве сказано, что пассажир должен наклоняться вместе с водителем и мотоциклом в поворотах и сводить движения к минимуму, особенно на малой скорости и на остановках, держа ноги на подножках, — то есть сидеть близко и спокойно, не мешая водителю управлять. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-11."
+  },
+  "pdfpage": 37,
+  "pdfpage_ru": 41
  },
  {
   "id": 170,
@@ -5124,8 +5294,8 @@ const QUESTIONS = [
   "image": null,
   "answer": 0,
   "q": {
-   "en": "How does carrying a passenger affect starting, stopping, and passing?",
-   "ru": "Как перевозка пассажира влияет на старт, остановку и обгон?"
+   "en": "How does carrying a passenger affect accelerating, stopping, and passing?",
+   "ru": "Как перевозка пассажира влияет на разгон, остановку и обгон?"
   },
   "opts": [
    {
@@ -5146,9 +5316,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that additional passenger/cargo weight may make acceleration and stopping take longer; the passing part comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Swerves / Carrying Passengers and Cargo, manual p. 3-10, PDF p. 36; practice subtitle files.",
-   "ru": "Руководство указывает, что дополнительный вес пассажира или груза может увеличивать время разгона и остановки; часть про обгон взята из субтитров практических материалов. Источник: Washington Motorcycle Operator Manual, «Swerves / Carrying Passengers and Cargo», manual p. 3-10, PDF p. 36; субтитры практических материалов (Practice subtitle files)."
-  }
+   "en": "The manual states that with the added weight of a passenger the motorcycle may take longer to accelerate and longer to stop. Because passing depends on accelerating past another vehicle, it likewise needs more time and space. Source: Chapter 3, \"Carrying Passengers and Cargo\", p. 3-10.",
+   "ru": "В руководстве сказано, что с дополнительным весом пассажира мотоциклу может требоваться больше времени на разгон и на остановку. Поскольку обгон строится на разгоне мимо другого транспорта, на него тоже нужно больше времени и пространства. Источник: глава 3, «Carrying Passengers and Cargo», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 172,
@@ -5179,9 +5351,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that the majority of motorcycle crashes involve several risk factors stacking up at one time. Source: Washington Motorcycle Operator Manual, Create Your Own Safety, manual p. 2-1, PDF p. 15.",
-   "ru": "Руководство указывает, что большинство мотоциклетных аварий связано с одновременным наложением нескольких факторов риска. Источник: Washington Motorcycle Operator Manual, «Create Your Own Safety», manual p. 2-1, PDF p. 15."
-  }
+   "en": "The manual states that the majority of motorcycle crashes involve several risk factors stacking up at one time. Source: Washington Motorcycle Operator Manual, Create Your Own Safety, manual p. 2-1.",
+   "ru": "Руководство указывает, что большинство мотоциклетных аварий связано с одновременным наложением нескольких факторов риска. Источник: Washington Motorcycle Operator Manual, «Create Your Own Safety», manual p. 2-1."
+  },
+  "pdfpage": 15,
+  "pdfpage_ru": 17
  },
  {
   "id": 174,
@@ -5212,9 +5386,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual explains that jacket, pants, and weather gear can reduce cold, heat, dehydration, fatigue, and distraction so the rider can focus on riding safely. Source: Washington Motorcycle Operator Manual, Jacket and Pants / Comfort and Weather Protection, manual pp. 2-5 to 2-6, PDF pp. 19-20.",
-   "ru": "Руководство объясняет, что куртка, штаны и погодная экипировка снижают холод, жару, обезвоживание, усталость и отвлекающие факторы, чтобы водитель мог сосредоточиться на безопасной езде. Источник: Washington Motorcycle Operator Manual, «Jacket and Pants / Comfort and Weather Protection», manual pp. 2-5 to 2-6, PDF pp. 19-20."
-  }
+   "en": "The manual explains that jacket, pants, and weather gear can reduce cold, heat, dehydration, fatigue, and distraction so the rider can focus on riding safely. Source: Washington Motorcycle Operator Manual, Jacket and Pants / Comfort and Weather Protection, manual pp. 2-5 to 2-6.",
+   "ru": "Руководство объясняет, что куртка, штаны и погодная экипировка снижают холод, жару, обезвоживание, усталость и отвлекающие факторы, чтобы водитель мог сосредоточиться на безопасной езде. Источник: Washington Motorcycle Operator Manual, «Jacket and Pants / Comfort and Weather Protection», manual pp. 2-5 to 2-6."
+  },
+  "pdfpage": 19,
+  "pdfpage_ru": 21
  },
  {
   "id": 175,
@@ -5245,9 +5421,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual notes that in-ear hearing protection is legal in Washington, but in-ear speakers are not. Source: Washington Motorcycle Operator Manual, Hearing Protection, manual p. 2-6, PDF p. 20.",
-   "ru": "Руководство отмечает, что внутриушная защита слуха в штате Вашингтон разрешена, а внутриушные динамики (in-ear speakers) — нет. Источник: Washington Motorcycle Operator Manual, «Hearing Protection», manual p. 2-6, PDF p. 20."
-  }
+   "en": "The manual notes that in-ear hearing protection is legal in Washington, but in-ear speakers are not. Source: Washington Motorcycle Operator Manual, Hearing Protection, manual p. 2-6.",
+   "ru": "Руководство отмечает, что внутриушная защита слуха в штате Вашингтон разрешена, а внутриушные динамики (in-ear speakers) — нет. Источник: Washington Motorcycle Operator Manual, «Hearing Protection», manual p. 2-6."
+  },
+  "pdfpage": 20,
+  "pdfpage_ru": 22
  },
  {
   "id": 176,
@@ -5278,9 +5456,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that medications can degrade riding abilities and that some medications can affect riding ability as much as alcohol and illegal drugs. Source: Washington Motorcycle Operator Manual, Types of Impairments / Alcohol and Drugs, manual pp. 6-1 to 6-2, PDF pp. 65-66.",
-   "ru": "Руководство указывает, что лекарства могут ухудшать способность управлять мотоциклом и что некоторые из них влияют на неё так же сильно, как алкоголь и запрещённые наркотики. Источник: Washington Motorcycle Operator Manual, «Types of Impairments / Alcohol and Drugs», manual pp. 6-1 to 6-2, PDF pp. 65-66."
-  }
+   "en": "The manual states that medications can degrade riding abilities and that some medications can affect riding ability as much as alcohol and illegal drugs. Source: Washington Motorcycle Operator Manual, Types of Impairments / Alcohol and Drugs, manual pp. 6-1 to 6-2.",
+   "ru": "Руководство указывает, что лекарства могут ухудшать способность управлять мотоциклом и что некоторые из них влияют на неё так же сильно, как алкоголь и запрещённые наркотики. Источник: Washington Motorcycle Operator Manual, «Types of Impairments / Alcohol and Drugs», manual pp. 6-1 to 6-2."
+  },
+  "pdfpage": 65,
+  "pdfpage_ru": 73
  },
  {
   "id": 177,
@@ -5311,9 +5491,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that GPS, cell phones, headsets, music, intercoms, and electronic controls can distract riders and degrade hazard identification. Source: Washington Motorcycle Operator Manual, Technology, manual p. 6-4, PDF p. 68.",
-   "ru": "Руководство указывает, что GPS, сотовые телефоны, гарнитуры, музыка, интеркомы (intercoms) и электронные органы управления могут отвлекать водителя и ухудшать распознавание опасностей. Источник: Washington Motorcycle Operator Manual, «Technology», manual p. 6-4, PDF p. 68."
-  }
+   "en": "The manual states that GPS, cell phones, headsets, music, intercoms, and electronic controls can distract riders and degrade hazard identification. Source: Washington Motorcycle Operator Manual, Technology, manual p. 6-4.",
+   "ru": "Руководство указывает, что GPS, сотовые телефоны, гарнитуры, музыка, интеркомы (intercoms) и электронные органы управления могут отвлекать водителя и ухудшать распознавание опасностей. Источник: Washington Motorcycle Operator Manual, «Technology», manual p. 6-4."
+  },
+  "pdfpage": 68,
+  "pdfpage_ru": 76
  },
  {
   "id": 180,
@@ -5344,9 +5526,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists pre-ride discussion topics for group rides, including how long each person has been riding, comfort level, skill level, and riding experience. Source: Washington Motorcycle Operator Manual, Peer Pressure, manual p. 6-5, PDF p. 69.",
-   "ru": "Руководство перечисляет темы для обсуждения перед групповой поездкой, включая то, как давно каждый ездит, уровень комфорта, уровень навыков и стаж езды. Источник: Washington Motorcycle Operator Manual, «Peer Pressure», manual p. 6-5, PDF p. 69."
-  }
+   "en": "The manual lists pre-ride discussion topics for group rides, including how long each person has been riding, comfort level, skill level, and riding experience. Source: Washington Motorcycle Operator Manual, Peer Pressure, manual p. 6-5.",
+   "ru": "Руководство перечисляет темы для обсуждения перед групповой поездкой, включая то, как давно каждый ездит, уровень комфорта, уровень навыков и стаж езды. Источник: Washington Motorcycle Operator Manual, «Peer Pressure», manual p. 6-5."
+  },
+  "pdfpage": 69,
+  "pdfpage_ru": 77
  },
  {
   "id": 185,
@@ -5355,8 +5539,8 @@ const QUESTIONS = [
   "image": null,
   "answer": 0,
   "q": {
-   "en": "If a motorcycle has a serious safety-equipment defect, what should the rider do?",
-   "ru": "Что следует сделать водителю, если у мотоцикла серьёзная неисправность оборудования безопасности?"
+   "en": "If a motorcycle has a serious defect in its required safety equipment, what should the rider do?",
+   "ru": "Что следует сделать водителю, если у мотоцикла серьёзная неисправность обязательного оборудования безопасности?"
   },
   "opts": [
    {
@@ -5377,42 +5561,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "This practice question is consistent with the manual's required equipment and pre-ride inspection sections, but the exact 'do not operate until corrected' wording comes from practice subtitles. Source: Washington Motorcycle Operator Manual, Required Equipment, manual p. 3-1, PDF p. 27; Checking Your Motorcycle, manual p. 2-9, PDF p. 23; practice subtitle files.",
-   "ru": "Этот практический вопрос согласуется с разделами руководства об обязательном оборудовании и предрейсовом осмотре, но точная формулировка «не эксплуатировать, пока не устранено» взята из субтитров практических материалов. Источник: Washington Motorcycle Operator Manual, «Required Equipment», manual p. 3-1, PDF p. 27; «Checking Your Motorcycle», manual p. 2-9, PDF p. 23; субтитры практических материалов (Practice subtitle files)."
-  }
- },
- {
-  "id": 186,
-  "page": "6-3",
-  "topic": "impairment",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "If a motorcycle endorsement is suspended, what must the rider do?",
-   "ru": "Что должен сделать мотоциклист, если мотоциклетный допуск (endorsement) приостановлен (suspended)?"
+   "en": "The manual states that a motorcycle must have its required equipment—mirrors, muffler, horn, license plate, headlight, taillight, and turn signals—installed and working to be legally operated on public roadways, and that you should know if anything is wrong with your bike before riding. A serious defect means it should not be ridden on public roads until it is corrected. Source: Chapter 3, \"The Right Bike for You\", p. 3-1.",
+   "ru": "В руководстве сказано, что для законной езды по дорогам общего пользования на мотоцикле должно быть установлено и исправно обязательное оборудование — зеркала, глушитель, звуковой сигнал, номерной знак, фара, задний фонарь и указатели поворота, — и что нужно знать о любой неисправности до выезда. При серьёзной неисправности мотоцикл нельзя эксплуатировать на дорогах, пока её не устранят. Источник: глава 3, «The Right Bike for You», p. 3-1."
   },
-  "opts": [
-   {
-    "en": "Stop riding on public roads until the suspension is resolved",
-    "ru": "Прекратить езду по дорогам общего пользования, пока приостановка не будет снята"
-   },
-   {
-    "en": "Ride only in daylight",
-    "ru": "Ездить только в светлое время суток"
-   },
-   {
-    "en": "Ride only below 35 mph",
-    "ru": "Ездить только со скоростью ниже 35 миль/ч"
-   },
-   {
-    "en": "Continue riding because suspension affects only cars",
-    "ru": "Продолжать ездить, так как приостановка касается только автомобилей"
-   }
-  ],
-  "why": {
-   "en": "This license-suspension practice question is not directly located in the uploaded manual; the manual only lists license suspension as a DUI-conviction consequence. Source: Washington Motorcycle Operator Manual, Consequences of Conviction, manual p. 6-3, PDF p. 67; practice subtitle files.",
-   "ru": "Этот вопрос о приостановке прав напрямую в загруженном руководстве не приводится; руководство упоминает приостановку прав лишь как одно из последствий осуждения за вождение в нетрезвом виде (DUI). Источник: Washington Motorcycle Operator Manual, «Consequences of Conviction», manual p. 6-3, PDF p. 67; practice subtitle files."
-  }
+  "pdfpage": 27,
+  "pdfpage_ru": 31
  },
  {
   "id": 188,
@@ -5421,8 +5574,8 @@ const QUESTIONS = [
   "image": null,
   "answer": 0,
   "q": {
-   "en": "What best describes responsible riders according to MSF-style practice material?",
-   "ru": "Что лучше всего описывает ответственных мотоциклистов согласно учебному материалу в стиле MSF?"
+   "en": "What best describes responsible riders?",
+   "ru": "Что лучше всего описывает ответственных мотоциклистов?"
   },
   "opts": [
    {
@@ -5443,9 +5596,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "This exact phrase comes from practice subtitles; the uploaded manual supports the same concept by emphasizing awareness, identifying hazards, evaluating 'what if,' and being prepared. Source: Washington Motorcycle Operator Manual, Taking Responsibility, manual pp. 2-10 to 2-11, PDF pp. 24-25; practice subtitle files.",
-   "ru": "Эта формулировка взята дословно из practice subtitles; загруженное руководство подтверждает ту же мысль, подчёркивая осознанность, выявление опасностей, оценку «что если» (what if) и готовность к действию. Источник: Washington Motorcycle Operator Manual, «Taking Responsibility», manual pp. 2-10 to 2-11, PDF pp. 24-25; practice subtitle files."
-  }
+   "en": "The manual's section on taking responsibility emphasizes riding with awareness, actively identifying and evaluating hazards by asking 'What if?', and being prepared to carry out crash-avoidance actions. In short, responsible riders ride aware, make critical decisions, and carry them out. Source: Chapter 2, \"Create Your Own Safety by Taking Responsibility\", p. 2-10 to 2-11.",
+   "ru": "В разделе руководства об ответственности подчёркивается осознанная езда, активное выявление и оценка опасностей с вопросом «What if?» («что если») и готовность выполнить действия по предотвращению аварии. Иными словами, ответственный мотоциклист едет осознанно, принимает важные решения и выполняет их. Источник: глава 2, «Create Your Own Safety by Taking Responsibility», p. 2-10 to 2-11."
+  },
+  "pdfpage": 24,
+  "pdfpage_ru": 26
  },
  {
   "id": 189,
@@ -5476,9 +5631,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual requires DOT-compliant helmets but does not frame this as an agency-definition question; the agency wording comes from practice subtitles. Source: Washington Motorcycle Operator Manual, Helmets, manual p. 2-2, PDF p. 16; practice subtitle files.",
-   "ru": "Руководство требует шлемы, соответствующие стандарту DOT, но не подаёт это как вопрос об определении ведомства; формулировка про ведомство взята из practice subtitles. Источник: Washington Motorcycle Operator Manual, «Helmets», manual p. 2-2, PDF p. 16; practice subtitle files."
-  }
+   "en": "The manual states that to legally ride in Washington you must wear a helmet that is compliant with Department of Transportation (DOT) guidelines, marked with DOT labels; DOT is the agency that sets this federal helmet standard. Source: Chapter 2, \"Helmets\", p. 2-2.",
+   "ru": "В руководстве сказано, что для законной езды в Вашингтоне нужно носить шлем, соответствующий требованиям Министерства транспорта (Department of Transportation, DOT) и имеющий маркировку DOT; именно DOT устанавливает этот федеральный стандарт для шлемов. Источник: глава 2, «Helmets», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 190,
@@ -5509,9 +5666,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual defines target fixation as staring at an object or area so intently that you end up moving toward it. Source: Washington Motorcycle Operator Manual, Target Fixation, manual p. 5-12, PDF p. 62.",
-   "ru": "Руководство определяет target fixation как состояние, когда вы смотрите на объект или участок настолько пристально, что в итоге начинаете двигаться к нему. Источник: Washington Motorcycle Operator Manual, «Target Fixation», manual p. 5-12, PDF p. 62."
-  }
+   "en": "The manual defines target fixation as staring at an object or area so intently that you end up moving toward it. Source: Washington Motorcycle Operator Manual, Target Fixation, manual p. 5-12.",
+   "ru": "Руководство определяет target fixation как состояние, когда вы смотрите на объект или участок настолько пристально, что в итоге начинаете двигаться к нему. Источник: Washington Motorcycle Operator Manual, «Target Fixation», manual p. 5-12."
+  },
+  "pdfpage": 62,
+  "pdfpage_ru": 69
  },
  {
   "id": 195,
@@ -5542,9 +5701,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual lists effective eye/face shield requirements: free of scratches, resistant to penetration, clear view to front and sides, secure fastening, airflow to reduce fogging, and room for eyeglasses or sunglasses if needed. Source: Washington Motorcycle Operator Manual, Eye Protection, manual pp. 2-4 to 2-5, PDF pp. 18-19.",
-   "ru": "Руководство перечисляет требования к эффективной защите глаз/лицевому щитку: отсутствие царапин, стойкость к пробиванию, чёткий обзор вперёд и в стороны, надёжное крепление, приток воздуха для уменьшения запотевания и место для очков или солнцезащитных очков при необходимости. Источник: Washington Motorcycle Operator Manual, «Eye Protection», manual pp. 2-4 to 2-5, PDF pp. 18-19."
-  }
+   "en": "The manual lists effective eye/face shield requirements: free of scratches, resistant to penetration, clear view to front and sides, secure fastening, airflow to reduce fogging, and room for eyeglasses or sunglasses if needed. Source: Washington Motorcycle Operator Manual, Eye Protection, manual pp. 2-4 to 2-5.",
+   "ru": "Руководство перечисляет требования к эффективной защите глаз/лицевому щитку: отсутствие царапин, стойкость к пробиванию, чёткий обзор вперёд и в стороны, надёжное крепление, приток воздуха для уменьшения запотевания и место для очков или солнцезащитных очков при необходимости. Источник: Washington Motorcycle Operator Manual, «Eye Protection», manual pp. 2-4 to 2-5."
+  },
+  "pdfpage": 18,
+  "pdfpage_ru": 20
  },
  {
   "id": 196,
@@ -5575,9 +5736,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual recommends that new riders start on motorcycles that are smaller and lighter because they can be easier to control, less intimidating, and easier to maneuver. Source: Washington Motorcycle Operator Manual, Choosing the Right Motorcycle, manual p. 2-8, PDF p. 22.",
-   "ru": "Руководство рекомендует начинающим мотоциклистам начинать с мотоциклов поменьше и полегче, потому что ими легче управлять, они меньше пугают и проще в маневрировании. Источник: Washington Motorcycle Operator Manual, «Choosing the Right Motorcycle», manual p. 2-8, PDF p. 22."
-  }
+   "en": "The manual recommends that new riders start on motorcycles that are smaller and lighter because they can be easier to control, less intimidating, and easier to maneuver. Source: Washington Motorcycle Operator Manual, Choosing the Right Motorcycle, manual p. 2-8.",
+   "ru": "Руководство рекомендует начинающим мотоциклистам начинать с мотоциклов поменьше и полегче, потому что ими легче управлять, они меньше пугают и проще в маневрировании. Источник: Washington Motorcycle Operator Manual, «Choosing the Right Motorcycle», manual p. 2-8."
+  },
+  "pdfpage": 22,
+  "pdfpage_ru": 24
  },
  {
   "id": 197,
@@ -5608,9 +5771,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that unfamiliar controls can be a big distraction and distracted riding can lead to a crash, so riders should practice in an empty, safe area. Source: Washington Motorcycle Operator Manual, Getting to Know Your Motorcycle, manual p. 2-8, PDF p. 22.",
-   "ru": "Руководство указывает, что незнакомые органы управления могут сильно отвлекать, а езда с отвлечённым вниманием может привести к аварии, поэтому осваивать их следует на пустой, безопасной площадке. Источник: Washington Motorcycle Operator Manual, «Getting to Know Your Motorcycle», manual p. 2-8, PDF p. 22."
-  }
+   "en": "The manual states that unfamiliar controls can be a big distraction and distracted riding can lead to a crash, so riders should practice in an empty, safe area. Source: Washington Motorcycle Operator Manual, Getting to Know Your Motorcycle, manual p. 2-8.",
+   "ru": "Руководство указывает, что незнакомые органы управления могут сильно отвлекать, а езда с отвлечённым вниманием может привести к аварии, поэтому осваивать их следует на пустой, безопасной площадке. Источник: Washington Motorcycle Operator Manual, «Getting to Know Your Motorcycle», manual p. 2-8."
+  },
+  "pdfpage": 22,
+  "pdfpage_ru": 24
  },
  {
   "id": 198,
@@ -5641,9 +5806,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that laces should be tucked in to prevent them from catching on parts of the bike. Source: Washington Motorcycle Operator Manual, Boots and Shoes, manual p. 2-6, PDF p. 20.",
-   "ru": "Руководство указывает, что шнурки нужно заправлять, чтобы они не цеплялись за части мотоцикла. Источник: Washington Motorcycle Operator Manual, «Boots and Shoes», manual p. 2-6, PDF p. 20."
-  }
+   "en": "The manual states that laces should be tucked in to prevent them from catching on parts of the bike. Source: Washington Motorcycle Operator Manual, Boots and Shoes, manual p. 2-6.",
+   "ru": "Руководство указывает, что шнурки нужно заправлять, чтобы они не цеплялись за части мотоцикла. Источник: Washington Motorcycle Operator Manual, «Boots and Shoes», manual p. 2-6."
+  },
+  "pdfpage": 20,
+  "pdfpage_ru": 22
  },
  {
   "id": 199,
@@ -5674,9 +5841,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual states that if you cannot see well at night, slow down; if you cannot see, look to the fog line or white line on the shoulder and use it to guide you. Source: Washington Motorcycle Operator Manual, Riding at Night, manual pp. 5-11 to 5-12, PDF pp. 61-62.",
-   "ru": "Руководство указывает, что если ночью вы плохо видите — снизьте скорость; если видите совсем плохо, ориентируйтесь на линию обочины (fog line) или белую линию на обочине и используйте её как ориентир. Источник: Washington Motorcycle Operator Manual, «Riding at Night», manual pp. 5-11 to 5-12, PDF pp. 61-62."
-  }
+   "en": "The manual states that if you cannot see well at night, slow down; if you cannot see, look to the fog line or white line on the shoulder and use it to guide you. Source: Washington Motorcycle Operator Manual, Riding at Night, manual pp. 5-11 to 5-12.",
+   "ru": "Руководство указывает, что если ночью вы плохо видите — снизьте скорость; если видите совсем плохо, ориентируйтесь на линию обочины (fog line) или белую линию на обочине и используйте её как ориентир. Источник: Washington Motorcycle Operator Manual, «Riding at Night», manual pp. 5-11 to 5-12."
+  },
+  "pdfpage": 61,
+  "pdfpage_ru": 68
  },
  {
   "id": 200,
@@ -5707,9 +5876,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The full-face helmet covers the whole head and chin and is considered the safest, offering the best protection for your chin and face. Source: Chapter 2, Helmets, p. 2-2 (Manual p. 2-2, PDF p. 16).",
-   "ru": "Шлем-интеграл (full-face) закрывает всю голову и подбородок и считается самым безопасным: он лучше всего защищает подбородок и лицо. Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "The full-face helmet covers the whole head and chin and is considered the safest, offering the best protection for your chin and face. Source: Chapter 2, Helmets, p. 2-2.",
+   "ru": "Шлем-интеграл (full-face) закрывает всю голову и подбородок и считается самым безопасным: он лучше всего защищает подбородок и лицо. Источник: глава 2, «Helmets», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 201,
@@ -5740,9 +5911,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "A half (shorty) helmet covers the least of your head and offers the least protection; full-face helmets are the safest. Source: Chapter 2, Helmets, p. 2-2 (Manual p. 2-2, PDF p. 16).",
-   "ru": "Открытый шлем-каска (half/shorty) закрывает голову меньше всего и даёт наименьшую защиту; самыми безопасными остаются шлемы-интегралы (full-face). Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
-  }
+   "en": "A half (shorty) helmet covers the least of your head and offers the least protection; full-face helmets are the safest. Source: Chapter 2, Helmets, p. 2-2.",
+   "ru": "Открытый шлем-каска (half/shorty) закрывает голову меньше всего и даёт наименьшую защиту; самыми безопасными остаются шлемы-интегралы (full-face). Источник: глава 2, «Helmets», p. 2-2."
+  },
+  "pdfpage": 16,
+  "pdfpage_ru": 18
  },
  {
   "id": 202,
@@ -5773,9 +5946,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Start with a flat wrist on the right hand; this helps keep you from unintentionally using too much throttle. Source: Chapter 3, Riding Posture, p. 3-2 (Manual p. 3-2, PDF p. 28).",
-   "ru": "Начинайте с прямого (плоского) запястья на правой руке: так вы не дадите газу непреднамеренно слишком много. Источник: глава 3, «Riding Posture», p. 3-2 (Manual p. 3-2, PDF p. 28)."
-  }
+   "en": "Start with a flat wrist on the right hand; this helps keep you from unintentionally using too much throttle. Source: Chapter 3, Riding Posture, p. 3-2.",
+   "ru": "Начинайте с прямого (плоского) запястья на правой руке: так вы не дадите газу непреднамеренно слишком много. Источник: глава 3, «Riding Posture», p. 3-2."
+  },
+  "pdfpage": 28,
+  "pdfpage_ru": 32
  },
  {
   "id": 203,
@@ -5806,9 +5981,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "To turn, the motorcycle must lean; in a normal turn the rider leans with the motorcycle, keeping their body in line with the bike. Source: Chapter 3, Cornering, p. 3-3 (Manual p. 3-3, PDF p. 30).",
-   "ru": "Чтобы повернуть, мотоцикл должен наклониться; в обычном повороте мотоциклист наклоняется вместе с мотоциклом, держа корпус на одной линии с ним. Источник: глава 3, «Cornering», p. 3-3 (Manual p. 3-3, PDF p. 30)."
-  }
+   "en": "To turn, the motorcycle must lean; in a normal turn the rider leans with the motorcycle, keeping their body in line with the bike. Source: Chapter 3, Cornering, p. 3-3.",
+   "ru": "Чтобы повернуть, мотоцикл должен наклониться; в обычном повороте мотоциклист наклоняется вместе с мотоциклом, держа корпус на одной линии с ним. Источник: глава 3, «Cornering», p. 3-3."
+  },
+  "pdfpage": 30,
+  "pdfpage_ru": 33
  },
  {
   "id": 204,
@@ -5839,9 +6016,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "This is the middle/middle/middle line; riding the middle of the lane through the corner typically helps you avoid both oncoming traffic and debris such as gravel. Source: Chapter 3, Cornering Lines, p. 3-5 (Manual p. 3-5, PDF p. 31).",
-   "ru": "Это линия «середина/середина/середина» (middle/middle/middle): двигаясь по центру полосы через поворот, вы обычно избегаете и встречного транспорта, и мусора вроде гравия. Источник: глава 3, «Cornering Lines», p. 3-5 (Manual p. 3-5, PDF p. 31)."
-  }
+   "en": "This is the middle/middle/middle line; riding the middle of the lane through the corner typically helps you avoid both oncoming traffic and debris such as gravel. Source: Chapter 3, Cornering Lines, p. 3-5.",
+   "ru": "Это линия «середина/середина/середина» (middle/middle/middle): двигаясь по центру полосы через поворот, вы обычно избегаете и встречного транспорта, и мусора вроде гравия. Источник: глава 3, «Cornering Lines», p. 3-5."
+  },
+  "pdfpage": 31,
+  "pdfpage_ru": 35
  },
  {
   "id": 205,
@@ -5872,9 +6051,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "This is the outside/inside/outside line: enter from the outside, clip the inside at the apex, and exit to the outside to straighten the corner. Source: Chapter 3, Cornering Lines, p. 3-5 (Manual p. 3-5, PDF p. 32).",
-   "ru": "Это линия «снаружи/внутри/снаружи» (outside/inside/outside): входите с внешней стороны, у апекса прижимаетесь к внутренней, а на выходе уходите к внешней — так поворот «спрямляется». Источник: глава 3, «Cornering Lines», p. 3-5 (Manual p. 3-5, PDF p. 32)."
-  }
+   "en": "This is the outside/inside/outside line: enter from the outside, clip the inside at the apex, and exit to the outside to straighten the corner. Source: Chapter 3, Cornering Lines, p. 3-5.",
+   "ru": "Это линия «снаружи/внутри/снаружи» (outside/inside/outside): входите с внешней стороны, у апекса прижимаетесь к внутренней, а на выходе уходите к внешней — так поворот «спрямляется». Источник: глава 3, «Cornering Lines», p. 3-5."
+  },
+  "pdfpage": 32,
+  "pdfpage_ru": 35
  },
  {
   "id": 206,
@@ -5905,9 +6086,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "This is the delayed-apex line: you stay to the outside longer and turn to the apex later, which improves your view through the corner before committing. Source: Chapter 3, Cornering Lines, p. 3-5 (Manual p. 3-5, PDF p. 33).",
-   "ru": "Это линия с поздним апексом (delayed apex): вы дольше держитесь внешней стороны и поворачиваете к апексу позже, благодаря чему лучше видите поворот, прежде чем в него «вложиться». Источник: глава 3, «Cornering Lines», p. 3-5 (Manual p. 3-5, PDF p. 33)."
-  }
+   "en": "This is the delayed-apex line: you stay to the outside longer and turn to the apex later, which improves your view through the corner before committing. Source: Chapter 3, Cornering Lines, p. 3-5.",
+   "ru": "Это линия с поздним апексом (delayed apex): вы дольше держитесь внешней стороны и поворачиваете к апексу позже, благодаря чему лучше видите поворот, прежде чем в него «вложиться». Источник: глава 3, «Cornering Lines», p. 3-5."
+  },
+  "pdfpage": 33,
+  "pdfpage_ru": 35
  },
  {
   "id": 207,
@@ -5938,9 +6121,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Swerving needs a lot of traction, so you must never swerve and brake at the same time — swerve and then brake, or brake and then swerve. Source: Chapter 3, Swerves, p. 3-10 (Manual p. 3-10, PDF p. 36).",
-   "ru": "Объезд (swerve) требует много сцепления с дорогой, поэтому нельзя объезжать и тормозить одновременно — сначала объезжайте, потом тормозите, или сначала тормозите, потом объезжайте. Источник: глава 3, «Swerves», p. 3-10 (Manual p. 3-10, PDF p. 36)."
-  }
+   "en": "Swerving needs a lot of traction, so you must never swerve and brake at the same time — swerve and then brake, or brake and then swerve. Source: Chapter 3, Swerves, p. 3-10.",
+   "ru": "Объезд (swerve) требует много сцепления с дорогой, поэтому нельзя объезжать и тормозить одновременно — сначала объезжайте, потом тормозите, или сначала тормозите, потом объезжайте. Источник: глава 3, «Swerves», p. 3-10."
+  },
+  "pdfpage": 36,
+  "pdfpage_ru": 40
  },
  {
   "id": 213,
@@ -5971,9 +6156,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "You choose your lane position to be seen and to keep an adequate space cushion around you; the best position is the one that maximizes your visibility and space. Source: Chapter 5, Lane Position, p. 5-1 (Manual p. 5-1, PDF p. 51).",
-   "ru": "Положение в полосе (lane position) выбирают, чтобы быть заметным и сохранять достаточный запас пространства (space cushion) вокруг себя; лучшее положение — то, что даёт максимум видимости и пространства. Источник: глава 5, «Lane Position», p. 5-1 (Manual p. 5-1, PDF p. 51)."
-  }
+   "en": "You choose your lane position to be seen and to keep an adequate space cushion around you; the best position is the one that maximizes your visibility and space. Source: Chapter 5, Lane Position, p. 5-1.",
+   "ru": "Положение в полосе (lane position) выбирают, чтобы быть заметным и сохранять достаточный запас пространства (space cushion) вокруг себя; лучшее положение — то, что даёт максимум видимости и пространства. Источник: глава 5, «Lane Position», p. 5-1."
+  },
+  "pdfpage": 51,
+  "pdfpage_ru": 58
  },
  {
   "id": 214,
@@ -6004,9 +6191,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "There is no single 'best' position for every situation — choose the lane position that lets you see and be seen and keeps the most space around you for the current conditions. Source: Chapter 5, Lane Position, p. 5-2 (Manual p. 5-2, PDF p. 52).",
-   "ru": "Единого «лучшего» положения на все случаи нет — выбирайте положение в полосе, которое позволяет видеть и быть видимым и сохраняет максимум пространства вокруг для текущих условий. Источник: глава 5, «Lane Position», p. 5-2 (Manual p. 5-2, PDF p. 52)."
-  }
+   "en": "There is no single 'best' position for every situation — choose the lane position that lets you see and be seen and keeps the most space around you for the current conditions. Source: Chapter 5, Lane Position, p. 5-2.",
+   "ru": "Единого «лучшего» положения на все случаи нет — выбирайте положение в полосе, которое позволяет видеть и быть видимым и сохраняет максимум пространства вокруг для текущих условий. Источник: глава 5, «Lane Position», p. 5-2."
+  },
+  "pdfpage": 52,
+  "pdfpage_ru": 59
  },
  {
   "id": 215,
@@ -6037,9 +6226,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Adjust your position in the lane to open up your line of sight so you can see — and be seen — farther around obstructions before you reach them. Source: Chapter 5, Improving Your Line of Sight, p. 5-3 (Manual p. 5-3, PDF p. 53).",
-   "ru": "Изменяйте своё положение в полосе, чтобы открыть себе линию обзора (line of sight) и заранее видеть — и быть видимым — дальше за препятствиями, прежде чем вы к ним подъедете. Источник: глава 5, «Improving Your Line of Sight», p. 5-3 (Manual p. 5-3, PDF p. 53)."
-  }
+   "en": "Adjust your position in the lane to open up your line of sight so you can see — and be seen — farther around obstructions before you reach them. Source: Chapter 5, Improving Your Line of Sight, p. 5-3.",
+   "ru": "Изменяйте своё положение в полосе, чтобы открыть себе линию обзора (line of sight) и заранее видеть — и быть видимым — дальше за препятствиями, прежде чем вы к ним подъедете. Источник: глава 5, «Improving Your Line of Sight», p. 5-3."
+  },
+  "pdfpage": 53,
+  "pdfpage_ru": 60
  },
  {
   "id": 216,
@@ -6070,9 +6261,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "When traffic is merging, create space by adjusting your speed and lane position so you keep a safe cushion and stay visible. Source: Chapter 5, Merging Traffic, p. 5-4 (Manual p. 5-4, PDF p. 54).",
-   "ru": "Когда транспорт въезжает в поток, создавайте пространство, корректируя скорость и положение в полосе, чтобы сохранить безопасный запас (cushion) и оставаться заметным. Источник: глава 5, «Merging Traffic», p. 5-4 (Manual p. 5-4, PDF p. 54)."
-  }
+   "en": "When traffic is merging, create space by adjusting your speed and lane position so you keep a safe cushion and stay visible. Source: Chapter 5, Merging Traffic, p. 5-4.",
+   "ru": "Когда транспорт въезжает в поток, создавайте пространство, корректируя скорость и положение в полосе, чтобы сохранить безопасный запас (cushion) и оставаться заметным. Источник: глава 5, «Merging Traffic», p. 5-4."
+  },
+  "pdfpage": 54,
+  "pdfpage_ru": 61
  },
  {
   "id": 217,
@@ -6103,9 +6296,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The shaded areas are the vehicle's blind spots, where the driver cannot see you; avoid riding in them and don't linger there. Source: Chapter 5, Avoid Blind Spots, p. 5-4 (Manual p. 5-4, PDF p. 54).",
-   "ru": "Заштрихованные зоны — это «слепые зоны» (blind spots) автомобиля, где водитель вас не видит; не двигайтесь в них и не задерживайтесь там. Источник: глава 5, «Avoid Blind Spots», p. 5-4 (Manual p. 5-4, PDF p. 54)."
-  }
+   "en": "The shaded areas are the vehicle's blind spots, where the driver cannot see you; avoid riding in them and don't linger there. Source: Chapter 5, Avoid Blind Spots, p. 5-4.",
+   "ru": "Заштрихованные зоны — это «слепые зоны» (blind spots) автомобиля, где водитель вас не видит; не двигайтесь в них и не задерживайтесь там. Источник: глава 5, «Avoid Blind Spots», p. 5-4."
+  },
+  "pdfpage": 54,
+  "pdfpage_ru": 61
  },
  {
   "id": 218,
@@ -6136,9 +6331,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Total stopping distance is made up of perception (noticing the hazard), reaction (your brain signaling to act), and execution (carrying out the braking). At 60 mph you travel a long way during all three. Source: Chapter 5, Total Stopping Distance, p. 5-5 (Manual p. 5-5, PDF p. 55).",
-   "ru": "Полный тормозной путь складывается из восприятия (perception — заметить опасность), реакции (reaction — мозг даёт сигнал действовать) и выполнения (execution — собственно торможение). На скорости 60 миль/ч за все три фазы вы проезжаете большое расстояние. Источник: глава 5, «Total Stopping Distance», p. 5-5 (Manual p. 5-5, PDF p. 55)."
-  }
+   "en": "Total stopping distance is made up of perception (noticing the hazard), reaction (your brain signaling to act), and execution (carrying out the braking). At 60 mph you travel a long way during all three. Source: Chapter 5, Total Stopping Distance, p. 5-5.",
+   "ru": "Полный тормозной путь складывается из восприятия (perception — заметить опасность), реакции (reaction — мозг даёт сигнал действовать) и выполнения (execution — собственно торможение). На скорости 60 миль/ч за все три фазы вы проезжаете большое расстояние. Источник: глава 5, «Total Stopping Distance», p. 5-5."
+  },
+  "pdfpage": 55,
+  "pdfpage_ru": 62
  },
  {
   "id": 219,
@@ -6169,9 +6366,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Intersections are high-risk: watch for cars turning left across your path, the most common car–motorcycle collision. Be visible and have an escape plan. Source: Chapter 5, Intersections, p. 5-7 (Manual p. 5-7, PDF p. 58).",
-   "ru": "Перекрёстки — зона повышенного риска: следите за машинами, поворачивающими налево поперёк вашего пути, — это самое частое столкновение машины с мотоциклом. Будьте заметны и держите наготове путь для манёвра (escape plan). Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 58)."
-  }
+   "en": "Intersections are high-risk: watch for cars turning left across your path, the most common car–motorcycle collision. Be visible and have an escape plan. Source: Chapter 5, Intersections, p. 5-7.",
+   "ru": "Перекрёстки — зона повышенного риска: следите за машинами, поворачивающими налево поперёк вашего пути, — это самое частое столкновение машины с мотоциклом. Будьте заметны и держите наготове путь для манёвра (escape plan). Источник: глава 5, «Intersections», p. 5-7."
+  },
+  "pdfpage": 58,
+  "pdfpage_ru": 64
  },
  {
   "id": 220,
@@ -6202,9 +6401,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Painted lines, manhole covers, and gravel reduce traction, especially for two-wheelers; look ahead for changes in surface color or texture and they may be more slippery after the first rain. Source: Chapter 5, Surface Hazards, p. 5-9 (Manual p. 5-9, PDF p. 59).",
-   "ru": "Дорожная разметка, крышки люков и гравий снижают сцепление с дорогой, особенно у двухколёсных (2W); заранее высматривайте изменения цвета или фактуры покрытия — после первого дождя оно может стать ещё более скользким. Источник: глава 5, «Surface Hazards», p. 5-9 (Manual p. 5-9, PDF p. 59)."
-  }
+   "en": "Painted lines, manhole covers, and gravel reduce traction, especially for two-wheelers; look ahead for changes in surface color or texture and they may be more slippery after the first rain. Source: Chapter 5, Surface Hazards, p. 5-9.",
+   "ru": "Дорожная разметка, крышки люков и гравий снижают сцепление с дорогой, особенно у двухколёсных (2W); заранее высматривайте изменения цвета или фактуры покрытия — после первого дождя оно может стать ещё более скользким. Источник: глава 5, «Surface Hazards», p. 5-9."
+  },
+  "pdfpage": 59,
+  "pdfpage_ru": 66
  },
  {
   "id": 221,
@@ -6235,9 +6436,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "Cross tracks and similar obstacles at as close to a 90-degree angle as is practical, keeping your head and eyes up and looking ahead. Source: Chapter 5, Crossing an Obstacle, p. 5-10 (Manual p. 5-10, PDF p. 60).",
-   "ru": "Пересекайте пути и подобные препятствия под углом как можно ближе к 90 градусам, держа голову и взгляд поднятыми и глядя вперёд. Источник: глава 5, «Crossing an Obstacle», p. 5-10 (Manual p. 5-10, PDF p. 60)."
-  }
+   "en": "Cross tracks and similar obstacles at as close to a 90-degree angle as is practical, keeping your head and eyes up and looking ahead. Source: Chapter 5, Crossing an Obstacle, p. 5-10.",
+   "ru": "Пересекайте пути и подобные препятствия под углом как можно ближе к 90 градусам, держа голову и взгляд поднятыми и глядя вперёд. Источник: глава 5, «Crossing an Obstacle», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 222,
@@ -6268,9 +6471,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "When changing lanes, check over your shoulder for vehicles in your blind spot, signal your intention, and cancel the signal when done — mirrors alone don't show the blind spot. Source: Chapter 5, Changing Lanes, p. 5-10 (Manual p. 5-10, PDF p. 60).",
-   "ru": "При перестроении обернитесь через плечо и проверьте «слепую зону» (blind spot) на наличие машин, подайте сигнал о намерении и выключите его, когда закончите, — одни зеркала «слепую зону» не показывают. Источник: глава 5, «Changing Lanes», p. 5-10 (Manual p. 5-10, PDF p. 60)."
-  }
+   "en": "When changing lanes, check over your shoulder for vehicles in your blind spot, signal your intention, and cancel the signal when done — mirrors alone don't show the blind spot. Source: Chapter 5, Changing Lanes, p. 5-10.",
+   "ru": "При перестроении обернитесь через плечо и проверьте «слепую зону» (blind spot) на наличие машин, подайте сигнал о намерении и выключите его, когда закончите, — одни зеркала «слепую зону» не показывают. Источник: глава 5, «Changing Lanes», p. 5-10."
+  },
+  "pdfpage": 60,
+  "pdfpage_ru": 67
  },
  {
   "id": 223,
@@ -6301,9 +6506,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "This is the staggered formation, usually the best way to keep a group close while keeping an adequate space cushion between riders. Source: Chapter 5, Staggered Formation, p. 5-13 (Manual p. 5-13, PDF p. 63).",
-   "ru": "Это шахматное построение (staggered formation) — обычно лучший способ держать группу компактно, сохраняя достаточный запас пространства (space cushion) между мотоциклистами. Источник: глава 5, «Staggered Formation», p. 5-13 (Manual p. 5-13, PDF p. 63)."
-  }
+   "en": "This is the staggered formation, usually the best way to keep a group close while keeping an adequate space cushion between riders. Source: Chapter 5, Staggered Formation, p. 5-13.",
+   "ru": "Это шахматное построение (staggered formation) — обычно лучший способ держать группу компактно, сохраняя достаточный запас пространства (space cushion) между мотоциклистами. Источник: глава 5, «Staggered Formation», p. 5-13."
+  },
+  "pdfpage": 63,
+  "pdfpage_ru": 70
  },
  {
   "id": 224,
@@ -6334,9 +6541,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "In any group position, keep a minimum three-second following distance behind the rider in front of you; move to single file in curves or where more space is needed. Source: Chapter 5, Staggered Formation, p. 5-13 (Manual p. 5-13, PDF p. 63).",
-   "ru": "В любой позиции в группе держите минимальную дистанцию (following distance) три секунды за мотоциклистом впереди; в поворотах или там, где нужно больше места, переходите в одну колонну (single file). Источник: глава 5, «Staggered Formation», p. 5-13 (Manual p. 5-13, PDF p. 63)."
-  }
+   "en": "In any group position, keep a minimum three-second following distance behind the rider in front of you; move to single file in curves or where more space is needed. Source: Chapter 5, Staggered Formation, p. 5-13.",
+   "ru": "В любой позиции в группе держите минимальную дистанцию (following distance) три секунды за мотоциклистом впереди; в поворотах или там, где нужно больше места, переходите в одну колонну (single file). Источник: глава 5, «Staggered Formation», p. 5-13."
+  },
+  "pdfpage": 63,
+  "pdfpage_ru": 70
  },
  {
   "id": 226,
@@ -6367,9 +6576,11 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual counts one drink as a 12 oz beer, a 5 oz glass of wine, OR 1.5 oz of hard alcohol — each contains a similar amount of alcohol, and only time removes it from your body. Source: Chapter 6, Alcohol and Drugs, p. 6-2 (Manual p. 6-2, PDF p. 66).",
-   "ru": "В руководстве «один дринк» — это 12 унций пива, бокал вина 5 унций ИЛИ 1½ унции крепкого алкоголя; в каждом примерно одинаковое количество алкоголя, и вывести его из организма может только время. Источник: глава 6, «Alcohol and Drugs», p. 6-2 (Manual p. 6-2, PDF p. 66)."
-  }
+   "en": "The manual counts one drink as a 12 oz beer, a 5 oz glass of wine, OR 1.5 oz of hard alcohol — each contains a similar amount of alcohol, and only time removes it from your body. Source: Chapter 6, Alcohol and Drugs, p. 6-2.",
+   "ru": "В руководстве «один дринк» — это 12 унций пива, бокал вина 5 унций ИЛИ 1½ унции крепкого алкоголя; в каждом примерно одинаковое количество алкоголя, и вывести его из организма может только время. Источник: глава 6, «Alcohol and Drugs», p. 6-2."
+  },
+  "pdfpage": 66,
+  "pdfpage_ru": 74
  }
 ];
 
@@ -6537,5 +6748,9 @@ const UI = {
   "agree_button": {
     "en": "I understand and agree →",
     "ru": "Я понимаю и согласен →"
+  },
+  "open_manual": {
+    "en": "Open the manual at page {PAGE}",
+    "ru": "Открыть руководство на странице {PAGE}"
   }
 };
