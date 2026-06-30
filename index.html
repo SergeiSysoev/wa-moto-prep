@@ -107,7 +107,6 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 .wrap{ max-width:var(--maxw); margin-inline:auto; padding:0 var(--s4) calc(28px + env(safe-area-inset-bottom)); }
 @media(min-width:600px){ .wrap{ border-left:1px solid var(--border); border-right:1px solid var(--border); min-height:60vh; } }
 .trust{ color:var(--muted); font-size:13px; margin:var(--s4) 0 0; }
-.trust .rnd{ display:block; margin-top:2px; opacity:.85; }
 
 .question{
   font-family:'Source Serif 4',Georgia,serif; font-weight:600; font-size:21px;
@@ -229,7 +228,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 <div class="railwrap"><div class="rail"><div class="rail-fill" id="railfill" role="progressbar" aria-valuemin="1"></div></div></div>
 
 <main class="wrap">
-  <p class="trust" id="trust"><span id="trust-main"></span><span class="rnd" id="trust-rnd"></span></p>
+  <p class="trust" id="trust"><span id="trust-main"></span></p>
 
   <section id="quizarea">
     <h1 class="question" id="question" tabindex="-1"></h1>
@@ -317,7 +316,6 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
     getId("wordmark-full").textContent=t("app_title");
     getId("wordmark-short").textContent=t("wordmark_short");
     getId("trust-main").textContent=t("trust_strip");
-    getId("trust-rnd").textContent=t("random_note");
     getId("langtoggle").setAttribute("aria-label", t("lang_aria_label"));
     getId("themebtn").setAttribute("aria-label", t(state.theme==="dark"?"theme_to_light":"theme_to_dark"));
   }
@@ -404,7 +402,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
       var lbl=document.createElement("span"); lbl.textContent=right?t("correct_label"):t("incorrect_label");
       st.appendChild(mk); st.appendChild(lbl);
       getId("exp-body").textContent=L(q.why);
-      getId("citation-text").textContent=t("citation_chip",{PAGE:q.page});
+      getId("citation-text").textContent = q.page ? t("citation_chip",{PAGE:q.page}) : t("citation_practice");
     }else{
       exp.hidden=true; exp.className="explain";
     }
