@@ -1,5 +1,4 @@
 // WA Motorcycle Knowledge Test — question data (bilingual EN/RU)
-// Generated from the official WA Motorcycle Operator Manual question bank.
 // answer = 0-based index; en/ru opts are index-aligned so the toggle can never desync.
 
 const QUESTIONS = [
@@ -173,6 +172,10 @@ const UI = {
     "en": "Practice questions based on the official Washington Motorcycle Operator Manual.",
     "ru": "Вопросы по официальному руководству для мотоциклистов штата Вашингтон."
   },
+  "random_note": {
+    "en": "New random order each time.",
+    "ru": "Каждый раз — новый случайный порядок."
+  },
   "choose_prompt": {
     "en": "Choose an answer",
     "ru": "Выберите ответ"
@@ -205,48 +208,60 @@ const UI = {
     "en": "Question {N} of {TOTAL}",
     "ru": "Вопрос {N} из {TOTAL}"
   },
-  "tally": {
+  "score_chip_warmup": {
     "en": "{N} correct",
     "ru": "{N} верно"
   },
+  "score_chip_full": {
+    "en": "{PCT}% · {N} correct",
+    "ru": "{PCT}% · {N} верно"
+  },
+  "score_chip_pct": {
+    "en": "{PCT}%",
+    "ru": "{PCT}%"
+  },
   "next_button": {
-    "en": "Next",
-    "ru": "Далее"
+    "en": "Next →",
+    "ru": "Далее →"
   },
   "done_button": {
-    "en": "Done",
-    "ru": "Готово"
-  },
-  "end_headline": {
-    "en": "You got {SCORE} / {TOTAL}",
-    "ru": "Вы ответили {SCORE} / {TOTAL}"
-  },
-  "end_oneliner": {
-    "en": "Solid run — keep going.",
-    "ru": "Хороший результат — продолжай."
-  },
-  "review_missed": {
-    "en": "Review missed",
-    "ru": "Просмотреть ошибки"
+    "en": "See results →",
+    "ru": "Показать результат →"
   },
   "start_over": {
     "en": "Start over",
     "ru": "Начать заново"
   },
-  "lang_toggle_en": {
-    "en": "EN",
-    "ru": "EN"
+  "start_over_confirm": {
+    "en": "Start over?",
+    "ru": "Точно?"
   },
-  "lang_toggle_ru": {
-    "en": "РУ",
-    "ru": "РУ"
+  "new_test": {
+    "en": "New test",
+    "ru": "Новый тест"
+  },
+  "review_missed": {
+    "en": "Review missed ({N})",
+    "ru": "Разобрать ошибки ({N})"
+  },
+  "end_headline": {
+    "en": "You got {SCORE} / {TOTAL} ({PCT}%)",
+    "ru": "Вы ответили {SCORE} / {TOTAL} ({PCT}%)"
+  },
+  "end_verdict_pass": {
+    "en": "That's a passing score — 80% to pass.",
+    "ru": "Это проходной балл — для сдачи нужно 80%."
+  },
+  "end_verdict_fail": {
+    "en": "Almost — 80% to pass. Run it again.",
+    "ru": "Почти — для сдачи нужно 80%. Попробуй ещё раз."
+  },
+  "end_perfect": {
+    "en": "Perfect — {N} of {N}.",
+    "ru": "Отлично — {N} из {N}."
   },
   "lang_aria_label": {
     "en": "Language",
     "ru": "Язык"
-  },
-  "lang_switch_announce": {
-    "en": "Language: English",
-    "ru": "Язык: Русский"
   }
 };

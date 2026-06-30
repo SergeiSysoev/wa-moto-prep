@@ -36,7 +36,6 @@ body{
   margin:0; background:var(--bg); color:var(--text);
   font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
   font-size:16px; line-height:1.5;
-  padding-bottom:96px;
   -webkit-font-smoothing:antialiased;
 }
 body[lang="ru"] .question{ line-height:1.45; }
@@ -66,7 +65,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 .meta{ display:flex; align-items:center; gap:var(--s3); margin-left:auto; }
 .counter{ font-size:14px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
 .tally{ font-size:14px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
-@media(max-width:380px){ .tally{ display:none; } }
+.tally.pass{ color:var(--correct); }
 
 /* ---------- Language toggle ---------- */
 .langtoggle{
@@ -88,9 +87,10 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 .rail-fill{ height:100%; width:0; background:var(--primary); transition:width var(--dur) var(--ease); }
 
 /* ---------- Layout ---------- */
-.wrap{ max-width:var(--maxw); margin-inline:auto; padding:0 var(--s4); }
+.wrap{ max-width:var(--maxw); margin-inline:auto; padding:0 var(--s4) calc(28px + env(safe-area-inset-bottom)); }
 @media(min-width:600px){ .wrap{ border-left:1px solid var(--border); border-right:1px solid var(--border); min-height:60vh; } }
 .trust{ color:var(--muted); font-size:13px; margin:var(--s4) 0 0; }
+.trust .rnd{ display:block; margin-top:2px; opacity:.85; }
 
 .question{
   font-family:'Source Serif 4',Georgia,serif; font-weight:600; font-size:21px;
@@ -150,24 +150,27 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 }
 .citation svg{ width:13px; height:13px; }
 
-/* ---------- Next / footer ---------- */
-.nextbar{
-  position:fixed; left:0; right:0; bottom:0; z-index:25;
-  background:linear-gradient(to top, var(--bg) 70%, transparent);
-  padding:var(--s3) var(--s4) calc(var(--s3) + env(safe-area-inset-bottom));
-}
-.nextbar-inner{ max-width:var(--maxw); margin-inline:auto; }
+/* ---------- Action zone (inline, directly under the explanation) ---------- */
+.actionzone{ display:flex; flex-direction:column; align-items:stretch; gap:var(--s3); margin-top:var(--s4); }
+.actionzone.reveal{ animation:rise var(--dur) var(--ease); }
 .nextbtn{
   appearance:none; border:0; width:100%; height:54px; border-radius:12px;
   background:var(--primary); color:#fff; font-family:inherit; font-size:17px; font-weight:600;
-  cursor:pointer; transition:background-color var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease);
+  cursor:pointer; transition:background-color var(--dur-fast) var(--ease);
 }
 .nextbtn:hover{ background:var(--primary-strong); }
-.nextbtn:disabled{ opacity:.45; cursor:default; }
 .nextbtn:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; }
+.restart-link{
+  appearance:none; border:0; background:transparent; cursor:pointer; align-self:center;
+  color:var(--muted); font-family:inherit; font-size:15px; font-weight:600;
+  min-height:44px; padding:0 var(--s3);
+}
+.restart-link:hover{ text-decoration:underline; color:var(--text); }
+.restart-link:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; border-radius:8px; }
+.restart-link.confirm{ color:var(--incorrect); }
 
 /* ---------- End card ---------- */
-.endcard{ text-align:center; padding:var(--s8) 0; }
+.endcard{ text-align:center; padding:var(--s8) 0 var(--s6); }
 .endseal{ width:64px; height:64px; color:var(--accent); margin:0 auto var(--s4); }
 .endhead{ font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:26px; margin:0 0 var(--s2); color:var(--text); }
 .endline{ color:var(--muted); font-size:16px; margin:0 0 var(--s6); }
@@ -182,7 +185,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
-  .explain.reveal{ animation:none; }
+  .explain.reveal, .actionzone.reveal{ animation:none; }
 }
 </style>
 </head>
@@ -205,7 +208,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 <div class="railwrap"><div class="rail"><div class="rail-fill" id="railfill" role="progressbar" aria-valuemin="1"></div></div></div>
 
 <main class="wrap">
-  <p class="trust" id="trust"></p>
+  <p class="trust" id="trust"><span id="trust-main"></span><span class="rnd" id="trust-rnd"></span></p>
 
   <section id="quizarea">
     <h1 class="question" id="question" tabindex="-1"></h1>
@@ -218,6 +221,10 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 1.5A1.5 1.5 0 0 0 1.5 3v10A1.5 1.5 0 0 0 3 14.5h10a.5.5 0 0 0 0-1H3a.5.5 0 0 1-.5-.5h10A1.5 1.5 0 0 0 14 11.5V3A1.5 1.5 0 0 0 12.5 1.5H3zm9.5 1v9H3a1.5 1.5 0 0 0-.5.085V3a.5.5 0 0 1 .5-.5h9.5z"/></svg>
         <span id="citation-text"></span>
       </span>
+    </div>
+    <div class="actionzone" id="actions">
+      <button class="nextbtn" type="button" id="nextbtn" hidden></button>
+      <button class="restart-link" type="button" id="restart-inline"></button>
     </div>
   </section>
 
@@ -236,93 +243,109 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   <div class="sronly" id="live" aria-live="polite" role="status"></div>
 </main>
 
-<div class="nextbar" id="nextbar">
-  <div class="nextbar-inner"><button class="nextbtn" type="button" id="nextbtn" disabled></button></div>
-</div>
-
-<script src="questions.js?v=1"></script>
+<script src="questions.js?v=2"></script>
 <script>
 (function(){
   "use strict";
   var LETTERS=["A","B","C","D"];
-  var state={ order:[], pos:0, lang:"en", answered:false, chosen:null, score:0, missed:[] };
+  var WARMUP=2;                                  // show % from the 2nd answer (avoids a lone "0%"); raise to ~5 at 199-scale
+  var SESSION_SIZE=Math.min(25,QUESTIONS.length);
+  var restartArmed=false, restartTimer=null;
+  var state={ order:[], pos:0, lang:"en", answered:false, chosen:null, score:0, answeredCount:0, missed:[] };
 
+  function getId(id){ return document.getElementById(id); }
   function t(key,vars){
     var s=(UI[key] && UI[key][state.lang]) || (UI[key] && UI[key].en) || "";
-    if(vars){ for(var k in vars){ s=s.replace("{"+k+"}", vars[k]); } }
+    if(vars){ for(var k in vars){ s=s.split("{"+k+"}").join(vars[k]); } }
     return s;
   }
   function curQ(){ return QUESTIONS[ state.order[state.pos] ]; }
   function L(field){ return field[state.lang]; }
+  function reduceMotion(){ return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
 
-  // ---- boot language ----
-  function bootLang(){
-    var saved=null;
-    try{ saved=localStorage.getItem("moto_lang"); }catch(e){}
-    if(saved==="en"||saved==="ru"){ state.lang=saved; }
-    else if((navigator.language||"").toLowerCase().indexOf("ru")===0){ state.lang="ru"; }
-    document.documentElement.lang=state.lang;
-    document.body.setAttribute("lang",state.lang);
+  function shuffle(a){ var r=a.slice(); for(var i=r.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var tmp=r[i]; r[i]=r[j]; r[j]=tmp; } return r; }
+  function dealSession(){
+    var deck=null;
+    try{ deck=JSON.parse(localStorage.getItem("moto_deck")||"null"); }catch(e){}
+    if(!Array.isArray(deck) || deck.length<SESSION_SIZE){
+      deck=shuffle(QUESTIONS.map(function(_,i){return i;}));
+    }
+    state.order=deck.slice(0,SESSION_SIZE);
+    try{ localStorage.setItem("moto_deck", JSON.stringify(deck.slice(SESSION_SIZE))); }catch(e){}
   }
 
+  // ---- language ----
+  function bootLang(){
+    var saved=null; try{ saved=localStorage.getItem("moto_lang"); }catch(e){}
+    if(saved==="en"||saved==="ru"){ state.lang=saved; }
+    else if((navigator.language||"").toLowerCase().indexOf("ru")===0){ state.lang="ru"; }
+    document.documentElement.lang=state.lang; document.body.setAttribute("lang",state.lang);
+  }
   function setLang(lang){
     if(lang!==state.lang){
       state.lang=lang;
       try{ localStorage.setItem("moto_lang",lang); }catch(e){}
-      document.documentElement.lang=lang;
-      document.body.setAttribute("lang",lang);
+      document.documentElement.lang=lang; document.body.setAttribute("lang",lang);
     }
-    document.getElementById("seg-en").setAttribute("aria-checked", lang==="en");
-    document.getElementById("seg-ru").setAttribute("aria-checked", lang==="ru");
+    getId("seg-en").setAttribute("aria-checked", lang==="en");
+    getId("seg-ru").setAttribute("aria-checked", lang==="ru");
     render();
   }
 
-  // ---- static chrome ----
   function paintChrome(){
-    document.getElementById("wordmark-full").textContent=t("app_title");
-    document.getElementById("wordmark-short").textContent=t("wordmark_short");
-    document.getElementById("trust").textContent=t("trust_strip");
-    document.getElementById("langtoggle").setAttribute("aria-label", t("lang_aria_label"));
-    document.getElementById("restartbtn").textContent=t("start_over");
-    document.getElementById("reviewbtn").textContent=t("review_missed");
+    getId("wordmark-full").textContent=t("app_title");
+    getId("wordmark-short").textContent=t("wordmark_short");
+    getId("trust-main").textContent=t("trust_strip");
+    getId("trust-rnd").textContent=t("random_note");
+    getId("langtoggle").setAttribute("aria-label", t("lang_aria_label"));
   }
 
-  // ---- render current question ----
+  function paintScore(){
+    var el=getId("tally"); if(!el) return;
+    var ac=state.answeredCount;
+    if(ac<WARMUP){ el.textContent=t("score_chip_warmup",{N:state.score}); el.classList.remove("pass"); return; }
+    var pct=Math.round(state.score/ac*100);
+    var narrow=window.matchMedia("(max-width:380px)").matches;
+    el.textContent= narrow ? t("score_chip_pct",{PCT:pct}) : t("score_chip_full",{PCT:pct,N:state.score});
+    el.classList.toggle("pass", pct>=80);
+  }
+
+  function paintRestartInline(){
+    var el=getId("restart-inline");
+    if(restartArmed){ el.textContent=t("start_over_confirm"); el.classList.add("confirm"); }
+    else{ el.textContent=t("start_over"); el.classList.remove("confirm"); }
+  }
+
+  // ---- render question ----
   function render(){
     paintChrome();
     if(state.pos>=state.order.length){ renderEnd(); return; }
-    document.getElementById("quizarea").hidden=false;
-    document.getElementById("endarea").hidden=true;
-    document.getElementById("nextbar").style.display="";
+    getId("quizarea").hidden=false; getId("endarea").hidden=true;
 
     var q=curQ(), total=state.order.length, n=state.pos+1;
-    // header meta
-    document.getElementById("counter").textContent=t("progress_counter",{N:n,TOTAL:total});
-    document.getElementById("tally").textContent=t("tally",{N:state.score});
-    // rail
-    var fill=document.getElementById("railfill");
-    fill.style.width=(n/total*100)+"%";
-    fill.setAttribute("aria-valuenow",n);
-    fill.setAttribute("aria-valuemax",total);
-    fill.setAttribute("aria-valuetext",t("progress_spoken",{N:n,TOTAL:total}));
-    // question
-    var qEl=document.getElementById("question");
-    qEl.textContent=L(q.q); qEl.setAttribute("lang",state.lang);
-    document.getElementById("prompt").textContent=t("choose_prompt");
-    document.getElementById("prompt").style.display = state.answered ? "none" : "";
+    getId("counter").textContent=t("progress_counter",{N:n,TOTAL:total});
+    paintScore();
 
-    // options
-    var box=document.getElementById("options"); box.innerHTML="";
+    var fill=getId("railfill");
+    fill.style.width=(n/total*100)+"%";
+    fill.setAttribute("aria-valuenow",n); fill.setAttribute("aria-valuemax",total);
+    fill.setAttribute("aria-valuetext",t("progress_spoken",{N:n,TOTAL:total}));
+
+    var qEl=getId("question");
+    qEl.textContent=L(q.q).replace(/^\s*\d+[.)]\s*/,"");   // strip baked-in "1." — order is shuffled
+    qEl.setAttribute("lang",state.lang);
+    getId("prompt").textContent=t("choose_prompt");
+    getId("prompt").style.display = state.answered ? "none" : "";
+
+    var box=getId("options"); box.innerHTML="";
     q.opts.forEach(function(opt,idx){
       var b=document.createElement("button");
-      b.className="opt"; b.type="button"; b.setAttribute("role","radio");
-      b.setAttribute("lang",state.lang);
+      b.className="opt"; b.type="button"; b.setAttribute("role","radio"); b.setAttribute("lang",state.lang);
       var badge=document.createElement("span"); badge.className="opt-badge";
       var txt=document.createElement("span"); txt.className="opt-text"; txt.textContent=L(opt);
       b.appendChild(badge); b.appendChild(txt);
       if(!state.answered){
-        badge.textContent=LETTERS[idx];
-        b.setAttribute("aria-checked","false");
+        badge.textContent=LETTERS[idx]; b.setAttribute("aria-checked","false");
         b.addEventListener("click",function(){ choose(idx); });
       }else{
         b.setAttribute("aria-disabled","true");
@@ -334,96 +357,112 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
       box.appendChild(b);
     });
 
-    // explanation
-    var exp=document.getElementById("explain");
+    var exp=getId("explain");
     if(state.answered){
       var right=state.chosen===q.answer;
-      exp.hidden=false;
-      exp.className="explain "+(right?"ok":"err");
-      var st=document.getElementById("exp-status");
-      st.innerHTML="";
+      exp.hidden=false; exp.className="explain "+(right?"ok":"err");
+      var st=getId("exp-status"); st.innerHTML="";
       var mk=document.createElement("span"); mk.className="mark"; mk.textContent=right?"✓":"✗";
       var lbl=document.createElement("span"); lbl.textContent=right?t("correct_label"):t("incorrect_label");
       st.appendChild(mk); st.appendChild(lbl);
-      document.getElementById("exp-body").textContent=L(q.why);
-      document.getElementById("citation-text").textContent=t("citation_chip",{PAGE:q.page});
+      getId("exp-body").textContent=L(q.why);
+      getId("citation-text").textContent=t("citation_chip",{PAGE:q.page});
     }else{
       exp.hidden=true; exp.className="explain";
     }
 
-    // next button
-    var nb=document.getElementById("nextbtn");
+    // action zone — always present; primary appears only after an answer
     var last=state.pos===state.order.length-1;
+    var nb=getId("nextbtn");
+    nb.hidden=!state.answered;
     nb.textContent=last?t("done_button"):t("next_button");
-    nb.disabled=!state.answered;
+    if(!state.answered){ getId("actions").classList.remove("reveal"); }
+    paintRestartInline();
   }
 
   function choose(idx){
     if(state.answered) return;
     state.answered=true; state.chosen=idx;
     var q=curQ(); var right=idx===q.answer;
+    state.answeredCount++;
     if(right){ state.score++; } else { state.missed.push(state.order[state.pos]); }
     render();
-    document.getElementById("explain").classList.add("reveal");
-    // announce
+    getId("explain").classList.add("reveal");
+    var az=getId("actions"); az.classList.add("reveal");
     var letter=LETTERS[q.answer];
-    var line=(right?t("status_correct_full",{LETTER:letter}):t("status_incorrect_full",{LETTER:letter}))+" "+L(q.why);
-    document.getElementById("live").textContent=line;
-    // focus next for one-keystroke advance
-    var nb=document.getElementById("nextbtn");
-    setTimeout(function(){ nb.focus(); },50);
+    getId("live").textContent=(right?t("status_correct_full",{LETTER:letter}):t("status_incorrect_full",{LETTER:letter}))+" "+L(q.why);
+    az.scrollIntoView({block:"nearest", behavior:reduceMotion()?"auto":"smooth"});
+    getId("nextbtn").focus();
   }
 
   function next(){
     if(!state.answered) return;
+    disarmRestart();
     state.pos++; state.answered=false; state.chosen=null;
     render();
     if(state.pos<state.order.length){
-      document.getElementById("question").focus();
       window.scrollTo({top:0,behavior:"auto"});
+      getId("question").focus();
     }
   }
 
   function renderEnd(){
-    document.getElementById("quizarea").hidden=true;
-    document.getElementById("endarea").hidden=false;
-    document.getElementById("nextbar").style.display="none";
+    getId("quizarea").hidden=true; getId("endarea").hidden=false;
     var total=state.order.length;
-    document.getElementById("endhead").textContent=t("end_headline",{SCORE:state.score,TOTAL:total});
-    document.getElementById("endline").textContent=t("end_oneliner");
-    var rb=document.getElementById("reviewbtn");
-    rb.hidden=state.missed.length===0;
-    // rail full
-    var fill=document.getElementById("railfill"); fill.style.width="100%";
-    document.getElementById("counter").textContent=t("progress_counter",{N:total,TOTAL:total});
-    document.getElementById("tally").textContent=t("tally",{N:state.score});
-    document.getElementById("live").textContent=t("end_headline",{SCORE:state.score,TOTAL:total});
+    var pct=total?Math.round(state.score/total*100):0;
+    getId("counter").textContent=t("progress_counter",{N:total,TOTAL:total});
+    paintScore();
+    getId("railfill").style.width="100%";
+    getId("endhead").textContent=t("end_headline",{SCORE:state.score,TOTAL:total,PCT:pct});
+    getId("endline").textContent = state.missed.length===0
+        ? t("end_perfect",{N:total})
+        : (pct>=80 ? t("end_verdict_pass",{PCT:pct}) : t("end_verdict_fail",{PCT:pct}));
+
+    var rb=getId("reviewbtn"), sb=getId("restartbtn");
+    if(state.missed.length>0){
+      rb.hidden=false; rb.className="nextbtn"; rb.textContent=t("review_missed",{N:state.missed.length});
+      sb.className="btn-secondary"; sb.textContent=t("new_test");
+    }else{
+      rb.hidden=true; sb.className="nextbtn"; sb.textContent=t("new_test");
+    }
+    getId("live").textContent=t("end_headline",{SCORE:state.score,TOTAL:total,PCT:pct});
   }
 
-  function startAll(){
-    state.order=QUESTIONS.map(function(_,i){return i;});
-    state.pos=0; state.answered=false; state.chosen=null; state.score=0; state.missed=[];
-    render(); window.scrollTo({top:0});
+  // ---- restart (mid-quiz, 2-tap confirm) ----
+  function onRestartInline(){
+    if(restartArmed){ disarmRestart(); startAll(); return; }
+    restartArmed=true; paintRestartInline();
+    restartTimer=setTimeout(disarmRestart, 3000);
   }
+  function disarmRestart(){
+    restartArmed=false;
+    if(restartTimer){ clearTimeout(restartTimer); restartTimer=null; }
+    var el=getId("restart-inline"); if(el){ el.textContent=t("start_over"); el.classList.remove("confirm"); }
+  }
+
+  // ---- sessions ----
+  function resetCounters(){ state.pos=0; state.answered=false; state.chosen=null; state.score=0; state.answeredCount=0; state.missed=[]; }
+  function startAll(){ disarmRestart(); dealSession(); resetCounters(); render(); window.scrollTo({top:0}); }
   function reviewMissed(){
     if(state.missed.length===0) return;
-    state.order=state.missed.slice();
-    state.pos=0; state.answered=false; state.chosen=null; state.score=0; state.missed=[];
+    disarmRestart();
+    var m=state.missed.slice();
+    resetCounters(); state.order=m;
     render(); window.scrollTo({top:0});
   }
 
   // ---- events ----
-  document.getElementById("seg-en").addEventListener("click",function(){ setLang("en"); });
-  document.getElementById("seg-ru").addEventListener("click",function(){ setLang("ru"); });
-  document.getElementById("nextbtn").addEventListener("click",next);
-  document.getElementById("restartbtn").addEventListener("click",startAll);
-  document.getElementById("reviewbtn").addEventListener("click",reviewMissed);
+  getId("seg-en").addEventListener("click",function(){ setLang("en"); });
+  getId("seg-ru").addEventListener("click",function(){ setLang("ru"); });
+  getId("nextbtn").addEventListener("click",next);
+  getId("restart-inline").addEventListener("click",onRestartInline);
+  getId("restartbtn").addEventListener("click",startAll);
+  getId("reviewbtn").addEventListener("click",reviewMissed);
+  window.addEventListener("resize",paintScore);
   document.addEventListener("keydown",function(e){
     if(e.key>="1" && e.key<="4" && !state.answered && state.pos<state.order.length){
       var idx=parseInt(e.key,10)-1; if(idx<curQ().opts.length){ choose(idx); }
-    }else if(e.key==="Enter" && state.answered){
-      next();
-    }
+    }else if(e.key==="Enter" && state.answered){ next(); }
   });
 
   bootLang();
