@@ -1,5 +1,5 @@
-// WA Motorcycle Knowledge Test — full bank (225 bilingual: 199 text + 26 picture questions)
-// fields: id, page(null=practice), topic, image(null=text question), answer(0-based), q{en,ru}, opts[{en,ru}]x4, why{en,ru}
+// WA Motorcycle Knowledge Test — FINAL public bank (193 bilingual: 172 text + 21 picture, all manual-grounded)
+// 2-wheel only; deduped; unsupported questions removed. fields: id,page,topic,image,answer(0-based),q{en,ru},opts[{en,ru}]x4,why{en,ru}
 
 const QUESTIONS = [
  {
@@ -33,39 +33,6 @@ const QUESTIONS = [
   "why": {
    "en": "The manual states that a motorcycle permit or endorsement is required to legally operate a motorcycle on Washington State roadways. Source: Chapter 1, Two- and Three-Wheel Motorcycle Endorsements, p. 1-1 (manual p. 1-1, PDF p. 9).",
    "ru": "В руководстве сказано, что для законного управления мотоциклом на дорогах штата Вашингтон необходимо иметь мотоциклетное разрешение (permit) или допуск (endorsement). Источник: глава 1, «Two- and Three-Wheel Motorcycle Endorsements», p. 1-1 (Manual p. 1-1, PDF p. 9)."
-  }
- },
- {
-  "id": 2,
-  "page": "1-1",
-  "topic": "law",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "To lawfully operate a two-wheeled motorcycle in Washington, what must you have?",
-   "ru": "Что необходимо иметь, чтобы законно управлять двухколёсным (2W) мотоциклом в штате Вашингтон?"
-  },
-  "opts": [
-   {
-    "en": "A two-wheel permit or endorsement",
-    "ru": "Разрешение (permit) или допуск (endorsement) на двухколёсный (2W) мотоцикл"
-   },
-   {
-    "en": "Only a three-wheel endorsement",
-    "ru": "Только допуск (endorsement) на трёхколёсный мотоцикл"
-   },
-   {
-    "en": "Only a car license",
-    "ru": "Только водительские права на автомобиль"
-   },
-   {
-    "en": "Only insurance",
-    "ru": "Только страховку (insurance)"
-   }
-  ],
-  "why": {
-   "en": "Washington separates two-wheel and three-wheel permits/endorsements because the handling is different. Source: Chapter 1, Two- and Three-Wheel Motorcycle Endorsements, p. 1-1 (manual p. 1-1, PDF p. 9).",
-   "ru": "В штате Вашингтон разрешения и допуски (permit/endorsement) для двухколёсных и трёхколёсных мотоциклов разделены, потому что управляются они по-разному. Источник: глава 1, «Two- and Three-Wheel Motorcycle Endorsements», p. 1-1 (Manual p. 1-1, PDF p. 9)."
   }
  },
  {
@@ -1092,39 +1059,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 34,
-  "page": "2-6",
-  "topic": "gear",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "Are ear plugs legal in Washington?",
-   "ru": "Разрешены ли беруши (ear plugs) в штате Вашингтон?"
-  },
-  "opts": [
-   {
-    "en": "Yes, in-ear hearing protection is legal",
-    "ru": "Да, внутриушная защита слуха разрешена"
-   },
-   {
-    "en": "No",
-    "ru": "Нет"
-   },
-   {
-    "en": "Only for passengers",
-    "ru": "Только для пассажиров"
-   },
-   {
-    "en": "Only at night",
-    "ru": "Только ночью"
-   }
-  ],
-  "why": {
-   "en": "The manual notes that in-ear hearing protection is legal in Washington, but in-ear speakers/earbuds are not. Source: Chapter 2, Hearing Protection, p. 2-6 (manual p. 2-6, PDF p. 20).",
-   "ru": "В руководстве отмечается, что внутриушная защита слуха разрешена в штате Вашингтон, но внутриушные динамики и наушники (earbuds) — нет. Источник: глава 2, «Hearing Protection», p. 2-6 (manual p. 2-6, PDF p. 20)."
-  }
- },
- {
   "id": 35,
   "page": "2-7",
   "topic": "controls",
@@ -1230,8 +1164,8 @@ const QUESTIONS = [
   "image": null,
   "answer": 0,
   "q": {
-   "en": "What does T-CLOCS stand for in the pre-ride inspection checklist?",
-   "ru": "Что означает T-CLOCS в контрольном списке предрейсового осмотра (pre-ride inspection)?"
+   "en": "What does the manual's pre-ride inspection checklist include?",
+   "ru": "Что входит в контрольный список предрейсового осмотра (pre-ride inspection) в руководстве?"
   },
   "opts": [
    {
@@ -1252,41 +1186,8 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "The manual provides the T-CLOCS checklist for pre-ride inspections. Source: Chapter 2, Checking Your Motorcycle, p. 2-9 (manual p. 2-9, PDF p. 23).",
-   "ru": "В руководстве приводится контрольный список T-CLOCS для предрейсового осмотра. Источник: глава 2, «Checking Your Motorcycle», p. 2-9 (manual p. 2-9, PDF p. 23)."
-  }
- },
- {
-  "id": 39,
-  "page": "2-10",
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "How should you ride defensively according to the manual?",
-   "ru": "Как, согласно руководству, следует ездить в защитной манере (defensively)?"
-  },
-  "opts": [
-   {
-    "en": "As though you are invisible",
-    "ru": "Как будто вы невидимы"
-   },
-   {
-    "en": "As though everyone sees you",
-    "ru": "Как будто вас все видят"
-   },
-   {
-    "en": "As aggressively as possible",
-    "ru": "Как можно агрессивнее"
-   },
-   {
-    "en": "Only in the center lane",
-    "ru": "Только в центральной полосе"
-   }
-  ],
-  "why": {
-   "en": "The manual says to always ride as though you are invisible and assume other road users cannot see you. Source: Chapter 2, Create Your Own Safety by Taking Responsibility, p. 2-10 (manual p. 2-10, PDF p. 24).",
-   "ru": "В руководстве сказано всегда ездить так, как будто вы невидимы, и исходить из того, что другие участники движения вас не видят. Источник: глава 2, «Create Your Own Safety by Taking Responsibility», p. 2-10 (manual p. 2-10, PDF p. 24)."
+   "en": "Before each ride the manual recommends inspecting your motorcycle: tires/wheels, oil/fluids, levers/controls, lights, suspension/drivetrain, and stands. Source: Chapter 2, Checking Your Motorcycle, p. 2-9 (Manual p. 2-9, PDF p. 23).",
+   "ru": "Перед каждой поездкой руководство рекомендует осмотреть мотоцикл: шины и колёса, масло и жидкости, рычаги и органы управления, освещение, подвеску и трансмиссию, подставки. Источник: глава 2, «Checking Your Motorcycle», p. 2-9 (Manual p. 2-9, PDF p. 23)."
   }
  },
  {
@@ -3369,39 +3270,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 103,
-  "page": "5-7",
-  "topic": "intersections",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What gear should you remain in at intersections?",
-   "ru": "На какой передаче нужно оставаться на перекрёстках?"
-  },
-  "opts": [
-   {
-    "en": "First gear",
-    "ru": "На первой передаче"
-   },
-   {
-    "en": "Neutral",
-    "ru": "На нейтральной передаче"
-   },
-   {
-    "en": "Top gear",
-    "ru": "На высшей передаче"
-   },
-   {
-    "en": "Any gear",
-    "ru": "На любой передаче"
-   }
-  ],
-  "why": {
-   "en": "The manual says to remain in first gear at intersections and check mirrors often to avoid rear-end collisions. Source: Chapter 5, Intersections, p. 5-7 (manual p. 5-7, PDF p. 57).",
-   "ru": "В руководстве сказано на перекрёстках оставаться на первой передаче и часто смотреть в зеркала, чтобы избежать наезда сзади. Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 57)."
-  }
- },
- {
   "id": 104,
   "page": "5-7",
   "topic": "intersections",
@@ -4128,39 +3996,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 126,
-  "page": "5-13",
-  "topic": "group",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What minimum following distance should you keep behind the rider in front?",
-   "ru": "Какую минимальную дистанцию следования нужно держать за мотоциклистом, едущим впереди?"
-  },
-  "opts": [
-   {
-    "en": "Three seconds",
-    "ru": "Три секунды"
-   },
-   {
-    "en": "One second",
-    "ru": "Одна секунда"
-   },
-   {
-    "en": "Half a second",
-    "ru": "Полсекунды"
-   },
-   {
-    "en": "No gap",
-    "ru": "Без дистанции"
-   }
-  ],
-  "why": {
-   "en": "The manual says to ensure a minimum three-second following distance behind the rider in front. Source: Chapter 5, Staggered Formation, p. 5-13 (manual p. 5-13, PDF p. 63).",
-   "ru": "В руководстве сказано держать минимальную дистанцию следования в три секунды за едущим впереди мотоциклистом. Источник: глава 5, «Staggered Formation», p. 5-13 (manual p. 5-13, PDF p. 63)."
-  }
- },
- {
   "id": 127,
   "page": "5-13",
   "topic": "group",
@@ -4657,7 +4492,7 @@ const QUESTIONS = [
  },
  {
   "id": 142,
-  "page": null,
+  "page": "5-1",
   "topic": "group",
   "image": null,
   "answer": 1,
@@ -4684,107 +4519,8 @@ const QUESTIONS = [
    }
   ],
   "why": {
-   "en": "This answer appears in the uploaded practice subtitles, but I did not find a direct statement in the uploaded Motorcycle Operator Manual. Verify in Title 46 RCW / current WA DOL law before relying on it as legal text. Source: practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Этот ответ встречается в загруженных учебных субтитрах, но прямого утверждения в загруженном Motorcycle Operator Manual я не нашёл. Перед использованием как юридического текста проверьте Title 46 RCW / действующее законодательство WA DOL. Источник: файлы учебных субтитров; прямо в загруженном Washington Motorcycle Operator Manual не найдено."
-  }
- },
- {
-  "id": 143,
-  "page": null,
-  "topic": "group",
-  "image": null,
-  "answer": 1,
-  "q": {
-   "en": "What should a motorcycle rider do at a yellow light?",
-   "ru": "Что должен делать мотоциклист на жёлтый сигнал светофора?"
-  },
-  "opts": [
-   {
-    "en": "Always accelerate",
-    "ru": "Всегда ускоряться"
-   },
-   {
-    "en": "Stop if it can be done safely before the stop line",
-    "ru": "Остановиться, если это можно сделать безопасно перед стоп-линией"
-   },
-   {
-    "en": "Always stop immediately regardless of distance",
-    "ru": "Всегда немедленно останавливаться независимо от расстояния"
-   },
-   {
-    "en": "Flash high beam",
-    "ru": "Моргнуть дальним светом"
-   }
-  ],
-  "why": {
-   "en": "This is a general traffic-signal rule from the practice subtitles. It is not specifically grounded in the uploaded Motorcycle Operator Manual. Source: practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Это общее правило проезда на сигналы светофора из учебных субтитров. Оно не имеет прямого подтверждения в загруженном Motorcycle Operator Manual. Источник: файлы учебных субтитров; прямо в загруженном Washington Motorcycle Operator Manual не найдено."
-  }
- },
- {
-  "id": 144,
-  "page": null,
-  "topic": "group",
-  "image": null,
-  "answer": 2,
-  "q": {
-   "en": "When encountering a threatening dog, what should you do?",
-   "ru": "Что делать при встрече с агрессивной собакой?"
-  },
-  "opts": [
-   {
-    "en": "Kick at it",
-    "ru": "Пнуть её"
-   },
-   {
-    "en": "Swerve around it immediately",
-    "ru": "Немедленно резко объехать её"
-   },
-   {
-    "en": "Slow when approaching, then speed up",
-    "ru": "Сбросить скорость при приближении, затем ускориться"
-   },
-   {
-    "en": "Run over it",
-    "ru": "Переехать её"
-   }
-  ],
-  "why": {
-   "en": "This appears in practice subtitles. I did not find a direct dog-specific instruction in the uploaded Motorcycle Operator Manual. Source: practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Это встречается в учебных субтитрах. Прямого указания именно про собак в загруженном Motorcycle Operator Manual я не нашёл. Источник: файлы учебных субтитров; прямо в загруженном Washington Motorcycle Operator Manual не найдено."
-  }
- },
- {
-  "id": 145,
-  "page": null,
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "Why should you park your motorcycle in first gear?",
-   "ru": "Почему мотоцикл следует парковать на первой передаче?"
-  },
-  "opts": [
-   {
-    "en": "To keep it from rolling",
-    "ru": "Чтобы он не скатился"
-   },
-   {
-    "en": "To make it louder",
-    "ru": "Чтобы он был громче"
-   },
-   {
-    "en": "To drain the oil",
-    "ru": "Чтобы слить масло"
-   },
-   {
-    "en": "To improve the headlight",
-    "ru": "Чтобы улучшить работу фары"
-   }
-  ],
-  "why": {
-   "en": "This is a practical riding/parking item from practice subtitles. I did not find a direct parking-in-first-gear instruction in the uploaded manual. Source: practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Это практический совет по езде и парковке из учебных субтитров. Прямого указания парковать на первой передаче в загруженном руководстве я не нашёл. Источник: файлы учебных субтитров; прямо в загруженном Washington Motorcycle Operator Manual не найдено."
+   "en": "The manual states that riding between lanes — commonly known as 'lane splitting' — and riding on the shoulder is against the law in Washington State. Source: Chapter 5, Street Strategies, p. 5-1 (Manual p. 5-1, PDF p. 51).",
+   "ru": "В руководстве сказано, что движение между рядами (lane splitting) и движение по обочине запрещены законом в штате Вашингтон. Источник: глава 5, «Street Strategies», p. 5-1 (Manual p. 5-1, PDF p. 51)."
   }
  },
  {
@@ -4818,39 +4554,6 @@ const QUESTIONS = [
   "why": {
    "en": "The Motorcycle Operator Manual says the owner's manual is the primary source for specifications and maintenance, but this exact tire-pressure question comes from practice subtitles. Source: manual p. 2-8, PDF p. 22; practice subtitle files.",
    "ru": "В руководстве сказано, что именно руководство по эксплуатации (owner's manual) — основной источник характеристик и сведений по обслуживанию, но конкретно этот вопрос о давлении в шинах взят из учебных субтитров. Источник: manual p. 2-8, PDF p. 22; practice subtitle files."
-  }
- },
- {
-  "id": 147,
-  "page": "5-8",
-  "topic": "intersections",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is hydroplaning?",
-   "ru": "Что такое аквапланирование (hydroplaning)?"
-  },
-  "opts": [
-   {
-    "en": "Water building under the tread and causing loss of traction",
-    "ru": "Вода скапливается под протектором и вызывает потерю сцепления"
-   },
-   {
-    "en": "Too much oil in the engine",
-    "ru": "Слишком много масла в двигателе"
-   },
-   {
-    "en": "Cold hands while riding",
-    "ru": "Замёрзшие руки во время езды"
-   },
-   {
-    "en": "Riding in a group",
-    "ru": "Езда в группе"
-   }
-  ],
-  "why": {
-   "en": "This is general wet-road terminology from practice subtitles. The uploaded manual discusses slippery/wet surfaces but does not directly define hydroplaning in the available text. Source: manual p. 5-8, PDF p. 59; practice subtitle files.",
-   "ru": "Это общий термин для мокрой дороги из учебных субтитров. В загруженном руководстве обсуждаются скользкие и мокрые поверхности, но прямого определения аквапланирования (hydroplaning) в доступном тексте нет. Источник: manual p. 5-8, PDF p. 59; practice subtitle files."
   }
  },
  {
@@ -5283,105 +4986,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 161,
-  "page": "3-8",
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "About how much stopping power does the front brake provide on a cruiser-type motorcycle according to the practice subtitles?",
-   "ru": "Какую примерно долю тормозной силы обеспечивает передний тормоз на мотоцикле типа cruiser согласно учебным субтитрам?"
-  },
-  "opts": [
-   {
-    "en": "About 70 percent",
-    "ru": "Около 70 процентов"
-   },
-   {
-    "en": "About 10 percent",
-    "ru": "Около 10 процентов"
-   },
-   {
-    "en": "About 30 percent",
-    "ru": "Около 30 процентов"
-   },
-   {
-    "en": "100 percent",
-    "ru": "100 процентов"
-   }
-  ],
-  "why": {
-   "en": "The manual states that the front brake has more braking power because weight transfers forward; the exact 70 percent cruiser figure comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Braking in a Straight Line, manual p. 3-8, PDF p. 34; practice subtitle files.",
-   "ru": "В руководстве сказано, что передний тормоз обладает большей тормозной силой, потому что вес переносится вперёд; точная цифра в 70 процентов для cruiser взята из учебных субтитров. Источник: Washington Motorcycle Operator Manual, «Braking in a Straight Line», manual p. 3-8, PDF p. 34; practice subtitle files."
-  }
- },
- {
-  "id": 162,
-  "page": "3-8",
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "About how much stopping power does the rear brake provide on a sport bike according to the practice subtitles?",
-   "ru": "Какую примерно долю тормозной силы обеспечивает задний тормоз на спортивном мотоцикле (sport bike) согласно учебным субтитрам?"
-  },
-  "opts": [
-   {
-    "en": "About 10 percent",
-    "ru": "Около 10 процентов"
-   },
-   {
-    "en": "About 30 percent",
-    "ru": "Около 30 процентов"
-   },
-   {
-    "en": "About 50 percent",
-    "ru": "Около 50 процентов"
-   },
-   {
-    "en": "About 80 percent",
-    "ru": "Около 80 процентов"
-   }
-  ],
-  "why": {
-   "en": "The manual explains that more braking power is in the front brake; the exact 10 percent sport-bike rear-brake figure comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Braking in a Straight Line, manual p. 3-8, PDF p. 34; practice subtitle files.",
-   "ru": "В руководстве объясняется, что большая часть тормозной силы приходится на передний тормоз; точная цифра в 10 процентов для заднего тормоза спортивного мотоцикла взята из учебных субтитров. Источник: Washington Motorcycle Operator Manual, «Braking in a Straight Line», manual p. 3-8, PDF p. 34; practice subtitle files."
-  }
- },
- {
-  "id": 163,
-  "page": "3-10",
-  "topic": "hazards",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "Swerving around an obstacle generally occurs at speeds above what speed according to the practice subtitles?",
-   "ru": "На скорости выше какого значения, как правило, выполняется объезд препятствия (swerve) согласно учебным субтитрам?"
-  },
-  "opts": [
-   {
-    "en": "20 mph",
-    "ru": "20 миль/ч"
-   },
-   {
-    "en": "10 mph",
-    "ru": "10 миль/ч"
-   },
-   {
-    "en": "30 mph",
-    "ru": "30 миль/ч"
-   },
-   {
-    "en": "45 mph",
-    "ru": "45 миль/ч"
-   }
-  ],
-  "why": {
-   "en": "The manual explains how swerves work and when a swerve may be safer than a quick stop, but the exact 20 mph threshold comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Swerves, manual p. 3-10, PDF p. 36; practice subtitle files.",
-   "ru": "В руководстве объясняется, как выполняется объезд (swerve) и когда он может быть безопаснее быстрой остановки, но точный порог в 20 миль/ч взят из учебных субтитров. Источник: Washington Motorcycle Operator Manual, «Swerves», manual p. 3-10, PDF p. 36; practice subtitle files."
-  }
- },
- {
   "id": 164,
   "page": "3-10",
   "topic": "hazards",
@@ -5448,39 +5052,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 166,
-  "page": null,
-  "topic": "group",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is hazardous about starting off uphill?",
-   "ru": "Чем опасно трогание с места на подъёме?"
-  },
-  "opts": [
-   {
-    "en": "Rolling backward",
-    "ru": "Скатывание назад"
-   },
-   {
-    "en": "The headlight becoming too bright",
-    "ru": "Слишком яркий свет фары"
-   },
-   {
-    "en": "The helmet visor fogging instantly",
-    "ru": "Мгновенное запотевание визора шлема"
-   },
-   {
-    "en": "The horn not working",
-    "ru": "Неработающий клаксон"
-   }
-  ],
-  "why": {
-   "en": "This hill-start hazard appears in the practice subtitles; I did not locate this exact two-wheel hill-start item in the uploaded Washington manual. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Эта опасность трогания с места на подъёме встречается в субтитрах практических материалов; точного пункта про трогание двухколёсного (2W) мотоцикла на подъёме в загруженном руководстве штата Вашингтон я не нашёл. Источник: субтитры практических материалов (Practice subtitle files); прямо в загруженном Washington Motorcycle Operator Manual не обнаружено."
-  }
- },
- {
   "id": 167,
   "page": "3-3",
   "topic": "cornering",
@@ -5511,39 +5082,6 @@ const QUESTIONS = [
   "why": {
    "en": "The manual supports clutch control and low-speed practice, but this exact slow-speed balance formula comes from the practice subtitles. Source: Washington Motorcycle Operator Manual, Clutch Control and Shifting Gears, manual p. 3-3, PDF p. 29; practice subtitle files.",
    "ru": "Руководство поддерживает работу со сцеплением и тренировку на малой скорости, но именно этот приём удержания равновесия взят из субтитров практических материалов. Источник: Washington Motorcycle Operator Manual, «Clutch Control and Shifting Gears», manual p. 3-3, PDF p. 29; субтитры практических материалов (Practice subtitle files)."
-  }
- },
- {
-  "id": 168,
-  "page": "3-4",
-  "topic": "cornering",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "When is counterweighting used according to the practice subtitles?",
-   "ru": "Когда применяется контрбаланс (counterweighting) согласно субтитрам практических материалов?"
-  },
-  "opts": [
-   {
-    "en": "In low-speed tight turns",
-    "ru": "В крутых поворотах на малой скорости"
-   },
-   {
-    "en": "In every high-speed curve",
-    "ru": "В каждом повороте на высокой скорости"
-   },
-   {
-    "en": "Only during emergency braking",
-    "ru": "Только при экстренном торможении"
-   },
-   {
-    "en": "Only while changing lanes",
-    "ru": "Только при смене полосы"
-   }
-  ],
-  "why": {
-   "en": "This exact two-wheel counterweighting question comes from the practice subtitles. The uploaded manual emphasizes leaning with the motorcycle for normal two-wheel cornering and does not present this exact counterweighting item in the two-wheel section. Source: Practice subtitle files; compare Washington Motorcycle Operator Manual, Cornering, manual p. 3-4, PDF p. 30.",
-   "ru": "Именно этот вопрос про контрбаланс (counterweighting) на двухколёсном (2W) мотоцикле взят из субтитров практических материалов. Загруженное руководство для обычного прохождения поворотов на двух колёсах рекомендует наклоняться вместе с мотоциклом и не содержит именно этого пункта про контрбаланс в разделе про двухколёсный транспорт. Источник: субтитры практических материалов (Practice subtitle files); сравните Washington Motorcycle Operator Manual, «Cornering», manual p. 3-4, PDF p. 30."
   }
  },
  {
@@ -5613,39 +5151,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 171,
-  "page": "3-8",
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is the most effective way to stop quickly in a straight line?",
-   "ru": "Как наиболее эффективно быстро остановиться, двигаясь по прямой?"
-  },
-  "opts": [
-   {
-    "en": "Use both brakes progressively without skidding",
-    "ru": "Плавно и с нарастающим усилием задействовать оба тормоза, не допуская заноса"
-   },
-   {
-    "en": "Use only the rear brake",
-    "ru": "Использовать только задний тормоз"
-   },
-   {
-    "en": "Use only the front brake abruptly",
-    "ru": "Резко нажать только на передний тормоз"
-   },
-   {
-    "en": "Use only engine braking",
-    "ru": "Использовать только торможение двигателем"
-   }
-  ],
-  "why": {
-   "en": "The manual states that the shortest and safest stops are obtained by using both front and rear brakes smoothly and progressively without skidding either tire. Source: Washington Motorcycle Operator Manual, Braking in a Straight Line, manual p. 3-8, PDF p. 34.",
-   "ru": "Руководство указывает, что самая короткая и безопасная остановка достигается плавным и постепенно нарастающим нажатием на передний и задний тормоза, без срыва колёс в занос. Источник: Washington Motorcycle Operator Manual, «Braking in a Straight Line», manual p. 3-8, PDF p. 34."
-  }
- },
- {
   "id": 172,
   "page": "2-1",
   "topic": "gear",
@@ -5676,39 +5181,6 @@ const QUESTIONS = [
   "why": {
    "en": "The manual states that the majority of motorcycle crashes involve several risk factors stacking up at one time. Source: Washington Motorcycle Operator Manual, Create Your Own Safety, manual p. 2-1, PDF p. 15.",
    "ru": "Руководство указывает, что большинство мотоциклетных аварий связано с одновременным наложением нескольких факторов риска. Источник: Washington Motorcycle Operator Manual, «Create Your Own Safety», manual p. 2-1, PDF p. 15."
-  }
- },
- {
-  "id": 173,
-  "page": "2-1",
-  "topic": "gear",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "Why does riding a motorcycle create different risks than driving a car?",
-   "ru": "Почему езда на мотоцикле создаёт иные риски, чем управление автомобилем?"
-  },
-  "opts": [
-   {
-    "en": "Less protection, different stability, less traction reserve, more weather exposure, and lower visibility",
-    "ru": "Меньше защиты, иная устойчивость, меньший запас сцепления (traction), сильнее воздействие погоды и хуже заметность"
-   },
-   {
-    "en": "Because motorcycles always have more airbags",
-    "ru": "Потому что у мотоциклов всегда больше подушек безопасности"
-   },
-   {
-    "en": "Because motorcycles cannot use roads",
-    "ru": "Потому что мотоциклам нельзя выезжать на дороги"
-   },
-   {
-    "en": "Because cars cannot turn",
-    "ru": "Потому что автомобили не могут поворачивать"
-   }
-  ],
-  "why": {
-   "en": "The manual lists protection, stability, traction, comfort, and visibility as risk factors that make riding different from driving. Source: Washington Motorcycle Operator Manual, Create Your Own Safety, manual p. 2-1, PDF p. 15.",
-   "ru": "Руководство перечисляет защиту, устойчивость, сцепление (traction), комфорт и заметность как факторы риска, которые отличают езду на мотоцикле от вождения автомобиля. Источник: Washington Motorcycle Operator Manual, «Create Your Own Safety», manual p. 2-1, PDF p. 15."
   }
  },
  {
@@ -5844,72 +5316,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 178,
-  "page": "6-1",
-  "topic": "impairment",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What should a rider do when negative emotions, fatigue, illness, stress, or fear affect riding?",
-   "ru": "Что следует делать водителю, когда на езду влияют негативные эмоции, усталость, болезнь, стресс или страх?"
-  },
-  "opts": [
-   {
-    "en": "Recognize the impairment and consider not riding",
-    "ru": "Признать ухудшение состояния и подумать о том, чтобы не ехать"
-   },
-   {
-    "en": "Ride faster to get home",
-    "ru": "Ехать быстрее, чтобы скорее добраться домой"
-   },
-   {
-    "en": "Ignore the feeling",
-    "ru": "Игнорировать это ощущение"
-   },
-   {
-    "en": "Join a faster group",
-    "ru": "Присоединиться к более быстрой группе"
-   }
-  ],
-  "why": {
-   "en": "The manual states that emotional and physical states such as fatigue, anger, illness, stress, and fear can impair riding skills. Source: Washington Motorcycle Operator Manual, Types of Impairments / Body and Emotions, manual pp. 6-1 and 6-4, PDF pp. 65 and 68.",
-   "ru": "Руководство указывает, что эмоциональные и физические состояния — усталость, гнев, болезнь, стресс и страх — могут ухудшать навыки управления мотоциклом. Источник: Washington Motorcycle Operator Manual, «Types of Impairments / Body and Emotions», manual pp. 6-1 and 6-4, PDF pp. 65 and 68."
-  }
- },
- {
-  "id": 179,
-  "page": "6-5",
-  "topic": "impairment",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What is the safest response to peer pressure to prove yourself on a motorcycle?",
-   "ru": "Как безопаснее всего реагировать на давление окружающих (peer pressure), подталкивающее что-то доказывать на мотоцикле?"
-  },
-  "opts": [
-   {
-    "en": "Resist it and ride within your own limits",
-    "ru": "Противостоять ему и ехать в пределах собственных возможностей"
-   },
-   {
-    "en": "Speed up to keep the group happy",
-    "ru": "Прибавить скорость, чтобы угодить группе"
-   },
-   {
-    "en": "Hold your formation at all costs",
-    "ru": "Любой ценой держать строй"
-   },
-   {
-    "en": "Buy a bigger motorcycle immediately",
-    "ru": "Немедленно купить мотоцикл побольше"
-   }
-  ],
-  "why": {
-   "en": "The manual tells riders to identify peer pressure, resist the impulse to react to it, and not succumb to pressure to prove themselves. Source: Washington Motorcycle Operator Manual, Peer Pressure / Challenge Peer Pressure, manual pp. 6-5 to 6-7, PDF pp. 69-71.",
-   "ru": "Руководство советует распознавать давление окружающих (peer pressure), сдерживать порыв поддаться ему и не уступать стремлению что-то доказывать. Источник: Washington Motorcycle Operator Manual, «Peer Pressure / Challenge Peer Pressure», manual pp. 6-5 to 6-7, PDF pp. 69-71."
-  }
- },
- {
   "id": 180,
   "page": "6-5",
   "topic": "impairment",
@@ -5940,138 +5346,6 @@ const QUESTIONS = [
   "why": {
    "en": "The manual lists pre-ride discussion topics for group rides, including how long each person has been riding, comfort level, skill level, and riding experience. Source: Washington Motorcycle Operator Manual, Peer Pressure, manual p. 6-5, PDF p. 69.",
    "ru": "Руководство перечисляет темы для обсуждения перед групповой поездкой, включая то, как давно каждый ездит, уровень комфорта, уровень навыков и стаж езды. Источник: Washington Motorcycle Operator Manual, «Peer Pressure», manual p. 6-5, PDF p. 69."
-  }
- },
- {
-  "id": 181,
-  "page": null,
-  "topic": "street",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What should a rider do if an oncoming driver does not dim their high beams?",
-   "ru": "Что следует сделать водителю, если встречный водитель не переключает дальний свет на ближний?"
-  },
-  "opts": [
-   {
-    "en": "Still dim your own lights; do not create two blinded drivers",
-    "ru": "Всё равно переключить свой свет на ближний; не создавать двух ослеплённых водителей"
-   },
-   {
-    "en": "Keep high beam on to punish them",
-    "ru": "Оставить дальний свет, чтобы проучить его"
-   },
-   {
-    "en": "Aim at the driver",
-    "ru": "Направить свет прямо на встречного водителя"
-   },
-   {
-    "en": "Close your eyes briefly",
-    "ru": "Ненадолго закрыть глаза"
-   }
-  ],
-  "why": {
-   "en": "This exact high-beam courtesy question comes from the practice subtitles; I did not locate this exact statement in the uploaded Washington manual. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Именно этот вопрос про вежливость с дальним светом взят из субтитров практических материалов; точной такой формулировки в загруженном руководстве штата Вашингтон я не нашёл. Источник: субтитры практических материалов (Practice subtitle files); прямо в загруженном Washington Motorcycle Operator Manual не обнаружено."
-  }
- },
- {
-  "id": 182,
-  "page": "2-10",
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "During daytime, what headlight setting do some practice tests recommend for visibility if it does not interfere with other drivers?",
-   "ru": "Какой режим фары некоторые практические тесты рекомендуют днём для заметности, если это не мешает другим водителям?"
-  },
-  "opts": [
-   {
-    "en": "High beam",
-    "ru": "Дальний свет"
-   },
-   {
-    "en": "Off",
-    "ru": "Выключенная фара"
-   },
-   {
-    "en": "Parking light only",
-    "ru": "Только габаритный огонь"
-   },
-   {
-    "en": "Flashing continuously",
-    "ru": "Постоянное мигание"
-   }
-  ],
-  "why": {
-   "en": "The manual tells riders to use the headlight and choose visible lane positions, but the exact daytime-high-beam answer comes from practice subtitles. Source: Washington Motorcycle Operator Manual, Taking Responsibility, manual p. 2-10, PDF p. 24; practice subtitle files.",
-   "ru": "Руководство советует использовать фару и выбирать заметное положение в полосе, но именно ответ про дневной дальний свет взят из субтитров практических материалов. Источник: Washington Motorcycle Operator Manual, «Taking Responsibility», manual p. 2-10, PDF p. 24; субтитры практических материалов (Practice subtitle files)."
-  }
- },
- {
-  "id": 183,
-  "page": null,
-  "topic": "hazards",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What should a rider do in a crosswind according to the practice subtitles?",
-   "ru": "Что следует делать водителю при боковом ветре (crosswind) согласно субтитрам практических материалов?"
-  },
-  "opts": [
-   {
-    "en": "Use steering pressure into the wind",
-    "ru": "Давить на руль в сторону ветра"
-   },
-   {
-    "en": "Use only the rear brake",
-    "ru": "Использовать только задний тормоз"
-   },
-   {
-    "en": "Ride with feet down",
-    "ru": "Ехать с опущенными ногами"
-   },
-   {
-    "en": "Close the throttle and stop immediately",
-    "ru": "Закрыть газ и немедленно остановиться"
-   }
-  ],
-  "why": {
-   "en": "This exact crosswind-control item comes from the practice subtitles; I did not locate this exact statement in the uploaded Washington manual. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Именно этот пункт про управление при боковом ветре (crosswind) взят из субтитров практических материалов; точной такой формулировки в загруженном руководстве штата Вашингтон я не нашёл. Источник: субтитры практических материалов (Practice subtitle files); прямо в загруженном Washington Motorcycle Operator Manual не обнаружено."
-  }
- },
- {
-  "id": 184,
-  "page": null,
-  "topic": "hazards",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What should a rider do when a large truck's wind blast pushes or pulls the motorcycle?",
-   "ru": "Что следует делать водителю, когда воздушный поток от большого грузовика толкает или тянет мотоцикл?"
-  },
-  "opts": [
-   {
-    "en": "Grip the handlebars firmly and be prepared for turbulence",
-    "ru": "Крепко держать руль и быть готовым к турбулентности"
-   },
-   {
-    "en": "Brake hard immediately",
-    "ru": "Немедленно резко затормозить"
-   },
-   {
-    "en": "Move to the shoulder",
-    "ru": "Съехать на обочину"
-   },
-   {
-    "en": "Close eyes until it passes",
-    "ru": "Закрыть глаза, пока это не пройдёт"
-   }
-  ],
-  "why": {
-   "en": "This truck-wind-blast item comes from the practice subtitles; I did not locate this exact statement in the uploaded Washington manual. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Этот пункт про воздушный поток от грузовика взят из субтитров практических материалов; точной такой формулировки в загруженном руководстве штата Вашингтон я не нашёл. Источник: субтитры практических материалов (Practice subtitle files); прямо в загруженном Washington Motorcycle Operator Manual не обнаружено."
   }
  },
  {
@@ -6138,39 +5412,6 @@ const QUESTIONS = [
   "why": {
    "en": "This license-suspension practice question is not directly located in the uploaded manual; the manual only lists license suspension as a DUI-conviction consequence. Source: Washington Motorcycle Operator Manual, Consequences of Conviction, manual p. 6-3, PDF p. 67; practice subtitle files.",
    "ru": "Этот вопрос о приостановке прав напрямую в загруженном руководстве не приводится; руководство упоминает приостановку прав лишь как одно из последствий осуждения за вождение в нетрезвом виде (DUI). Источник: Washington Motorcycle Operator Manual, «Consequences of Conviction», manual p. 6-3, PDF p. 67; practice subtitle files."
-  }
- },
- {
-  "id": 187,
-  "page": null,
-  "topic": "group",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "When entering Washington from another state, which traffic laws must a motorcycle rider follow?",
-   "ru": "Какие правила дорожного движения должен соблюдать мотоциклист, въезжая в штат Вашингтон из другого штата?"
-  },
-  "opts": [
-   {
-    "en": "Washington traffic laws immediately",
-    "ru": "Правила дорожного движения штата Вашингтон — сразу же"
-   },
-   {
-    "en": "Only the laws from the rider's home state",
-    "ru": "Только правила своего родного штата"
-   },
-   {
-    "en": "Only federal speed limits",
-    "ru": "Только федеральные ограничения скорости"
-   },
-   {
-    "en": "No helmet law until stopping",
-    "ru": "Закон о шлеме не действует до остановки"
-   }
-  ],
-  "why": {
-   "en": "This general legal principle comes from practice subtitles; the uploaded manual is Washington-specific but does not state this exact crossing-state-line rule. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Этот общий правовой принцип взят из practice subtitles; загруженное руководство относится именно к штату Вашингтон и не содержит этого конкретного правила о пересечении границы штата. Источник: Practice subtitle files; напрямую в загруженном Washington Motorcycle Operator Manual не найдено."
   }
  },
  {
@@ -6270,138 +5511,6 @@ const QUESTIONS = [
   "why": {
    "en": "The manual defines target fixation as staring at an object or area so intently that you end up moving toward it. Source: Washington Motorcycle Operator Manual, Target Fixation, manual p. 5-12, PDF p. 62.",
    "ru": "Руководство определяет target fixation как состояние, когда вы смотрите на объект или участок настолько пристально, что в итоге начинаете двигаться к нему. Источник: Washington Motorcycle Operator Manual, «Target Fixation», manual p. 5-12, PDF p. 62."
-  }
- },
- {
-  "id": 191,
-  "page": null,
-  "topic": "intersections",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "At a four-way stop, if two vehicles arrive at the same time and the motorcycle is on the left, who goes first?",
-   "ru": "На перекрёстке со знаками STOP по всем направлениям (four-way stop), если два транспортных средства подъезжают одновременно и мотоцикл находится слева, кто проезжает первым?"
-  },
-  "opts": [
-   {
-    "en": "The vehicle on the right",
-    "ru": "Транспортное средство справа"
-   },
-   {
-    "en": "The motorcycle because it is smaller",
-    "ru": "Мотоцикл, потому что он меньше"
-   },
-   {
-    "en": "The larger vehicle",
-    "ru": "Более крупное транспортное средство"
-   },
-   {
-    "en": "Both go together",
-    "ru": "Оба едут одновременно"
-   }
-  ],
-  "why": {
-   "en": "This general traffic-law question comes from practice subtitles; it is not directly located in the uploaded Washington Motorcycle Operator Manual. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Этот общий вопрос по правилам дорожного движения взят из practice subtitles; напрямую в загруженном Washington Motorcycle Operator Manual он не найден. Источник: Practice subtitle files; напрямую в загруженном Washington Motorcycle Operator Manual не найдено."
-  }
- },
- {
-  "id": 192,
-  "page": null,
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What does ABS stand for?",
-   "ru": "Как расшифровывается ABS?"
-  },
-  "opts": [
-   {
-    "en": "Anti-lock Braking System",
-    "ru": "Антиблокировочная тормозная система (Anti-lock Braking System)"
-   },
-   {
-    "en": "Automatic Balance System",
-    "ru": "Автоматическая система баланса (Automatic Balance System)"
-   },
-   {
-    "en": "Advanced Battery Switch",
-    "ru": "Усовершенствованный переключатель аккумулятора (Advanced Battery Switch)"
-   },
-   {
-    "en": "Air Brake Sensor",
-    "ru": "Датчик пневматического тормоза (Air Brake Sensor)"
-   }
-  ],
-  "why": {
-   "en": "This definition appears in the practice subtitles; the uploaded manual discusses braking technique but does not provide this exact ABS definition. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Это определение приведено в practice subtitles; загруженное руководство рассматривает технику торможения, но не даёт именно этого определения ABS. Источник: Practice subtitle files; напрямую в загруженном Washington Motorcycle Operator Manual не найдено."
-  }
- },
- {
-  "id": 193,
-  "page": null,
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "Where is neutral on most motorcycles?",
-   "ru": "Где находится нейтральная передача (neutral) на большинстве мотоциклов?"
-  },
-  "opts": [
-   {
-    "en": "Between first and second gear",
-    "ru": "Между первой и второй передачей"
-   },
-   {
-    "en": "Below first gear",
-    "ru": "Ниже первой передачи"
-   },
-   {
-    "en": "Above top gear",
-    "ru": "Выше высшей передачи"
-   },
-   {
-    "en": "Between second and third gear",
-    "ru": "Между второй и третьей передачей"
-   }
-  ],
-  "why": {
-   "en": "This is general motorcycle-control knowledge from the practice subtitles; I did not locate this exact neutral-position statement in the uploaded Washington manual. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Это общие сведения об управлении мотоциклом из practice subtitles; именно этого утверждения о положении нейтральной передачи в загруженном руководстве штата Вашингтон я не нашёл. Источник: Practice subtitle files; напрямую в загруженном Washington Motorcycle Operator Manual не найдено."
-  }
- },
- {
-  "id": 194,
-  "page": null,
-  "topic": "controls",
-  "image": null,
-  "answer": 0,
-  "q": {
-   "en": "What does the tachometer show?",
-   "ru": "Что показывает тахометр?"
-  },
-  "opts": [
-   {
-    "en": "Engine speed in RPM",
-    "ru": "Частоту вращения двигателя в оборотах в минуту (RPM)"
-   },
-   {
-    "en": "Road speed in MPH",
-    "ru": "Скорость движения в милях в час (MPH)"
-   },
-   {
-    "en": "Fuel level",
-    "ru": "Уровень топлива"
-   },
-   {
-    "en": "Tire pressure",
-    "ru": "Давление в шинах"
-   }
-  ],
-  "why": {
-   "en": "This is general motorcycle-control knowledge from the practice subtitles; I did not locate this exact tachometer definition in the uploaded Washington manual. Source: Practice subtitle files; not directly located in the uploaded Washington Motorcycle Operator Manual.",
-   "ru": "Это общие сведения об управлении мотоциклом из practice subtitles; именно этого определения тахометра в загруженном руководстве штата Вашингтон я не нашёл. Источник: Practice subtitle files; напрямую в загруженном Washington Motorcycle Operator Manual не найдено."
   }
  },
  {
@@ -6834,171 +5943,6 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 208,
-  "page": "4-1",
-  "topic": "controls",
-  "image": "f4-1.png",
-  "answer": 2,
-  "q": {
-   "en": "What kind of motorcycles are shown in this picture?",
-   "ru": "Какие мотоциклы показаны на этой картинке?"
-  },
-  "opts": [
-   {
-    "en": "Mopeds",
-    "ru": "Мопеды"
-   },
-   {
-    "en": "Two-wheeled sport bikes",
-    "ru": "Двухколёсные спортбайки"
-   },
-   {
-    "en": "Three-wheeled motorcycles (trikes and sidecar rigs)",
-    "ru": "Трёхколёсные мотоциклы (трайки и мотоциклы с коляской)"
-   },
-   {
-    "en": "Dirt bikes",
-    "ru": "Кроссовые мотоциклы (dirt bikes)"
-   }
-  ],
-  "why": {
-   "en": "These are three-wheeled motorcycles — including sidecar rigs, trikes, and reverse (inverted) trikes — which require a separate three-wheel endorsement. Source: Chapter 4, The Right Three-Wheel Motorcycle, p. 4-1 (Manual p. 4-1, PDF p. 39).",
-   "ru": "Это трёхколёсные мотоциклы — в том числе мотоциклы с коляской (sidecar), трайки и обратные (инвертированные) трайки, — для которых нужен отдельный допуск (endorsement) на трёхколёсный мотоцикл. Источник: глава 4, «The Right Three-Wheel Motorcycle», p. 4-1 (Manual p. 4-1, PDF p. 39)."
-  }
- },
- {
-  "id": 209,
-  "page": "4-2",
-  "topic": "cornering",
-  "image": "f4-2.png",
-  "answer": 1,
-  "q": {
-   "en": "On this sidecar-rig diagram, what do the 'tip-over lines' represent?",
-   "ru": "На этой схеме мотоцикла с коляской (sidecar) — что обозначают «линии опрокидывания» (tip-over lines)?"
-  },
-  "opts": [
-   {
-    "en": "Where to mount the headlight",
-    "ru": "Куда крепить фару"
-   },
-   {
-    "en": "The directions in which the rig is most likely to tip over",
-    "ru": "Направления, в которых мотоцикл с коляской вероятнее всего опрокинется"
-   },
-   {
-    "en": "The legal lane the rig must use",
-    "ru": "Полосу движения, по которой обязан ехать такой мотоцикл"
-   },
-   {
-    "en": "The path of the exhaust",
-    "ru": "Путь выхлопных газов"
-   }
-  ],
-  "why": {
-   "en": "The tip-over lines show the directions a three-wheeler can roll over; a sidecar rig can tip toward the sidecar or away from it depending on the maneuver, so manage speed in turns. Source: Chapter 4, Tip-over Lines, p. 4-2 (Manual p. 4-2, PDF p. 42).",
-   "ru": "Линии опрокидывания (tip-over lines) показывают направления, в которых трёхколёсный мотоцикл может перевернуться; в зависимости от манёвра мотоцикл с коляской может опрокинуться в сторону коляски или от неё, поэтому контролируйте скорость в поворотах. Источник: глава 4, «Tip-over Lines», p. 4-2 (Manual p. 4-2, PDF p. 42)."
-  }
- },
- {
-  "id": 210,
-  "page": "4-4",
-  "topic": "cornering",
-  "image": "f4-5_6.png",
-  "answer": 3,
-  "q": {
-   "en": "These pictures show a sidecar rig under hard acceleration and hard braking. What do they illustrate?",
-   "ru": "На этих картинках показан мотоцикл с коляской (sidecar) при резком разгоне и резком торможении. Что они иллюстрируют?"
-  },
-  "opts": [
-   {
-    "en": "The rig cannot turn at all",
-    "ru": "Такой мотоцикл вообще не может поворачивать"
-   },
-   {
-    "en": "Braking has no effect on a sidecar rig",
-    "ru": "Торможение никак не действует на мотоцикл с коляской"
-   },
-   {
-    "en": "The sidecar lifts off on every turn",
-    "ru": "Коляска отрывается от земли в каждом повороте"
-   },
-   {
-    "en": "The rig tends to yaw (steer) to one side under acceleration or deceleration",
-    "ru": "Мотоцикл с коляской уводит (yaw) в сторону при разгоне или торможении"
-   }
-  ],
-  "why": {
-   "en": "A sidecar rig yaws (pulls to one side) under acceleration and deceleration because of the offset sidecar weight, so be ready to correct steering when speeding up or slowing down. Source: Chapter 4, Acceleration and Braking, p. 4-4 (Manual p. 4-4, PDF p. 45).",
-   "ru": "Мотоцикл с коляской уводит (yaw) в сторону при разгоне и торможении из-за смещённого веса коляски, поэтому будьте готовы подкорректировать руление, когда ускоряетесь или замедляетесь. Источник: глава 4, «Acceleration and Braking», p. 4-4 (Manual p. 4-4, PDF p. 45)."
-  }
- },
- {
-  "id": 211,
-  "page": "4-7",
-  "topic": "cornering",
-  "image": "f4-8.png",
-  "answer": 3,
-  "q": {
-   "en": "According to this three-wheel cornering picture, what should you do before entering a turn?",
-   "ru": "Согласно этой картинке о прохождении поворотов на трёхколёсном мотоцикле, что нужно сделать перед входом в поворот?"
-  },
-  "opts": [
-   {
-    "en": "Coast with both feet down",
-    "ru": "Катиться накатом, опустив обе ноги"
-   },
-   {
-    "en": "Brake hard while leaned in the turn",
-    "ru": "Резко тормозить уже в наклоне в повороте"
-   },
-   {
-    "en": "Speed up before the turn",
-    "ru": "Прибавить скорость перед поворотом"
-   },
-   {
-    "en": "Slow down before the turn",
-    "ru": "Снизить скорость перед поворотом"
-   }
-  ],
-  "why": {
-   "en": "For three-wheel cornering the steps are to slow down before turns, enter toward the outside, and roll on throttle and brake together as needed — you set your speed before the turn, not in it. Source: Chapter 4, Three-Wheel Cornering, p. 4-7 (Manual p. 4-7, PDF p. 46).",
-   "ru": "Для прохождения поворотов на трёхколёсном мотоцикле порядок такой: снизить скорость перед поворотом, входить ближе к внешней стороне и по необходимости одновременно работать газом и тормозом — скорость вы задаёте до поворота, а не в нём. Источник: глава 4, «Three-Wheel Cornering», p. 4-7 (Manual p. 4-7, PDF p. 46)."
-  }
- },
- {
-  "id": 212,
-  "page": "4-11",
-  "topic": "controls",
-  "image": "f4-9.png",
-  "answer": 0,
-  "q": {
-   "en": "The 'FRONT / REAR / BOTH' picture compares stopping distances. What does it show about braking?",
-   "ru": "Картинка «FRONT / REAR / BOTH» сравнивает тормозной путь. Что она показывает о торможении?"
-  },
-  "opts": [
-   {
-    "en": "Using both brakes together gives the shortest stop",
-    "ru": "Одновременное использование обоих тормозов даёт самый короткий тормозной путь"
-   },
-   {
-    "en": "Braking distance is the same no matter which brake you use",
-    "ru": "Тормозной путь одинаков, каким бы тормозом вы ни пользовались"
-   },
-   {
-    "en": "The front brake should never be used",
-    "ru": "Передним тормозом нельзя пользоваться никогда"
-   },
-   {
-    "en": "The rear brake alone stops you the fastest",
-    "ru": "Один задний тормоз останавливает быстрее всего"
-   }
-  ],
-  "why": {
-   "en": "Using both the front and rear brakes together, smoothly and progressively, gives the shortest, safest stop. Source: Chapter 4, Stopping Distances, p. 4-11 / Chapter 3, Braking, p. 3-8 (Manual p. 4-11, PDF p. 49).",
-   "ru": "Одновременное и плавное, нарастающее использование переднего и заднего тормозов даёт самую короткую и безопасную остановку. Источник: глава 4, «Stopping Distances», p. 4-11 / глава 3, «Braking», p. 3-8 (Manual p. 4-11, PDF p. 49)."
-  }
- },
- {
   "id": 213,
   "page": "5-1",
   "topic": "street",
@@ -7395,36 +6339,36 @@ const QUESTIONS = [
   }
  },
  {
-  "id": 225,
-  "page": "4-3",
-  "topic": "cornering",
-  "image": "f4-3_4.png",
-  "answer": 0,
+  "id": 226,
+  "page": "6-2",
+  "topic": "impairment",
+  "image": "f6-2.png",
+  "answer": 1,
   "q": {
-   "en": "These diagrams show the tip-over lines of a trike and an inverted (reverse) trike. What do they tell a three-wheel rider?",
-   "ru": "Эти схемы показывают линии опрокидывания (tip-over lines) трайка и обратного (инвертированного) трайка. Что они говорят водителю трёхколёсного мотоцикла?"
+   "en": "Based on the picture, which of these counts as 'one drink'?",
+   "ru": "Судя по картинке, что считается «одним дринком» (one drink)?"
   },
   "opts": [
    {
-    "en": "The directions the machine can roll over, so manage speed and lean in turns",
-    "ru": "Направления, в которых машина может перевернуться, поэтому в поворотах контролируйте скорость и наклон"
+    "en": "Only the can of beer",
+    "ru": "Только банка пива"
    },
    {
-    "en": "To always ride with one wheel off the ground",
-    "ru": "Что нужно всегда ехать с одним колесом, оторванным от земли"
+    "en": "A 12 oz beer, 1.5 oz of hard alcohol, or a 5 oz glass of wine — each is one drink",
+    "ru": "Банка пива 12 унций, 1,5 унции крепкого алкоголя или бокал вина 5 унций — каждое считается одним дринком"
    },
    {
-    "en": "That trikes cannot tip over",
-    "ru": "Что трайки не могут опрокинуться"
+    "en": "None of them — they each contain different amounts of alcohol",
+    "ru": "Ничего из этого — в них разное количество алкоголя"
    },
    {
-    "en": "That braking is unnecessary on a trike",
-    "ru": "Что на трайке тормозить не нужно"
+    "en": "Only the glass of hard alcohol",
+    "ru": "Только стакан крепкого алкоголя"
    }
   ],
   "why": {
-   "en": "Like the sidecar rig, a trike and an inverted trike have tip-over lines showing the directions they can roll; respect them by managing your speed and line through turns. Source: Chapter 4, Tip-over Lines, p. 4-3 (Manual p. 4-3, PDF p. 43).",
-   "ru": "Как и у мотоцикла с коляской (sidecar), у трайка и обратного трайка есть линии опрокидывания (tip-over lines), показывающие направления, в которых они могут перевернуться; учитывайте их, контролируя скорость и траекторию в поворотах. Источник: глава 4, «Tip-over Lines», p. 4-3 (Manual p. 4-3, PDF p. 43)."
+   "en": "The manual counts one drink as a 12 oz beer, a 5 oz glass of wine, OR 1.5 oz of hard alcohol — each contains a similar amount of alcohol, and only time removes it from your body. Source: Chapter 6, Alcohol and Drugs, p. 6-2 (Manual p. 6-2, PDF p. 66).",
+   "ru": "В руководстве «один дринк» — это 12 унций пива, бокал вина 5 унций ИЛИ 1½ унции крепкого алкоголя; в каждом примерно одинаковое количество алкоголя, и вывести его из организма может только время. Источник: глава 6, «Alcohol and Drugs», p. 6-2 (Manual p. 6-2, PDF p. 66)."
   }
  }
 ];
@@ -7437,6 +6381,10 @@ const UI = {
   "wordmark_short": {
     "en": "WA Moto Test",
     "ru": "WA Мото Тест"
+  },
+  "home_aria": {
+    "en": "Home",
+    "ru": "На главную"
   },
   "trust_strip": {
     "en": "Practice questions based on the official Washington Motorcycle Operator Manual.",
@@ -7545,5 +6493,45 @@ const UI = {
   "theme_to_light": {
     "en": "Switch to light theme",
     "ru": "Светлая тема"
+  },
+  "landing_title": {
+    "en": "Washington Motorcycle Knowledge Test — Practice Trainer",
+    "ru": "Тренажёр для экзамена на мотоцикл — штат Вашингтон"
+  },
+  "landing_p1": {
+    "en": "I built this trainer for myself while studying for the Washington 2-wheel motorcycle endorsement exam, and I'm sharing it for free with everyone.",
+    "ru": "Я сделал этот тренажёр для себя, когда готовился к экзамену на двухколёсный мотоцикл (endorsement) в штате Вашингтон, и бесплатно делюсь им со всеми."
+  },
+  "landing_p2": {
+    "en": "No guarantees. I don't promise the questions or answers are correct or match any official source. This is study material — not an official source — and the real exam may differ.",
+    "ru": "Никаких гарантий. Я не обещаю, что вопросы и ответы правильные или соответствуют какому-либо официальному источнику. Это учебный материал, а не официальный источник, и реальный экзамен может отличаться."
+  },
+  "landing_work": {
+    "en": "That said, I put in a lot of work:",
+    "ru": "Но я честно проделал большую работу:"
+  },
+  "landing_b1": {
+    "en": "Found real-exam-style questions from open sources and reworked them.",
+    "ru": "Нашёл в открытых источниках примеры вопросов с реальных экзаменов и переработал их."
+  },
+  "landing_b2": {
+    "en": "Checked every question and answer against the official Motorcycle Operator Manual and added the page reference for each.",
+    "ru": "Сверил каждый вопрос и ответ с официальным руководством (Motorcycle Operator Manual) и проставил ссылку на страницу для каждого."
+  },
+  "landing_b3": {
+    "en": "Built picture questions from the manual's own diagrams — you won't find these anywhere else.",
+    "ru": "Разработал вопросы по картинкам из самого руководства — таких больше нигде нет."
+  },
+  "landing_b4": {
+    "en": "Researched how exam questions split across topics and how each topic is weighted, and applied it: there's a large pool of questions, all tagged by topic, and every set of 25 is drawn in the correct proportions — like the real test.",
+    "ru": "Изучил, как вопросы разбиваются по темам и с какими весами, и применил это: в общей базе много вопросов, все размечены по темам, и каждые 25 формируются в правильном соотношении — как на реальном экзамене."
+  },
+  "landing_p4": {
+    "en": "I may have made mistakes and I give no guarantees — but I genuinely did my best. Good luck on your test!",
+    "ru": "Я мог ошибиться и не даю никаких гарантий — но я честно старался. Удачи на экзамене!"
+  },
+  "agree_button": {
+    "en": "I understand and agree →",
+    "ru": "Я понимаю и согласен →"
   }
 };
