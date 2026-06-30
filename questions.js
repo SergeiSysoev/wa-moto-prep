@@ -1,10 +1,12 @@
-// WA Motorcycle Knowledge Test — full question bank (199, bilingual EN/RU)
-// answer = 0-based index; en/ru opts index-aligned. page=null -> practice question (not in manual).
+// WA Motorcycle Knowledge Test — full bank (225 bilingual: 199 text + 26 picture questions)
+// fields: id, page(null=practice), topic, image(null=text question), answer(0-based), q{en,ru}, opts[{en,ru}]x4, why{en,ru}
 
 const QUESTIONS = [
  {
   "id": 1,
   "page": "1-1",
+  "topic": "law",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What must you have on your driver license to legally operate a motorcycle on Washington State roadways?",
@@ -36,6 +38,8 @@ const QUESTIONS = [
  {
   "id": 2,
   "page": "1-1",
+  "topic": "law",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "To lawfully operate a two-wheeled motorcycle in Washington, what must you have?",
@@ -67,6 +71,8 @@ const QUESTIONS = [
  {
   "id": 3,
   "page": "1-1",
+  "topic": "law",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What can happen if a motorcycle is operated on public roadways without the required permit or endorsement?",
@@ -98,6 +104,8 @@ const QUESTIONS = [
  {
   "id": 4,
   "page": "1-2",
+  "topic": "law",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What must you pass to get a 2W permit?",
@@ -129,6 +137,8 @@ const QUESTIONS = [
  {
   "id": 5,
   "page": "1-2",
+  "topic": "law",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "What must you pass to get a 2W endorsement?",
@@ -160,6 +170,8 @@ const QUESTIONS = [
  {
   "id": 6,
   "page": "1-2",
+  "topic": "law",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Where must Washington motorcycle permit/endorsement tests be taken?",
@@ -191,6 +203,8 @@ const QUESTIONS = [
  {
   "id": 7,
   "page": "1-3",
+  "topic": "law",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What is the minimum age for a Washington motorcycle instruction permit?",
@@ -222,6 +236,8 @@ const QUESTIONS = [
  {
   "id": 8,
   "page": "1-3",
+  "topic": "law",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Which restrictions apply to riders with Washington motorcycle instruction permits?",
@@ -253,6 +269,8 @@ const QUESTIONS = [
  {
   "id": 9,
   "page": "1-3",
+  "topic": "law",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "How long does a Washington motorcycle permit last before expiring?",
@@ -284,6 +302,8 @@ const QUESTIONS = [
  {
   "id": 10,
   "page": "1-3",
+  "topic": "law",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "How many motorcycle permits are allowed within a 5-year period?",
@@ -315,6 +335,8 @@ const QUESTIONS = [
  {
   "id": 11,
   "page": "1-3",
+  "topic": "law",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "What is the best way to improve riding technique, street strategies, and skill development?",
@@ -346,6 +368,8 @@ const QUESTIONS = [
  {
   "id": 12,
   "page": "1-3",
+  "topic": "law",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Can completion of a motorcycle training course qualify a rider for an insurance discount?",
@@ -377,6 +401,8 @@ const QUESTIONS = [
  {
   "id": 13,
   "page": "1-4",
+  "topic": "law",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What topics may advanced rider courses include?",
@@ -408,6 +434,8 @@ const QUESTIONS = [
  {
   "id": 14,
   "page": "1-5",
+  "topic": "law",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Do you have to take training in order to take the permit or endorsement tests?",
@@ -439,6 +467,8 @@ const QUESTIONS = [
  {
   "id": 15,
   "page": "2-1",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Compared with driving a car, why does riding a motorcycle involve different and greater risks?",
@@ -470,6 +500,8 @@ const QUESTIONS = [
  {
   "id": 16,
   "page": "2-1",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What is the rider's greatest risk factor according to the manual?",
@@ -501,6 +533,8 @@ const QUESTIONS = [
  {
   "id": 17,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What three functions should protective gear provide?",
@@ -532,6 +566,8 @@ const QUESTIONS = [
  {
   "id": 18,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What is the single most important thing you can do to reduce risk and improve crash survival?",
@@ -563,6 +599,8 @@ const QUESTIONS = [
  {
   "id": 19,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "To legally ride in Washington, what helmet standard is required?",
@@ -594,6 +632,8 @@ const QUESTIONS = [
  {
   "id": 20,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Where is DOT compliance indicated on a motorcycle helmet?",
@@ -625,6 +665,8 @@ const QUESTIONS = [
  {
   "id": 21,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "Are novelty helmets legal for riding on public roadways in Washington?",
@@ -656,6 +698,8 @@ const QUESTIONS = [
  {
   "id": 22,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "Which helmet style is considered the safest?",
@@ -687,6 +731,8 @@ const QUESTIONS = [
  {
   "id": 23,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Which helmet parts are required for a DOT-compliant helmet?",
@@ -718,6 +764,8 @@ const QUESTIONS = [
  {
   "id": 24,
   "page": "2-3",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "When should a helmet be replaced?",
@@ -749,6 +797,8 @@ const QUESTIONS = [
  {
   "id": 25,
   "page": "2-4",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Should a properly fitted DOT helmet block a rider's central or peripheral vision?",
@@ -780,6 +830,8 @@ const QUESTIONS = [
  {
   "id": 26,
   "page": "2-4",
+  "topic": "gear",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "When does Washington law require eye protection?",
@@ -811,6 +863,8 @@ const QUESTIONS = [
  {
   "id": 27,
   "page": "2-4",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What type of eye protection offers the most protection?",
@@ -842,6 +896,8 @@ const QUESTIONS = [
  {
   "id": 28,
   "page": "2-5",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Should tinted eye protection be worn in low visibility such as dusk, fog, or rain?",
@@ -873,6 +929,8 @@ const QUESTIONS = [
  {
   "id": 29,
   "page": "2-5",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What is the minimum protective gear required to ride legally in Washington?",
@@ -904,6 +962,8 @@ const QUESTIONS = [
  {
   "id": 30,
   "page": "2-5",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What kind of material offers better abrasion protection than denim?",
@@ -935,6 +995,8 @@ const QUESTIONS = [
  {
   "id": 31,
   "page": "2-5",
+  "topic": "gear",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "What is hypothermia?",
@@ -966,6 +1028,8 @@ const QUESTIONS = [
  {
   "id": 32,
   "page": "2-6",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What should motorcycle-specific gloves provide?",
@@ -997,6 +1061,8 @@ const QUESTIONS = [
  {
   "id": 33,
   "page": "2-6",
+  "topic": "gear",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What is the main motorcycle-riding noise risk identified by the manual?",
@@ -1028,6 +1094,8 @@ const QUESTIONS = [
  {
   "id": 34,
   "page": "2-6",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Are ear plugs legal in Washington?",
@@ -1059,6 +1127,8 @@ const QUESTIONS = [
  {
   "id": 35,
   "page": "2-7",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What should a rider assume about other drivers seeing the motorcycle?",
@@ -1090,6 +1160,8 @@ const QUESTIONS = [
  {
   "id": 36,
   "page": "2-7",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "When do many crashes occur relative to a rider's experience with a motorcycle?",
@@ -1121,6 +1193,8 @@ const QUESTIONS = [
  {
   "id": 37,
   "page": "2-8",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What is the primary source for motorcycle specifications, operation, and maintenance?",
@@ -1152,6 +1226,8 @@ const QUESTIONS = [
  {
   "id": 38,
   "page": "2-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What does T-CLOCS stand for in the pre-ride inspection checklist?",
@@ -1183,6 +1259,8 @@ const QUESTIONS = [
  {
   "id": 39,
   "page": "2-10",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should you ride defensively according to the manual?",
@@ -1214,6 +1292,8 @@ const QUESTIONS = [
  {
   "id": 40,
   "page": "3-1",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What equipment must a motorcycle have to be legally operated on public roadways in Washington?",
@@ -1245,6 +1325,8 @@ const QUESTIONS = [
  {
   "id": 41,
   "page": "3-1",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Where should your head and eyes be while riding?",
@@ -1276,6 +1358,8 @@ const QUESTIONS = [
  {
   "id": 42,
   "page": "3-2",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What should your arms be able to do while riding?",
@@ -1307,6 +1391,8 @@ const QUESTIONS = [
  {
   "id": 43,
   "page": "3-2",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the recommended right-hand wrist position?",
@@ -1338,6 +1424,8 @@ const QUESTIONS = [
  {
   "id": 44,
   "page": "3-2",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Where should your feet be while riding?",
@@ -1369,6 +1457,8 @@ const QUESTIONS = [
  {
   "id": 45,
   "page": "3-2",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why should you practice using controls in a safe environment?",
@@ -1400,6 +1490,8 @@ const QUESTIONS = [
  {
   "id": 46,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why should you practice shifting without looking down?",
@@ -1431,6 +1523,8 @@ const QUESTIONS = [
  {
   "id": 47,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What does the wet clutch help control?",
@@ -1462,6 +1556,8 @@ const QUESTIONS = [
  {
   "id": 48,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do when engine braking?",
@@ -1493,6 +1589,8 @@ const QUESTIONS = [
  {
   "id": 49,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "At approximately what speed do two-wheeled motorcycles steer through countersteering?",
@@ -1524,6 +1622,8 @@ const QUESTIONS = [
  {
   "id": 50,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How do you countersteer a two-wheeled motorcycle?",
@@ -1555,6 +1655,8 @@ const QUESTIONS = [
  {
   "id": 51,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What happens when you press on the left handgrip?",
@@ -1586,6 +1688,8 @@ const QUESTIONS = [
  {
   "id": 52,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "How do three-wheeled motorcycles steer?",
@@ -1617,6 +1721,8 @@ const QUESTIONS = [
  {
   "id": 53,
   "page": "3-4",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What are the two leading causes of single-vehicle motorcycle crashes in corners in Washington?",
@@ -1648,6 +1754,8 @@ const QUESTIONS = [
  {
   "id": 54,
   "page": "3-4",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What are the four basic cornering steps?",
@@ -1679,6 +1787,8 @@ const QUESTIONS = [
  {
   "id": 55,
   "page": "3-4",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When should speed be reduced for a corner?",
@@ -1710,6 +1820,8 @@ const QUESTIONS = [
  {
   "id": 56,
   "page": "3-4",
+  "topic": "cornering",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Where should you look during a corner?",
@@ -1741,6 +1853,8 @@ const QUESTIONS = [
  {
   "id": 57,
   "page": "3-4",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "If you feel yourself going wide in a corner, what should you do?",
@@ -1772,6 +1886,8 @@ const QUESTIONS = [
  {
   "id": 58,
   "page": "3-5",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "After entering a corner, how should you use the throttle?",
@@ -1803,6 +1919,8 @@ const QUESTIONS = [
  {
   "id": 59,
   "page": "3-5",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What are the three lane positions in a corner?",
@@ -1834,6 +1952,8 @@ const QUESTIONS = [
  {
   "id": 60,
   "page": "3-6",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What cornering line is generally safest for less experienced riders?",
@@ -1865,6 +1985,8 @@ const QUESTIONS = [
  {
   "id": 61,
   "page": "3-6",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What does an outside/inside/outside line do?",
@@ -1896,6 +2018,8 @@ const QUESTIONS = [
  {
   "id": 62,
   "page": "3-6",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why can starting from the outside lane position be useful?",
@@ -1927,6 +2051,8 @@ const QUESTIONS = [
  {
   "id": 63,
   "page": "3-7",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you gather information about while looking through a corner?",
@@ -1958,6 +2084,8 @@ const QUESTIONS = [
  {
   "id": 64,
   "page": "3-7",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What hazards should you anticipate in corners?",
@@ -1989,6 +2117,8 @@ const QUESTIONS = [
  {
   "id": 65,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "No matter which cornering path you choose, where should your head and chin point?",
@@ -2020,6 +2150,8 @@ const QUESTIONS = [
  {
   "id": 66,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Which brake has more braking power on a motorcycle?",
@@ -2051,6 +2183,8 @@ const QUESTIONS = [
  {
   "id": 67,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "How are the shortest and safest stops obtained?",
@@ -2082,6 +2216,8 @@ const QUESTIONS = [
  {
   "id": 68,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What should you avoid when using the front brake?",
@@ -2113,6 +2249,8 @@ const QUESTIONS = [
  {
   "id": 69,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "After coming to a stop, what gear should you remain in?",
@@ -2144,6 +2282,8 @@ const QUESTIONS = [
  {
   "id": 70,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why is braking in a turn more risky on a two-wheeled motorcycle?",
@@ -2175,6 +2315,8 @@ const QUESTIONS = [
  {
   "id": 71,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "To stop quickly and safely in a curve, what should you try to do first?",
@@ -2206,6 +2348,8 @@ const QUESTIONS = [
  {
   "id": 72,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "If you cannot safely straighten before braking in a curve, what should you do?",
@@ -2237,6 +2381,8 @@ const QUESTIONS = [
  {
   "id": 73,
   "page": "3-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Before coming to a complete stop in a corner, what should be squared for stability and control?",
@@ -2268,6 +2414,8 @@ const QUESTIONS = [
  {
   "id": 74,
   "page": "3-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What are the two basic types of evasive maneuvers?",
@@ -2299,6 +2447,8 @@ const QUESTIONS = [
  {
   "id": 75,
   "page": "3-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should you perform a quick stop?",
@@ -2330,6 +2480,8 @@ const QUESTIONS = [
  {
   "id": 76,
   "page": "3-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should the front brake be applied in a quick stop?",
@@ -2361,6 +2513,8 @@ const QUESTIONS = [
  {
   "id": 77,
   "page": "3-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should rear brake pressure change during a hard stop?",
@@ -2392,6 +2546,8 @@ const QUESTIONS = [
  {
   "id": 78,
   "page": "3-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where should your knees and eyes be during a quick stop?",
@@ -2423,6 +2579,8 @@ const QUESTIONS = [
  {
   "id": 79,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When might a swerve be safer than a quick stop?",
@@ -2454,6 +2612,8 @@ const QUESTIONS = [
  {
   "id": 80,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is a swerve made of on a two-wheeled motorcycle?",
@@ -2485,6 +2645,8 @@ const QUESTIONS = [
  {
   "id": 81,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Should you brake while swerving?",
@@ -2516,6 +2678,8 @@ const QUESTIONS = [
  {
   "id": 82,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should happen to your body during a swerve?",
@@ -2547,6 +2711,8 @@ const QUESTIONS = [
  {
   "id": 83,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where should you look during a swerve?",
@@ -2578,6 +2744,8 @@ const QUESTIONS = [
  {
   "id": 84,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How does carrying a passenger or cargo affect motorcycle performance?",
@@ -2609,6 +2777,8 @@ const QUESTIONS = [
  {
   "id": 85,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where should heavier cargo be placed?",
@@ -2640,6 +2810,8 @@ const QUESTIONS = [
  {
   "id": 86,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should cargo be secured?",
@@ -2671,6 +2843,8 @@ const QUESTIONS = [
  {
   "id": 87,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should a passenger do in turns?",
@@ -2702,6 +2876,8 @@ const QUESTIONS = [
  {
   "id": 88,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should a passenger do with their feet?",
@@ -2733,6 +2909,8 @@ const QUESTIONS = [
  {
   "id": 89,
   "page": "5-5",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the purpose of creating time and space around you?",
@@ -2764,6 +2942,8 @@ const QUESTIONS = [
  {
   "id": 90,
   "page": "5-5",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Should escape paths be part of your time and space choice?",
@@ -2795,6 +2975,8 @@ const QUESTIONS = [
  {
   "id": 91,
   "page": "5-5",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What are the three factors that make up total stopping distance?",
@@ -2826,6 +3008,8 @@ const QUESTIONS = [
  {
   "id": 92,
   "page": "5-6",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How far down the road should riders strive to see?",
@@ -2857,6 +3041,8 @@ const QUESTIONS = [
  {
   "id": 93,
   "page": "5-6",
+  "topic": "street",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "What minimum following distance does the manual recommend?",
@@ -2888,6 +3074,8 @@ const QUESTIONS = [
  {
   "id": 94,
   "page": "5-6",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Is the three-second following distance always enough?",
@@ -2919,6 +3107,8 @@ const QUESTIONS = [
  {
   "id": 95,
   "page": "5-6",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you avoid doing when someone is tailgating you?",
@@ -2950,6 +3140,8 @@ const QUESTIONS = [
  {
   "id": 96,
   "page": "5-6",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do if you are being followed too closely?",
@@ -2981,6 +3173,8 @@ const QUESTIONS = [
  {
   "id": 97,
   "page": "5-2",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should you choose a lane?",
@@ -3012,6 +3206,8 @@ const QUESTIONS = [
  {
   "id": 98,
   "page": "5-2",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Are motorcycles allowed to use HOV lanes in Washington?",
@@ -3043,6 +3239,8 @@ const QUESTIONS = [
  {
   "id": 99,
   "page": "5-3",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Is there one lane position that is best in every situation?",
@@ -3074,6 +3272,8 @@ const QUESTIONS = [
  {
   "id": 100,
   "page": "5-7",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where do most motorcycle-versus-vehicle collisions occur?",
@@ -3105,6 +3305,8 @@ const QUESTIONS = [
  {
   "id": 101,
   "page": "5-7",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the most common motorcycle-versus-vehicle collision at intersections?",
@@ -3136,6 +3338,8 @@ const QUESTIONS = [
  {
   "id": 102,
   "page": "5-7",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should riders always look for at intersections?",
@@ -3167,6 +3371,8 @@ const QUESTIONS = [
  {
   "id": 103,
   "page": "5-7",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What gear should you remain in at intersections?",
@@ -3198,6 +3404,8 @@ const QUESTIONS = [
  {
   "id": 104,
   "page": "5-7",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do before proceeding through an intersection?",
@@ -3229,6 +3437,8 @@ const QUESTIONS = [
  {
   "id": 105,
   "page": "5-7",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "If you notice a car waiting at a green light, what should you predict?",
@@ -3260,6 +3470,8 @@ const QUESTIONS = [
  {
   "id": 106,
   "page": "5-7",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What does covering your controls at intersections prepare you to do?",
@@ -3291,6 +3503,8 @@ const QUESTIONS = [
  {
   "id": 107,
   "page": "5-8",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Which surfaces are listed as slippery hazards?",
@@ -3322,6 +3536,8 @@ const QUESTIONS = [
  {
   "id": 108,
   "page": "5-8",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do before reaching a slippery surface?",
@@ -3353,6 +3569,8 @@ const QUESTIONS = [
  {
   "id": 109,
   "page": "5-8",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should you use motorcycle controls on a slippery surface?",
@@ -3384,6 +3602,8 @@ const QUESTIONS = [
  {
   "id": 110,
   "page": "5-8",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why are painted lines, steel plates, and grates dangerous when wet?",
@@ -3415,6 +3635,8 @@ const QUESTIONS = [
  {
   "id": 111,
   "page": "5-10",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "At what angle should you cross an obstacle when possible?",
@@ -3446,6 +3668,8 @@ const QUESTIONS = [
  {
   "id": 112,
   "page": "5-10",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do with your body when crossing an obstacle?",
@@ -3477,6 +3701,8 @@ const QUESTIONS = [
  {
   "id": 113,
   "page": "5-10",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where should you look while crossing an obstacle?",
@@ -3508,6 +3734,8 @@ const QUESTIONS = [
  {
   "id": 114,
   "page": "5-10",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do before changing lanes?",
@@ -3539,6 +3767,8 @@ const QUESTIONS = [
  {
   "id": 115,
   "page": "5-10",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Before passing another vehicle, what should you make sure of?",
@@ -3570,6 +3800,8 @@ const QUESTIONS = [
  {
   "id": 116,
   "page": "5-10",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "After completing a passing or lane-change maneuver, what should you do?",
@@ -3601,6 +3833,8 @@ const QUESTIONS = [
  {
   "id": 117,
   "page": "5-11",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is a major risk of riding at night?",
@@ -3632,6 +3866,8 @@ const QUESTIONS = [
  {
   "id": 118,
   "page": "5-11",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do to compensate for night-riding risk?",
@@ -3663,6 +3899,8 @@ const QUESTIONS = [
  {
   "id": 119,
   "page": "5-11",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What does it mean to override your headlights?",
@@ -3694,6 +3932,8 @@ const QUESTIONS = [
  {
   "id": 120,
   "page": "5-11",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When is wildlife more active according to the manual?",
@@ -3725,6 +3965,8 @@ const QUESTIONS = [
  {
   "id": 121,
   "page": "5-12",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where should you look when avoiding a hazard?",
@@ -3756,6 +3998,8 @@ const QUESTIONS = [
  {
   "id": 122,
   "page": "5-12",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Should newer riders immediately ride in groups?",
@@ -3787,6 +4031,8 @@ const QUESTIONS = [
  {
   "id": 123,
   "page": "5-13",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Is side-by-side riding by two motorcycles in the same lane legal in Washington?",
@@ -3818,6 +4064,8 @@ const QUESTIONS = [
  {
   "id": 124,
   "page": "5-13",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What formation do most two-wheel groups choose to stay close while keeping space?",
@@ -3849,6 +4097,8 @@ const QUESTIONS = [
  {
   "id": 125,
   "page": "5-13",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When should a group move to single-file formation?",
@@ -3880,6 +4130,8 @@ const QUESTIONS = [
  {
   "id": 126,
   "page": "5-13",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What minimum following distance should you keep behind the rider in front?",
@@ -3911,6 +4163,8 @@ const QUESTIONS = [
  {
   "id": 127,
   "page": "5-13",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do if group members ride too fast or dangerously?",
@@ -3942,6 +4196,8 @@ const QUESTIONS = [
  {
   "id": 128,
   "page": "6-1",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Which substances or conditions can impair riding ability?",
@@ -3973,6 +4229,8 @@ const QUESTIONS = [
  {
   "id": 129,
   "page": "6-2",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When does alcohol impairment begin?",
@@ -4004,6 +4262,8 @@ const QUESTIONS = [
  {
   "id": 130,
   "page": "6-2",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Is it legal to ride under the influence of alcohol or drugs in Washington?",
@@ -4035,6 +4295,8 @@ const QUESTIONS = [
  {
   "id": 131,
   "page": "6-2",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How long does alcohol take on average to leave your system per drink?",
@@ -4066,6 +4328,8 @@ const QUESTIONS = [
  {
   "id": 132,
   "page": "6-2",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the only thing that can remove alcohol or its effects from your body?",
@@ -4097,6 +4361,8 @@ const QUESTIONS = [
  {
   "id": 133,
   "page": "6-2",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is considered one drink in the manual?",
@@ -4128,6 +4394,8 @@ const QUESTIONS = [
  {
   "id": 134,
   "page": "6-3",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What BAC is considered intoxicated for an adult in Washington?",
@@ -4159,6 +4427,8 @@ const QUESTIONS = [
  {
   "id": 135,
   "page": "6-3",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What BAC limit applies to riders under 21 in Washington?",
@@ -4190,6 +4460,8 @@ const QUESTIONS = [
  {
   "id": 136,
   "page": "6-3",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How can marijuana affect riding?",
@@ -4221,6 +4493,8 @@ const QUESTIONS = [
  {
   "id": 137,
   "page": "6-3",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What THC blood concentration is considered impaired in Washington for a person over 21?",
@@ -4252,6 +4526,8 @@ const QUESTIONS = [
  {
   "id": 138,
   "page": "6-1",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Can music, cell phones, GPS, intercoms, and electronic controls impair riding?",
@@ -4283,6 +4559,8 @@ const QUESTIONS = [
  {
   "id": 139,
   "page": "2-10",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When should you recognize that it may be better not to ride?",
@@ -4314,6 +4592,8 @@ const QUESTIONS = [
  {
   "id": 140,
   "page": "6-5",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should you do when group pressure pushes you beyond your limits?",
@@ -4345,6 +4625,8 @@ const QUESTIONS = [
  {
   "id": 141,
   "page": "6-7",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Who is responsible for keeping you safe when riding?",
@@ -4376,6 +4658,8 @@ const QUESTIONS = [
  {
   "id": 142,
   "page": null,
+  "topic": "group",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "Is lane splitting or lane filtering legal in Washington?",
@@ -4407,6 +4691,8 @@ const QUESTIONS = [
  {
   "id": 143,
   "page": null,
+  "topic": "group",
+  "image": null,
   "answer": 1,
   "q": {
    "en": "What should a motorcycle rider do at a yellow light?",
@@ -4438,6 +4724,8 @@ const QUESTIONS = [
  {
   "id": 144,
   "page": null,
+  "topic": "group",
+  "image": null,
   "answer": 2,
   "q": {
    "en": "When encountering a threatening dog, what should you do?",
@@ -4469,6 +4757,8 @@ const QUESTIONS = [
  {
   "id": 145,
   "page": null,
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why should you park your motorcycle in first gear?",
@@ -4500,6 +4790,8 @@ const QUESTIONS = [
  {
   "id": 146,
   "page": "2-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the best place to find the correct tire pressure for your tires?",
@@ -4531,6 +4823,8 @@ const QUESTIONS = [
  {
   "id": 147,
   "page": "5-8",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is hydroplaning?",
@@ -4562,6 +4856,8 @@ const QUESTIONS = [
  {
   "id": 148,
   "page": "6-2",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the safest blood alcohol level for motorcycle operation?",
@@ -4593,6 +4889,8 @@ const QUESTIONS = [
  {
   "id": 149,
   "page": "3-11",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the minimum age for a motorcycle passenger in Washington State?",
@@ -4624,6 +4922,8 @@ const QUESTIONS = [
  {
   "id": 150,
   "page": "3-11",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What equipment must a motorcycle passenger have in Washington?",
@@ -4655,6 +4955,8 @@ const QUESTIONS = [
  {
   "id": 151,
   "page": "3-11",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When should a passenger mount the motorcycle?",
@@ -4686,6 +4988,8 @@ const QUESTIONS = [
  {
   "id": 152,
   "page": "3-11",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When should a passenger dismount the motorcycle?",
@@ -4717,6 +5021,8 @@ const QUESTIONS = [
  {
   "id": 153,
   "page": "3-11",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "After a passenger is seated, what should the rider adjust?",
@@ -4748,6 +5054,8 @@ const QUESTIONS = [
  {
   "id": 154,
   "page": "3-11",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where should the rider check maximum safe load and possible tire-pressure or suspension adjustments?",
@@ -4779,6 +5087,8 @@ const QUESTIONS = [
  {
   "id": 155,
   "page": "1-6",
+  "topic": "law",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When transferring an out-of-state driver license to Washington, what must you tell DOL staff if you also want the motorcycle endorsement transferred?",
@@ -4810,6 +5120,8 @@ const QUESTIONS = [
  {
   "id": 156,
   "page": "1-6",
+  "topic": "law",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What must you present to transfer a two-wheel motorcycle endorsement from out of state?",
@@ -4841,6 +5153,8 @@ const QUESTIONS = [
  {
   "id": 157,
   "page": "1-6",
+  "topic": "law",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What documentation issue can prevent a three-wheel endorsement from transferring as three-wheel only?",
@@ -4872,6 +5186,8 @@ const QUESTIONS = [
  {
   "id": 158,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What does the clutch lever do?",
@@ -4903,6 +5219,8 @@ const QUESTIONS = [
  {
   "id": 159,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the friction zone?",
@@ -4934,6 +5252,8 @@ const QUESTIONS = [
  {
   "id": 160,
   "page": "3-9",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is threshold braking?",
@@ -4965,6 +5285,8 @@ const QUESTIONS = [
  {
   "id": 161,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "About how much stopping power does the front brake provide on a cruiser-type motorcycle according to the practice subtitles?",
@@ -4996,6 +5318,8 @@ const QUESTIONS = [
  {
   "id": 162,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "About how much stopping power does the rear brake provide on a sport bike according to the practice subtitles?",
@@ -5027,6 +5351,8 @@ const QUESTIONS = [
  {
   "id": 163,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Swerving around an obstacle generally occurs at speeds above what speed according to the practice subtitles?",
@@ -5058,6 +5384,8 @@ const QUESTIONS = [
  {
   "id": 164,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Which actions should be avoided while swerving?",
@@ -5089,6 +5417,8 @@ const QUESTIONS = [
  {
   "id": 165,
   "page": "3-1",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the best way for a beginner to improve stability when starting from a stop?",
@@ -5120,6 +5450,8 @@ const QUESTIONS = [
  {
   "id": 166,
   "page": null,
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is hazardous about starting off uphill?",
@@ -5151,6 +5483,8 @@ const QUESTIONS = [
  {
   "id": 167,
   "page": "3-3",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the most effective way to maintain balance at very slow speeds according to the practice subtitles?",
@@ -5182,6 +5516,8 @@ const QUESTIONS = [
  {
   "id": 168,
   "page": "3-4",
+  "topic": "cornering",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When is counterweighting used according to the practice subtitles?",
@@ -5213,6 +5549,8 @@ const QUESTIONS = [
  {
   "id": 169,
   "page": "3-11",
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How should a passenger sit on the motorcycle according to the practice subtitles?",
@@ -5244,6 +5582,8 @@ const QUESTIONS = [
  {
   "id": 170,
   "page": "3-10",
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How does carrying a passenger affect starting, stopping, and passing?",
@@ -5275,6 +5615,8 @@ const QUESTIONS = [
  {
   "id": 171,
   "page": "3-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the most effective way to stop quickly in a straight line?",
@@ -5306,6 +5648,8 @@ const QUESTIONS = [
  {
   "id": 172,
   "page": "2-1",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the main cause pattern of motorcycle crashes according to the manual's risk discussion?",
@@ -5337,6 +5681,8 @@ const QUESTIONS = [
  {
   "id": 173,
   "page": "2-1",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why does riding a motorcycle create different risks than driving a car?",
@@ -5368,6 +5714,8 @@ const QUESTIONS = [
  {
   "id": 174,
   "page": "2-5",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "How can riding gear make the rider more comfortable?",
@@ -5399,6 +5747,8 @@ const QUESTIONS = [
  {
   "id": 175,
   "page": "2-6",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Is in-ear hearing protection legal in Washington?",
@@ -5430,6 +5780,8 @@ const QUESTIONS = [
  {
   "id": 176,
   "page": "6-1",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "If a rider takes medication that causes dizziness, what should the rider do?",
@@ -5461,6 +5813,8 @@ const QUESTIONS = [
  {
   "id": 177,
   "page": "6-4",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should a rider do if electronics, GPS, music, or intercom distract them?",
@@ -5492,6 +5846,8 @@ const QUESTIONS = [
  {
   "id": 178,
   "page": "6-1",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should a rider do when negative emotions, fatigue, illness, stress, or fear affect riding?",
@@ -5523,6 +5879,8 @@ const QUESTIONS = [
  {
   "id": 179,
   "page": "6-5",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is the safest response to peer pressure to prove yourself on a motorcycle?",
@@ -5554,6 +5912,8 @@ const QUESTIONS = [
  {
   "id": 180,
   "page": "6-5",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should be discussed before a group ride?",
@@ -5585,6 +5945,8 @@ const QUESTIONS = [
  {
   "id": 181,
   "page": null,
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should a rider do if an oncoming driver does not dim their high beams?",
@@ -5616,6 +5978,8 @@ const QUESTIONS = [
  {
   "id": 182,
   "page": "2-10",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "During daytime, what headlight setting do some practice tests recommend for visibility if it does not interfere with other drivers?",
@@ -5647,6 +6011,8 @@ const QUESTIONS = [
  {
   "id": 183,
   "page": null,
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should a rider do in a crosswind according to the practice subtitles?",
@@ -5678,6 +6044,8 @@ const QUESTIONS = [
  {
   "id": 184,
   "page": null,
+  "topic": "hazards",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should a rider do when a large truck's wind blast pushes or pulls the motorcycle?",
@@ -5709,6 +6077,8 @@ const QUESTIONS = [
  {
   "id": 185,
   "page": "3-1",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "If a motorcycle has a serious safety-equipment defect, what should the rider do?",
@@ -5740,6 +6110,8 @@ const QUESTIONS = [
  {
   "id": 186,
   "page": "6-3",
+  "topic": "impairment",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "If a motorcycle endorsement is suspended, what must the rider do?",
@@ -5771,6 +6143,8 @@ const QUESTIONS = [
  {
   "id": 187,
   "page": null,
+  "topic": "group",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "When entering Washington from another state, which traffic laws must a motorcycle rider follow?",
@@ -5802,6 +6176,8 @@ const QUESTIONS = [
  {
   "id": 188,
   "page": "2-10",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What best describes responsible riders according to MSF-style practice material?",
@@ -5833,6 +6209,8 @@ const QUESTIONS = [
  {
   "id": 189,
   "page": "2-2",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Which agency sets the minimum federal safety standards for motorcycle helmets sold in the United States?",
@@ -5864,6 +6242,8 @@ const QUESTIONS = [
  {
   "id": 190,
   "page": "5-12",
+  "topic": "street",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What is target fixation?",
@@ -5895,6 +6275,8 @@ const QUESTIONS = [
  {
   "id": 191,
   "page": null,
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "At a four-way stop, if two vehicles arrive at the same time and the motorcycle is on the left, who goes first?",
@@ -5926,6 +6308,8 @@ const QUESTIONS = [
  {
   "id": 192,
   "page": null,
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What does ABS stand for?",
@@ -5957,6 +6341,8 @@ const QUESTIONS = [
  {
   "id": 193,
   "page": null,
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Where is neutral on most motorcycles?",
@@ -5988,6 +6374,8 @@ const QUESTIONS = [
  {
   "id": 194,
   "page": null,
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What does the tachometer show?",
@@ -6019,6 +6407,8 @@ const QUESTIONS = [
  {
   "id": 195,
   "page": "2-4",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What qualities must effective eye or face shield protection have?",
@@ -6050,6 +6440,8 @@ const QUESTIONS = [
  {
   "id": 196,
   "page": "2-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why should new riders start on motorcycles that are smaller and lighter?",
@@ -6081,6 +6473,8 @@ const QUESTIONS = [
  {
   "id": 197,
   "page": "2-8",
+  "topic": "controls",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "Why should you practice controls on an unfamiliar motorcycle in a safe area?",
@@ -6112,6 +6506,8 @@ const QUESTIONS = [
  {
   "id": 198,
   "page": "2-6",
+  "topic": "gear",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "What should riders do with boot or shoe laces?",
@@ -6143,6 +6539,8 @@ const QUESTIONS = [
  {
   "id": 199,
   "page": "5-11",
+  "topic": "intersections",
+  "image": null,
   "answer": 0,
   "q": {
    "en": "If you cannot see well while riding at night, what should you do?",
@@ -6169,6 +6567,864 @@ const QUESTIONS = [
   "why": {
    "en": "The manual states that if you cannot see well at night, slow down; if you cannot see, look to the fog line or white line on the shoulder and use it to guide you. Source: Washington Motorcycle Operator Manual, Riding at Night, manual pp. 5-11 to 5-12, PDF pp. 61-62.",
    "ru": "Руководство указывает, что если ночью вы плохо видите — снизьте скорость; если видите совсем плохо, ориентируйтесь на линию обочины (fog line) или белую линию на обочине и используйте её как ориентир. Источник: Washington Motorcycle Operator Manual, «Riding at Night», manual pp. 5-11 to 5-12, PDF pp. 61-62."
+  }
+ },
+ {
+  "id": 200,
+  "page": "2-2",
+  "topic": "gear",
+  "image": "f2-1.png",
+  "answer": 1,
+  "q": {
+   "en": "Based on the picture, which type of helmet provides the most protection?",
+   "ru": "Судя по картинке, какой тип шлема обеспечивает наибольшую защиту?"
+  },
+  "opts": [
+   {
+    "en": "Any helmet without a chin bar",
+    "ru": "Любой шлем без защиты подбородка (chin bar)"
+   },
+   {
+    "en": "The full-face helmet",
+    "ru": "Закрытый шлем-интеграл (full-face)"
+   },
+   {
+    "en": "The half (shorty) helmet",
+    "ru": "Открытый шлем-каска (half/shorty)"
+   },
+   {
+    "en": "The three-quarter open-face helmet",
+    "ru": "Открытый шлем «три четверти» (three-quarter open-face)"
+   }
+  ],
+  "why": {
+   "en": "The full-face helmet covers the whole head and chin and is considered the safest, offering the best protection for your chin and face. Source: Chapter 2, Helmets, p. 2-2 (Manual p. 2-2, PDF p. 16).",
+   "ru": "Шлем-интеграл (full-face) закрывает всю голову и подбородок и считается самым безопасным: он лучше всего защищает подбородок и лицо. Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
+  }
+ },
+ {
+  "id": 201,
+  "page": "2-2",
+  "topic": "gear",
+  "image": "f2-1b.png",
+  "answer": 0,
+  "q": {
+   "en": "Based on the picture, which type of helmet provides the LEAST protection?",
+   "ru": "Судя по картинке, какой тип шлема обеспечивает НАИМЕНЬШУЮ защиту?"
+  },
+  "opts": [
+   {
+    "en": "The half (shorty) helmet",
+    "ru": "Открытый шлем-каска (half/shorty)"
+   },
+   {
+    "en": "A three-quarter helmet with a face shield",
+    "ru": "Шлем «три четверти» с визором (face shield)"
+   },
+   {
+    "en": "The full-face helmet",
+    "ru": "Закрытый шлем-интеграл (full-face)"
+   },
+   {
+    "en": "A modular full-face helmet",
+    "ru": "Модульный шлем (modular full-face)"
+   }
+  ],
+  "why": {
+   "en": "A half (shorty) helmet covers the least of your head and offers the least protection; full-face helmets are the safest. Source: Chapter 2, Helmets, p. 2-2 (Manual p. 2-2, PDF p. 16).",
+   "ru": "Открытый шлем-каска (half/shorty) закрывает голову меньше всего и даёт наименьшую защиту; самыми безопасными остаются шлемы-интегралы (full-face). Источник: глава 2, «Helmets», p. 2-2 (Manual p. 2-2, PDF p. 16)."
+  }
+ },
+ {
+  "id": 202,
+  "page": "3-2",
+  "topic": "controls",
+  "image": "f3-1.png",
+  "answer": 1,
+  "q": {
+   "en": "The picture contrasts a 'Right' and a 'Wrong' hand position. What is the correct way to hold the throttle?",
+   "ru": "На картинке сравниваются «правильное» (Right) и «неправильное» (Wrong) положение руки. Как правильно держать ручку газа (throttle)?"
+  },
+  "opts": [
+   {
+    "en": "With the wrist held high above the grip",
+    "ru": "Держать запястье высоко над рукояткой"
+   },
+   {
+    "en": "Start with a flat wrist",
+    "ru": "Начинать с прямого (плоского) запястья"
+   },
+   {
+    "en": "Gripping as tightly as possible at all times",
+    "ru": "Всё время сжимать рукоятку как можно крепче"
+   },
+   {
+    "en": "With only two fingers on the grip",
+    "ru": "Держать рукоятку всего двумя пальцами"
+   }
+  ],
+  "why": {
+   "en": "Start with a flat wrist on the right hand; this helps keep you from unintentionally using too much throttle. Source: Chapter 3, Riding Posture, p. 3-2 (Manual p. 3-2, PDF p. 28).",
+   "ru": "Начинайте с прямого (плоского) запястья на правой руке: так вы не дадите газу непреднамеренно слишком много. Источник: глава 3, «Riding Posture», p. 3-2 (Manual p. 3-2, PDF p. 28)."
+  }
+ },
+ {
+  "id": 203,
+  "page": "3-3",
+  "topic": "cornering",
+  "image": "f3-2.png",
+  "answer": 3,
+  "q": {
+   "en": "In a normal turn at speed, as shown in the picture, how should the rider and the motorcycle lean?",
+   "ru": "В обычном повороте на скорости, как показано на картинке, как должны наклоняться мотоциклист и мотоцикл?"
+  },
+  "opts": [
+   {
+    "en": "Neither should lean",
+    "ru": "Ни тот, ни другой не должны наклоняться"
+   },
+   {
+    "en": "The rider leans the opposite way to the bike",
+    "ru": "Мотоциклист наклоняется в сторону, противоположную мотоциклу"
+   },
+   {
+    "en": "The rider stays upright while only the bike leans",
+    "ru": "Мотоциклист остаётся прямо, наклоняется только мотоцикл"
+   },
+   {
+    "en": "Rider and motorcycle lean together",
+    "ru": "Мотоциклист и мотоцикл наклоняются вместе"
+   }
+  ],
+  "why": {
+   "en": "To turn, the motorcycle must lean; in a normal turn the rider leans with the motorcycle, keeping their body in line with the bike. Source: Chapter 3, Cornering, p. 3-3 (Manual p. 3-3, PDF p. 30).",
+   "ru": "Чтобы повернуть, мотоцикл должен наклониться; в обычном повороте мотоциклист наклоняется вместе с мотоциклом, держа корпус на одной линии с ним. Источник: глава 3, «Cornering», p. 3-3 (Manual p. 3-3, PDF p. 30)."
+  }
+ },
+ {
+  "id": 204,
+  "page": "3-5",
+  "topic": "cornering",
+  "image": "f3-3.png",
+  "answer": 0,
+  "q": {
+   "en": "Which cornering line does this picture show?",
+   "ru": "Какую линию прохождения поворота (cornering line) показывает эта картинка?"
+  },
+  "opts": [
+   {
+    "en": "Middle / middle / middle",
+    "ru": "Середина / середина / середина (middle/middle/middle)"
+   },
+   {
+    "en": "Delayed apex",
+    "ru": "Поздний апекс (delayed apex)"
+   },
+   {
+    "en": "Inside / inside / inside",
+    "ru": "Внутри / внутри / внутри (inside/inside/inside)"
+   },
+   {
+    "en": "Outside / inside / outside",
+    "ru": "Снаружи / внутри / снаружи (outside/inside/outside)"
+   }
+  ],
+  "why": {
+   "en": "This is the middle/middle/middle line; riding the middle of the lane through the corner typically helps you avoid both oncoming traffic and debris such as gravel. Source: Chapter 3, Cornering Lines, p. 3-5 (Manual p. 3-5, PDF p. 31).",
+   "ru": "Это линия «середина/середина/середина» (middle/middle/middle): двигаясь по центру полосы через поворот, вы обычно избегаете и встречного транспорта, и мусора вроде гравия. Источник: глава 3, «Cornering Lines», p. 3-5 (Manual p. 3-5, PDF p. 31)."
+  }
+ },
+ {
+  "id": 205,
+  "page": "3-5",
+  "topic": "cornering",
+  "image": "f3-4.png",
+  "answer": 0,
+  "q": {
+   "en": "Which cornering line does this picture show?",
+   "ru": "Какую линию прохождения поворота (cornering line) показывает эта картинка?"
+  },
+  "opts": [
+   {
+    "en": "Outside / inside / outside",
+    "ru": "Снаружи / внутри / снаружи (outside/inside/outside)"
+   },
+   {
+    "en": "Middle / middle / middle",
+    "ru": "Середина / середина / середина (middle/middle/middle)"
+   },
+   {
+    "en": "Delayed apex",
+    "ru": "Поздний апекс (delayed apex)"
+   },
+   {
+    "en": "Inside / outside / inside",
+    "ru": "Внутри / снаружи / внутри (inside/outside/inside)"
+   }
+  ],
+  "why": {
+   "en": "This is the outside/inside/outside line: enter from the outside, clip the inside at the apex, and exit to the outside to straighten the corner. Source: Chapter 3, Cornering Lines, p. 3-5 (Manual p. 3-5, PDF p. 32).",
+   "ru": "Это линия «снаружи/внутри/снаружи» (outside/inside/outside): входите с внешней стороны, у апекса прижимаетесь к внутренней, а на выходе уходите к внешней — так поворот «спрямляется». Источник: глава 3, «Cornering Lines», p. 3-5 (Manual p. 3-5, PDF p. 32)."
+  }
+ },
+ {
+  "id": 206,
+  "page": "3-5",
+  "topic": "cornering",
+  "image": "f3-5.png",
+  "answer": 2,
+  "q": {
+   "en": "Which cornering line does this picture show?",
+   "ru": "Какую линию прохождения поворота (cornering line) показывает эта картинка?"
+  },
+  "opts": [
+   {
+    "en": "Early apex",
+    "ru": "Ранний апекс (early apex)"
+   },
+   {
+    "en": "Outside / inside / outside",
+    "ru": "Снаружи / внутри / снаружи (outside/inside/outside)"
+   },
+   {
+    "en": "Delayed apex",
+    "ru": "Поздний апекс (delayed apex)"
+   },
+   {
+    "en": "Middle / middle / middle",
+    "ru": "Середина / середина / середина (middle/middle/middle)"
+   }
+  ],
+  "why": {
+   "en": "This is the delayed-apex line: you stay to the outside longer and turn to the apex later, which improves your view through the corner before committing. Source: Chapter 3, Cornering Lines, p. 3-5 (Manual p. 3-5, PDF p. 33).",
+   "ru": "Это линия с поздним апексом (delayed apex): вы дольше держитесь внешней стороны и поворачиваете к апексу позже, благодаря чему лучше видите поворот, прежде чем в него «вложиться». Источник: глава 3, «Cornering Lines», p. 3-5 (Manual p. 3-5, PDF p. 33)."
+  }
+ },
+ {
+  "id": 207,
+  "page": "3-10",
+  "topic": "hazards",
+  "image": "f3-6_7.png",
+  "answer": 2,
+  "q": {
+   "en": "These two pictures show swerving and braking. What is the key rule they illustrate?",
+   "ru": "На этих двух картинках показаны объезд (swerve) и торможение. Какое главное правило они иллюстрируют?"
+  },
+  "opts": [
+   {
+    "en": "Always brake and swerve at the same time",
+    "ru": "Всегда тормозить и объезжать одновременно"
+   },
+   {
+    "en": "Swerving is never safe",
+    "ru": "Объезд (swerve) никогда не бывает безопасным"
+   },
+   {
+    "en": "Never swerve and brake at the same time",
+    "ru": "Никогда не объезжать (swerve) и тормозить одновременно"
+   },
+   {
+    "en": "Only ever use the rear brake while swerving",
+    "ru": "При объезде пользоваться только задним тормозом"
+   }
+  ],
+  "why": {
+   "en": "Swerving needs a lot of traction, so you must never swerve and brake at the same time — swerve and then brake, or brake and then swerve. Source: Chapter 3, Swerves, p. 3-10 (Manual p. 3-10, PDF p. 36).",
+   "ru": "Объезд (swerve) требует много сцепления с дорогой, поэтому нельзя объезжать и тормозить одновременно — сначала объезжайте, потом тормозите, или сначала тормозите, потом объезжайте. Источник: глава 3, «Swerves», p. 3-10 (Manual p. 3-10, PDF p. 36)."
+  }
+ },
+ {
+  "id": 208,
+  "page": "4-1",
+  "topic": "controls",
+  "image": "f4-1.png",
+  "answer": 2,
+  "q": {
+   "en": "What kind of motorcycles are shown in this picture?",
+   "ru": "Какие мотоциклы показаны на этой картинке?"
+  },
+  "opts": [
+   {
+    "en": "Mopeds",
+    "ru": "Мопеды"
+   },
+   {
+    "en": "Two-wheeled sport bikes",
+    "ru": "Двухколёсные спортбайки"
+   },
+   {
+    "en": "Three-wheeled motorcycles (trikes and sidecar rigs)",
+    "ru": "Трёхколёсные мотоциклы (трайки и мотоциклы с коляской)"
+   },
+   {
+    "en": "Dirt bikes",
+    "ru": "Кроссовые мотоциклы (dirt bikes)"
+   }
+  ],
+  "why": {
+   "en": "These are three-wheeled motorcycles — including sidecar rigs, trikes, and reverse (inverted) trikes — which require a separate three-wheel endorsement. Source: Chapter 4, The Right Three-Wheel Motorcycle, p. 4-1 (Manual p. 4-1, PDF p. 39).",
+   "ru": "Это трёхколёсные мотоциклы — в том числе мотоциклы с коляской (sidecar), трайки и обратные (инвертированные) трайки, — для которых нужен отдельный допуск (endorsement) на трёхколёсный мотоцикл. Источник: глава 4, «The Right Three-Wheel Motorcycle», p. 4-1 (Manual p. 4-1, PDF p. 39)."
+  }
+ },
+ {
+  "id": 209,
+  "page": "4-2",
+  "topic": "cornering",
+  "image": "f4-2.png",
+  "answer": 1,
+  "q": {
+   "en": "On this sidecar-rig diagram, what do the 'tip-over lines' represent?",
+   "ru": "На этой схеме мотоцикла с коляской (sidecar) — что обозначают «линии опрокидывания» (tip-over lines)?"
+  },
+  "opts": [
+   {
+    "en": "Where to mount the headlight",
+    "ru": "Куда крепить фару"
+   },
+   {
+    "en": "The directions in which the rig is most likely to tip over",
+    "ru": "Направления, в которых мотоцикл с коляской вероятнее всего опрокинется"
+   },
+   {
+    "en": "The legal lane the rig must use",
+    "ru": "Полосу движения, по которой обязан ехать такой мотоцикл"
+   },
+   {
+    "en": "The path of the exhaust",
+    "ru": "Путь выхлопных газов"
+   }
+  ],
+  "why": {
+   "en": "The tip-over lines show the directions a three-wheeler can roll over; a sidecar rig can tip toward the sidecar or away from it depending on the maneuver, so manage speed in turns. Source: Chapter 4, Tip-over Lines, p. 4-2 (Manual p. 4-2, PDF p. 42).",
+   "ru": "Линии опрокидывания (tip-over lines) показывают направления, в которых трёхколёсный мотоцикл может перевернуться; в зависимости от манёвра мотоцикл с коляской может опрокинуться в сторону коляски или от неё, поэтому контролируйте скорость в поворотах. Источник: глава 4, «Tip-over Lines», p. 4-2 (Manual p. 4-2, PDF p. 42)."
+  }
+ },
+ {
+  "id": 210,
+  "page": "4-4",
+  "topic": "cornering",
+  "image": "f4-5_6.png",
+  "answer": 3,
+  "q": {
+   "en": "These pictures show a sidecar rig under hard acceleration and hard braking. What do they illustrate?",
+   "ru": "На этих картинках показан мотоцикл с коляской (sidecar) при резком разгоне и резком торможении. Что они иллюстрируют?"
+  },
+  "opts": [
+   {
+    "en": "The rig cannot turn at all",
+    "ru": "Такой мотоцикл вообще не может поворачивать"
+   },
+   {
+    "en": "Braking has no effect on a sidecar rig",
+    "ru": "Торможение никак не действует на мотоцикл с коляской"
+   },
+   {
+    "en": "The sidecar lifts off on every turn",
+    "ru": "Коляска отрывается от земли в каждом повороте"
+   },
+   {
+    "en": "The rig tends to yaw (steer) to one side under acceleration or deceleration",
+    "ru": "Мотоцикл с коляской уводит (yaw) в сторону при разгоне или торможении"
+   }
+  ],
+  "why": {
+   "en": "A sidecar rig yaws (pulls to one side) under acceleration and deceleration because of the offset sidecar weight, so be ready to correct steering when speeding up or slowing down. Source: Chapter 4, Acceleration and Braking, p. 4-4 (Manual p. 4-4, PDF p. 45).",
+   "ru": "Мотоцикл с коляской уводит (yaw) в сторону при разгоне и торможении из-за смещённого веса коляски, поэтому будьте готовы подкорректировать руление, когда ускоряетесь или замедляетесь. Источник: глава 4, «Acceleration and Braking», p. 4-4 (Manual p. 4-4, PDF p. 45)."
+  }
+ },
+ {
+  "id": 211,
+  "page": "4-7",
+  "topic": "cornering",
+  "image": "f4-8.png",
+  "answer": 3,
+  "q": {
+   "en": "According to this three-wheel cornering picture, what should you do before entering a turn?",
+   "ru": "Согласно этой картинке о прохождении поворотов на трёхколёсном мотоцикле, что нужно сделать перед входом в поворот?"
+  },
+  "opts": [
+   {
+    "en": "Coast with both feet down",
+    "ru": "Катиться накатом, опустив обе ноги"
+   },
+   {
+    "en": "Brake hard while leaned in the turn",
+    "ru": "Резко тормозить уже в наклоне в повороте"
+   },
+   {
+    "en": "Speed up before the turn",
+    "ru": "Прибавить скорость перед поворотом"
+   },
+   {
+    "en": "Slow down before the turn",
+    "ru": "Снизить скорость перед поворотом"
+   }
+  ],
+  "why": {
+   "en": "For three-wheel cornering the steps are to slow down before turns, enter toward the outside, and roll on throttle and brake together as needed — you set your speed before the turn, not in it. Source: Chapter 4, Three-Wheel Cornering, p. 4-7 (Manual p. 4-7, PDF p. 46).",
+   "ru": "Для прохождения поворотов на трёхколёсном мотоцикле порядок такой: снизить скорость перед поворотом, входить ближе к внешней стороне и по необходимости одновременно работать газом и тормозом — скорость вы задаёте до поворота, а не в нём. Источник: глава 4, «Three-Wheel Cornering», p. 4-7 (Manual p. 4-7, PDF p. 46)."
+  }
+ },
+ {
+  "id": 212,
+  "page": "4-11",
+  "topic": "controls",
+  "image": "f4-9.png",
+  "answer": 0,
+  "q": {
+   "en": "The 'FRONT / REAR / BOTH' picture compares stopping distances. What does it show about braking?",
+   "ru": "Картинка «FRONT / REAR / BOTH» сравнивает тормозной путь. Что она показывает о торможении?"
+  },
+  "opts": [
+   {
+    "en": "Using both brakes together gives the shortest stop",
+    "ru": "Одновременное использование обоих тормозов даёт самый короткий тормозной путь"
+   },
+   {
+    "en": "Braking distance is the same no matter which brake you use",
+    "ru": "Тормозной путь одинаков, каким бы тормозом вы ни пользовались"
+   },
+   {
+    "en": "The front brake should never be used",
+    "ru": "Передним тормозом нельзя пользоваться никогда"
+   },
+   {
+    "en": "The rear brake alone stops you the fastest",
+    "ru": "Один задний тормоз останавливает быстрее всего"
+   }
+  ],
+  "why": {
+   "en": "Using both the front and rear brakes together, smoothly and progressively, gives the shortest, safest stop. Source: Chapter 4, Stopping Distances, p. 4-11 / Chapter 3, Braking, p. 3-8 (Manual p. 4-11, PDF p. 49).",
+   "ru": "Одновременное и плавное, нарастающее использование переднего и заднего тормозов даёт самую короткую и безопасную остановку. Источник: глава 4, «Stopping Distances», p. 4-11 / глава 3, «Braking», p. 3-8 (Manual p. 4-11, PDF p. 49)."
+  }
+ },
+ {
+  "id": 213,
+  "page": "5-1",
+  "topic": "street",
+  "image": "f5-1.png",
+  "answer": 2,
+  "q": {
+   "en": "In this picture the rider has chosen a lane position toward the far left. What is the main reason to pick a lane position like this?",
+   "ru": "На этой картинке мотоциклист выбрал положение в полосе ближе к крайней левой части. Какова главная причина выбирать такое положение в полосе (lane position)?"
+  },
+  "opts": [
+   {
+    "en": "Because the left is the only legal position",
+    "ru": "Потому что левая часть — единственное разрешённое положение"
+   },
+   {
+    "en": "To stay in another driver's blind spot",
+    "ru": "Чтобы держаться в «слепой зоне» (blind spot) другого водителя"
+   },
+   {
+    "en": "To be seen and to keep a space cushion from other traffic",
+    "ru": "Чтобы быть заметным и сохранять запас пространства (space cushion) от остального транспорта"
+   },
+   {
+    "en": "To go faster than the cars",
+    "ru": "Чтобы ехать быстрее машин"
+   }
+  ],
+  "why": {
+   "en": "You choose your lane position to be seen and to keep an adequate space cushion around you; the best position is the one that maximizes your visibility and space. Source: Chapter 5, Lane Position, p. 5-1 (Manual p. 5-1, PDF p. 51).",
+   "ru": "Положение в полосе (lane position) выбирают, чтобы быть заметным и сохранять достаточный запас пространства (space cushion) вокруг себя; лучшее положение — то, что даёт максимум видимости и пространства. Источник: глава 5, «Lane Position», p. 5-1 (Manual p. 5-1, PDF p. 51)."
+  }
+ },
+ {
+  "id": 214,
+  "page": "5-2",
+  "topic": "street",
+  "image": "f5-2.png",
+  "answer": 1,
+  "q": {
+   "en": "This picture shows three possible lane positions (1, 2, 3). How do you choose the best one?",
+   "ru": "На этой картинке показаны три возможных положения в полосе (1, 2, 3). Как выбрать лучшее?"
+  },
+  "opts": [
+   {
+    "en": "Always ride in the position closest to parked cars",
+    "ru": "Всегда ехать в положении, ближайшем к припаркованным машинам"
+   },
+   {
+    "en": "Pick the position that gives you the best visibility and space cushion",
+    "ru": "Выбрать положение, дающее лучшую видимость и запас пространства (space cushion)"
+   },
+   {
+    "en": "Change position only when a police car is near",
+    "ru": "Менять положение, только когда рядом полицейская машина"
+   },
+   {
+    "en": "Always ride in position 2 (center) no matter what",
+    "ru": "Всегда ехать в положении 2 (по центру), что бы ни было"
+   }
+  ],
+  "why": {
+   "en": "There is no single 'best' position for every situation — choose the lane position that lets you see and be seen and keeps the most space around you for the current conditions. Source: Chapter 5, Lane Position, p. 5-2 (Manual p. 5-2, PDF p. 52).",
+   "ru": "Единого «лучшего» положения на все случаи нет — выбирайте положение в полосе, которое позволяет видеть и быть видимым и сохраняет максимум пространства вокруг для текущих условий. Источник: глава 5, «Lane Position», p. 5-2 (Manual p. 5-2, PDF p. 52)."
+  }
+ },
+ {
+  "id": 215,
+  "page": "5-3",
+  "topic": "street",
+  "image": "f5-3.png",
+  "answer": 1,
+  "q": {
+   "en": "This picture shows a 'sight line' at a blind intersection. How can you improve your line of sight?",
+   "ru": "На этой картинке показана «линия обзора» (sight line) на перекрёстке с плохой видимостью. Как улучшить себе обзор?"
+  },
+  "opts": [
+   {
+    "en": "Ride faster to get past it sooner",
+    "ru": "Ехать быстрее, чтобы скорее его проскочить"
+   },
+   {
+    "en": "Adjust your lane position to see farther around the obstruction",
+    "ru": "Изменить положение в полосе, чтобы видеть дальше за препятствием"
+   },
+   {
+    "en": "Close the distance to the car ahead",
+    "ru": "Сократить дистанцию до машины впереди"
+   },
+   {
+    "en": "Move as close to the blind corner as possible",
+    "ru": "Подъехать как можно ближе к «слепому» углу"
+   }
+  ],
+  "why": {
+   "en": "Adjust your position in the lane to open up your line of sight so you can see — and be seen — farther around obstructions before you reach them. Source: Chapter 5, Improving Your Line of Sight, p. 5-3 (Manual p. 5-3, PDF p. 53).",
+   "ru": "Изменяйте своё положение в полосе, чтобы открыть себе линию обзора (line of sight) и заранее видеть — и быть видимым — дальше за препятствиями, прежде чем вы к ним подъедете. Источник: глава 5, «Improving Your Line of Sight», p. 5-3 (Manual p. 5-3, PDF p. 53)."
+  }
+ },
+ {
+  "id": 216,
+  "page": "5-4",
+  "topic": "intersections",
+  "image": "f5-4.png",
+  "answer": 2,
+  "q": {
+   "en": "This picture shows traffic merging onto the road. What is the best response?",
+   "ru": "На этой картинке показан транспорт, въезжающий (merging) на дорогу. Как лучше всего отреагировать?"
+  },
+  "opts": [
+   {
+    "en": "Ride in the merging vehicle's blind spot",
+    "ru": "Ехать в «слепой зоне» (blind spot) въезжающей машины"
+   },
+   {
+    "en": "Speed up to block the merging vehicle",
+    "ru": "Прибавить газу, чтобы перекрыть въезжающей машине путь"
+   },
+   {
+    "en": "Adjust your speed and lane position to open up space for the merging traffic",
+    "ru": "Скорректировать скорость и положение в полосе, освобождая место для въезжающего транспорта"
+   },
+   {
+    "en": "Keep your exact speed and position no matter what",
+    "ru": "Сохранять ту же скорость и положение, что бы ни было"
+   }
+  ],
+  "why": {
+   "en": "When traffic is merging, create space by adjusting your speed and lane position so you keep a safe cushion and stay visible. Source: Chapter 5, Merging Traffic, p. 5-4 (Manual p. 5-4, PDF p. 54).",
+   "ru": "Когда транспорт въезжает в поток, создавайте пространство, корректируя скорость и положение в полосе, чтобы сохранить безопасный запас (cushion) и оставаться заметным. Источник: глава 5, «Merging Traffic», p. 5-4 (Manual p. 5-4, PDF p. 54)."
+  }
+ },
+ {
+  "id": 217,
+  "page": "5-4",
+  "topic": "street",
+  "image": "f5-5.png",
+  "answer": 1,
+  "q": {
+   "en": "The shaded areas around the car in this picture represent what — and what should you do about them?",
+   "ru": "Заштрихованные зоны вокруг машины на этой картинке обозначают что — и что с ними делать?"
+  },
+  "opts": [
+   {
+    "en": "Legal passing zones",
+    "ru": "Разрешённые зоны для обгона"
+   },
+   {
+    "en": "Blind spots — avoid lingering in them",
+    "ru": "«Слепые зоны» (blind spots) — не задерживайтесь в них"
+   },
+   {
+    "en": "Areas with the best traction",
+    "ru": "Зоны с лучшим сцеплением с дорогой"
+   },
+   {
+    "en": "The safest place to ride",
+    "ru": "Самое безопасное место для движения"
+   }
+  ],
+  "why": {
+   "en": "The shaded areas are the vehicle's blind spots, where the driver cannot see you; avoid riding in them and don't linger there. Source: Chapter 5, Avoid Blind Spots, p. 5-4 (Manual p. 5-4, PDF p. 54).",
+   "ru": "Заштрихованные зоны — это «слепые зоны» (blind spots) автомобиля, где водитель вас не видит; не двигайтесь в них и не задерживайтесь там. Источник: глава 5, «Avoid Blind Spots», p. 5-4 (Manual p. 5-4, PDF p. 54)."
+  }
+ },
+ {
+  "id": 218,
+  "page": "5-5",
+  "topic": "controls",
+  "image": "f5-6.png",
+  "answer": 2,
+  "q": {
+   "en": "This picture breaks total stopping distance into three parts. What are they?",
+   "ru": "На этой картинке полный тормозной путь (total stopping distance) разбит на три части. Какие это части?"
+  },
+  "opts": [
+   {
+    "en": "Steering, leaning, and braking",
+    "ru": "Руление, наклон и торможение"
+   },
+   {
+    "en": "Acceleration, coasting, and braking",
+    "ru": "Разгон, накат и торможение"
+   },
+   {
+    "en": "Perception, reaction, and execution (braking)",
+    "ru": "Восприятие, реакция и выполнение торможения (perception, reaction, execution)"
+   },
+   {
+    "en": "Seeing, signaling, and shifting",
+    "ru": "Обзор, сигнал и переключение передач"
+   }
+  ],
+  "why": {
+   "en": "Total stopping distance is made up of perception (noticing the hazard), reaction (your brain signaling to act), and execution (carrying out the braking). At 60 mph you travel a long way during all three. Source: Chapter 5, Total Stopping Distance, p. 5-5 (Manual p. 5-5, PDF p. 55).",
+   "ru": "Полный тормозной путь складывается из восприятия (perception — заметить опасность), реакции (reaction — мозг даёт сигнал действовать) и выполнения (execution — собственно торможение). На скорости 60 миль/ч за все три фазы вы проезжаете большое расстояние. Источник: глава 5, «Total Stopping Distance», p. 5-5 (Manual p. 5-5, PDF p. 55)."
+  }
+ },
+ {
+  "id": 219,
+  "page": "5-7",
+  "topic": "intersections",
+  "image": "f5-7.png",
+  "answer": 3,
+  "q": {
+   "en": "What hazard does this intersection picture warn you to watch for?",
+   "ru": "О какой опасности предупреждает эта картинка с перекрёстком?"
+  },
+  "opts": [
+   {
+    "en": "Low-flying birds",
+    "ru": "Низколетящие птицы"
+   },
+   {
+    "en": "Potholes in your lane",
+    "ru": "Ямы на вашей полосе"
+   },
+   {
+    "en": "Pedestrians on the sidewalk only",
+    "ru": "Только пешеходы на тротуаре"
+   },
+   {
+    "en": "Cars turning left across your path",
+    "ru": "Машины, поворачивающие налево поперёк вашего пути"
+   }
+  ],
+  "why": {
+   "en": "Intersections are high-risk: watch for cars turning left across your path, the most common car–motorcycle collision. Be visible and have an escape plan. Source: Chapter 5, Intersections, p. 5-7 (Manual p. 5-7, PDF p. 58).",
+   "ru": "Перекрёстки — зона повышенного риска: следите за машинами, поворачивающими налево поперёк вашего пути, — это самое частое столкновение машины с мотоциклом. Будьте заметны и держите наготове путь для манёвра (escape plan). Источник: глава 5, «Intersections», p. 5-7 (Manual p. 5-7, PDF p. 58)."
+  }
+ },
+ {
+  "id": 220,
+  "page": "5-9",
+  "topic": "hazards",
+  "image": "f5-8.png",
+  "answer": 3,
+  "q": {
+   "en": "This picture points out road-surface hazards. Which of these is a surface hazard to watch for?",
+   "ru": "Эта картинка указывает на опасности дорожного покрытия (surface hazards). Что из перечисленного является такой опасностью?"
+  },
+  "opts": [
+   {
+    "en": "Tall roadside trees",
+    "ru": "Высокие деревья у обочины"
+   },
+   {
+    "en": "Other riders' helmets",
+    "ru": "Шлемы других мотоциклистов"
+   },
+   {
+    "en": "Overhead traffic lights",
+    "ru": "Светофоры над дорогой"
+   },
+   {
+    "en": "Painted markings, manhole covers, and gravel",
+    "ru": "Дорожная разметка, крышки люков и гравий"
+   }
+  ],
+  "why": {
+   "en": "Painted lines, manhole covers, and gravel reduce traction, especially for two-wheelers; look ahead for changes in surface color or texture and they may be more slippery after the first rain. Source: Chapter 5, Surface Hazards, p. 5-9 (Manual p. 5-9, PDF p. 59).",
+   "ru": "Дорожная разметка, крышки люков и гравий снижают сцепление с дорогой, особенно у двухколёсных (2W); заранее высматривайте изменения цвета или фактуры покрытия — после первого дождя оно может стать ещё более скользким. Источник: глава 5, «Surface Hazards», p. 5-9 (Manual p. 5-9, PDF p. 59)."
+  }
+ },
+ {
+  "id": 221,
+  "page": "5-10",
+  "topic": "hazards",
+  "image": "f5-9.png",
+  "answer": 3,
+  "q": {
+   "en": "This picture shows crossing parallel railroad tracks. At what angle should you cross?",
+   "ru": "На этой картинке показано пересечение параллельных железнодорожных путей (railroad tracks). Под каким углом их следует пересекать?"
+  },
+  "opts": [
+   {
+    "en": "At a shallow 15-degree angle",
+    "ru": "Под небольшим углом 15 градусов"
+   },
+   {
+    "en": "It does not matter",
+    "ru": "Это не имеет значения"
+   },
+   {
+    "en": "Exactly parallel to the tracks",
+    "ru": "Точно параллельно путям"
+   },
+   {
+    "en": "As close to a 90-degree angle as possible",
+    "ru": "Как можно ближе к углу 90 градусов"
+   }
+  ],
+  "why": {
+   "en": "Cross tracks and similar obstacles at as close to a 90-degree angle as is practical, keeping your head and eyes up and looking ahead. Source: Chapter 5, Crossing an Obstacle, p. 5-10 (Manual p. 5-10, PDF p. 60).",
+   "ru": "Пересекайте пути и подобные препятствия под углом как можно ближе к 90 градусам, держа голову и взгляд поднятыми и глядя вперёд. Источник: глава 5, «Crossing an Obstacle», p. 5-10 (Manual p. 5-10, PDF p. 60)."
+  }
+ },
+ {
+  "id": 222,
+  "page": "5-10",
+  "topic": "intersections",
+  "image": "f5-10.png",
+  "answer": 3,
+  "q": {
+   "en": "The numbered steps in this picture show how to change lanes safely. What must you do that mirrors alone will NOT cover?",
+   "ru": "Пронумерованные шаги на этой картинке показывают, как безопасно перестроиться. Что обязательно нужно сделать, чего НЕ покажут одни зеркала?"
+  },
+  "opts": [
+   {
+    "en": "Honk the horn twice",
+    "ru": "Дважды посигналить"
+   },
+   {
+    "en": "Only glance at the speedometer",
+    "ru": "Лишь взглянуть на спидометр"
+   },
+   {
+    "en": "Close your eyes and ease over",
+    "ru": "Закрыть глаза и плавно перестроиться"
+   },
+   {
+    "en": "Check over your shoulder for vehicles in your blind spot",
+    "ru": "Обернуться через плечо и проверить «слепую зону» (blind spot) на наличие машин"
+   }
+  ],
+  "why": {
+   "en": "When changing lanes, check over your shoulder for vehicles in your blind spot, signal your intention, and cancel the signal when done — mirrors alone don't show the blind spot. Source: Chapter 5, Changing Lanes, p. 5-10 (Manual p. 5-10, PDF p. 60).",
+   "ru": "При перестроении обернитесь через плечо и проверьте «слепую зону» (blind spot) на наличие машин, подайте сигнал о намерении и выключите его, когда закончите, — одни зеркала «слепую зону» не показывают. Источник: глава 5, «Changing Lanes», p. 5-10 (Manual p. 5-10, PDF p. 60)."
+  }
+ },
+ {
+  "id": 223,
+  "page": "5-13",
+  "topic": "group",
+  "image": "f5-11.png",
+  "answer": 3,
+  "q": {
+   "en": "What group-riding formation is shown in this picture?",
+   "ru": "Какое построение для групповой езды (group-riding formation) показано на этой картинке?"
+  },
+  "opts": [
+   {
+    "en": "Side-by-side formation",
+    "ru": "Построение бок о бок (side-by-side)"
+   },
+   {
+    "en": "Single-file only",
+    "ru": "Строго в одну колонну (single-file)"
+   },
+   {
+    "en": "A tight diamond",
+    "ru": "Плотный «ромб» (diamond)"
+   },
+   {
+    "en": "Staggered formation",
+    "ru": "Шахматное построение (staggered formation)"
+   }
+  ],
+  "why": {
+   "en": "This is the staggered formation, usually the best way to keep a group close while keeping an adequate space cushion between riders. Source: Chapter 5, Staggered Formation, p. 5-13 (Manual p. 5-13, PDF p. 63).",
+   "ru": "Это шахматное построение (staggered formation) — обычно лучший способ держать группу компактно, сохраняя достаточный запас пространства (space cushion) между мотоциклистами. Источник: глава 5, «Staggered Formation», p. 5-13 (Manual p. 5-13, PDF p. 63)."
+  }
+ },
+ {
+  "id": 224,
+  "page": "5-13",
+  "topic": "group",
+  "image": "f5-11b.png",
+  "answer": 1,
+  "q": {
+   "en": "In the group formation shown, what is the minimum following distance you should keep behind the rider directly in front of you?",
+   "ru": "В показанном групповом построении какую минимальную дистанцию (following distance) нужно держать за мотоциклистом прямо перед вами?"
+  },
+  "opts": [
+   {
+    "en": "Ten car lengths exactly",
+    "ru": "Ровно десять корпусов автомобиля"
+   },
+   {
+    "en": "At least three seconds",
+    "ru": "Не менее трёх секунд"
+   },
+   {
+    "en": "No following distance is needed in a group",
+    "ru": "В группе дистанция не нужна"
+   },
+   {
+    "en": "About half a second",
+    "ru": "Около половины секунды"
+   }
+  ],
+  "why": {
+   "en": "In any group position, keep a minimum three-second following distance behind the rider in front of you; move to single file in curves or where more space is needed. Source: Chapter 5, Staggered Formation, p. 5-13 (Manual p. 5-13, PDF p. 63).",
+   "ru": "В любой позиции в группе держите минимальную дистанцию (following distance) три секунды за мотоциклистом впереди; в поворотах или там, где нужно больше места, переходите в одну колонну (single file). Источник: глава 5, «Staggered Formation», p. 5-13 (Manual p. 5-13, PDF p. 63)."
+  }
+ },
+ {
+  "id": 225,
+  "page": "4-3",
+  "topic": "cornering",
+  "image": "f4-3_4.png",
+  "answer": 0,
+  "q": {
+   "en": "These diagrams show the tip-over lines of a trike and an inverted (reverse) trike. What do they tell a three-wheel rider?",
+   "ru": "Эти схемы показывают линии опрокидывания (tip-over lines) трайка и обратного (инвертированного) трайка. Что они говорят водителю трёхколёсного мотоцикла?"
+  },
+  "opts": [
+   {
+    "en": "The directions the machine can roll over, so manage speed and lean in turns",
+    "ru": "Направления, в которых машина может перевернуться, поэтому в поворотах контролируйте скорость и наклон"
+   },
+   {
+    "en": "To always ride with one wheel off the ground",
+    "ru": "Что нужно всегда ехать с одним колесом, оторванным от земли"
+   },
+   {
+    "en": "That trikes cannot tip over",
+    "ru": "Что трайки не могут опрокинуться"
+   },
+   {
+    "en": "That braking is unnecessary on a trike",
+    "ru": "Что на трайке тормозить не нужно"
+   }
+  ],
+  "why": {
+   "en": "Like the sidecar rig, a trike and an inverted trike have tip-over lines showing the directions they can roll; respect them by managing your speed and line through turns. Source: Chapter 4, Tip-over Lines, p. 4-3 (Manual p. 4-3, PDF p. 43).",
+   "ru": "Как и у мотоцикла с коляской (sidecar), у трайка и обратного трайка есть линии опрокидывания (tip-over lines), показывающие направления, в которых они могут перевернуться; учитывайте их, контролируя скорость и траекторию в поворотах. Источник: глава 4, «Tip-over Lines», p. 4-3 (Manual p. 4-3, PDF p. 43)."
   }
  }
 ];
@@ -6213,6 +7469,10 @@ const UI = {
   "citation_practice": {
     "en": "Practice question",
     "ru": "Учебный вопрос"
+  },
+  "figure_alt": {
+    "en": "Figure from the manual",
+    "ru": "Иллюстрация из руководства"
   },
   "progress_counter": {
     "en": "{N} / {TOTAL}",

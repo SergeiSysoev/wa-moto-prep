@@ -114,6 +114,14 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 }
 .prompt{ color:var(--muted); font-size:14px; margin:0 0 var(--s3); }
 
+/* ---------- Question figure (picture questions) ---------- */
+.qfig{ margin:0 0 var(--s4); text-align:center; }
+.qfig img{
+  max-width:100%; max-height:320px; width:auto;
+  border:1px solid var(--border); border-radius:12px;
+  background:#fff; padding:10px;   /* white pad so line-art reads in dark mode */
+}
+
 /* ---------- Options ---------- */
 .options{ display:flex; flex-direction:column; gap:14px; margin:0; }
 .opt{
@@ -232,6 +240,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
 
   <section id="quizarea">
     <h1 class="question" id="question" tabindex="-1"></h1>
+    <figure class="qfig" id="qfig" hidden style="margin-top:var(--s4)"><img id="qimg" alt=""></figure>
     <p class="prompt" id="prompt"></p>
     <div class="options" id="options" role="radiogroup" aria-labelledby="question"></div>
     <div class="explain" id="explain" hidden>
@@ -263,13 +272,16 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   <div class="sronly" id="live" aria-live="polite" role="status"></div>
 </main>
 
-<script src="questions.js?v=4"></script>
+<script src="questions.js?v=5"></script>
 <script>
 (function(){
   "use strict";
   var LETTERS=["A","B","C","D"];
-  var WARMUP=2;                                  // show % from the 2nd answer (avoids a lone "0%"); raise to ~5 at 199-scale
+  var WARMUP=2;                                  // show % from the 2nd answer (avoids a lone "0%"); raise to ~5 at scale
   var SESSION_SIZE=Math.min(25,QUESTIONS.length);
+  // Topic-balanced session — counts per 25-question session (from WA test research). Sum = 25.
+  var TOPIC_TARGET={law:2,gear:2,controls:4,cornering:3,street:4,intersections:2,hazards:3,group:2,impairment:3};
+  var TOPIC_POOLS=(function(){ var p={}; QUESTIONS.forEach(function(q,i){ var t=q.topic||"street"; (p[t]=p[t]||[]).push(i); }); return p; })();
   var restartArmed=false, restartTimer=null;
   var state={ order:[], pos:0, lang:"en", theme:"light", answered:false, chosen:null, score:0, answeredCount:0, missed:[] };
 
@@ -284,14 +296,30 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   function reduceMotion(){ return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
 
   function shuffle(a){ var r=a.slice(); for(var i=r.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var tmp=r[i]; r[i]=r[j]; r[j]=tmp; } return r; }
+  // Deal a topic-balanced session of SESSION_SIZE. Per-topic "bags" persist in localStorage so
+  // questions don't repeat within a topic until that topic's pool is exhausted (then it reshuffles).
   function dealSession(){
-    var deck=null;
-    try{ deck=JSON.parse(localStorage.getItem("moto_deck")||"null"); }catch(e){}
-    if(!Array.isArray(deck) || deck.length<SESSION_SIZE){
-      deck=shuffle(QUESTIONS.map(function(_,i){return i;}));
+    var bags={};
+    try{ bags=JSON.parse(localStorage.getItem("moto_bags")||"{}")||{}; }catch(e){ bags={}; }
+    var picked=[];
+    Object.keys(TOPIC_TARGET).forEach(function(t){
+      var want=TOPIC_TARGET[t];
+      var pool=TOPIC_POOLS[t]||[];
+      if(!pool.length) return;
+      var bag=Array.isArray(bags[t])?bags[t]:[];
+      if(bag.length<want){ bag=bag.concat(shuffle(pool)); }   // refill (every pool >= its target)
+      var take=Math.min(want,bag.length);
+      picked=picked.concat(bag.slice(0,take));
+      bags[t]=bag.slice(take);
+    });
+    // top up to SESSION_SIZE if any topic was short
+    if(picked.length<SESSION_SIZE){
+      var rest=shuffle(QUESTIONS.map(function(_,i){return i;})).filter(function(i){return picked.indexOf(i)<0;});
+      picked=picked.concat(rest.slice(0,SESSION_SIZE-picked.length));
     }
-    state.order=deck.slice(0,SESSION_SIZE);
-    try{ localStorage.setItem("moto_deck", JSON.stringify(deck.slice(SESSION_SIZE))); }catch(e){}
+    picked=picked.filter(function(v,i,a){return a.indexOf(v)===i;}).slice(0,SESSION_SIZE);
+    state.order=shuffle(picked);
+    try{ localStorage.setItem("moto_bags", JSON.stringify(bags)); }catch(e){}
   }
 
   // ---- language ----
@@ -370,6 +398,10 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
     var qEl=getId("question");
     qEl.textContent=L(q.q).replace(/^\s*\d+[.)]\s*/,"");   // strip baked-in "1." — order is shuffled
     qEl.setAttribute("lang",state.lang);
+    // picture questions: show the manual figure
+    var fig=getId("qfig"), qimg=getId("qimg");
+    if(q.image){ qimg.src="img/"+q.image; qimg.alt=t("figure_alt"); fig.hidden=false; }
+    else{ qimg.removeAttribute("src"); fig.hidden=true; }
     getId("prompt").textContent=t("choose_prompt");
     getId("prompt").style.display = state.answered ? "none" : "";
 
