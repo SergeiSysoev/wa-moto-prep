@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WA Motorcycle Knowledge Test</title>
+<meta name="description" content="Practice questions for the Washington State motorcycle endorsement knowledge test. Bilingual English / Russian. Based on the official WA Motorcycle Operator Manual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<style>
+:root{
+  --bg:#F4F6FA; --surface:#FFFFFF; --text:#14213D; --muted:#5A6B82;
+  --primary:#1B4E8F; --primary-strong:#163F73; --correct:#146C38; --incorrect:#B42318;
+  --accent:#0E7C66; --border:#DCE3EC;
+  --ok-bg:#E6F4EA; --ok-text:#14532A; --err-bg:#FBEAE9; --err-text:#8A1C13;
+  --citation-bg:#EAF0F7; --focus-ring:#1B4E8F; --explain-bg:#F6F4EF;
+  --hover-bg:#F7FAFD;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px;
+  --dur-fast:140ms; --dur:200ms; --ease:cubic-bezier(0.16,1,0.3,1);
+  --maxw:600px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B0F1A; --surface:#141B2B; --surface-raised:#1B2536; --text:#E7ECF5; --muted:#9AA9C2;
+    --primary:#5B8FD4; --primary-strong:#4D7EC2; --correct:#5BD08A; --incorrect:#F08A80;
+    --accent:#56C9AB; --border:#2A364B;
+    --ok-bg:#16301F; --ok-text:#A8E6BE; --err-bg:#3A1A18; --err-text:#F2B5AE;
+    --citation-bg:#1C2A40; --focus-ring:#7FA8E0; --explain-bg:#1B2536;
+    --hover-bg:#1B2536;
+  }
+}
+*{box-sizing:border-box;}
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:16px; line-height:1.5;
+  padding-bottom:96px;
+  -webkit-font-smoothing:antialiased;
+}
+body[lang="ru"] .question{ line-height:1.45; }
+body[lang="ru"] .opt-text{ line-height:1.5; }
+.sronly{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* ---------- Header ---------- */
+.hdr{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface); border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:var(--s3);
+  padding:0 var(--s4); height:56px;
+  max-width:var(--maxw); margin-inline:auto;
+}
+@media(min-width:600px){ .hdr{ border-left:1px solid var(--border); border-right:1px solid var(--border); } }
+.brand{ display:flex; align-items:center; gap:var(--s2); min-width:0; }
+.seal{ flex:none; width:22px; height:26px; color:var(--primary); }
+.wordmark{
+  font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:17px;
+  color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.wordmark .full{ display:none; } .wordmark .short{ display:inline; }
+@media(min-width:430px){ .wordmark .full{ display:inline; } .wordmark .short{ display:none; } }
+.meta{ display:flex; align-items:center; gap:var(--s3); margin-left:auto; }
+.counter{ font-size:14px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.tally{ font-size:14px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
+@media(max-width:380px){ .tally{ display:none; } }
+
+/* ---------- Language toggle ---------- */
+.langtoggle{
+  display:inline-flex; flex:none; border:1px solid var(--border);
+  border-radius:999px; overflow:hidden; background:var(--surface);
+}
+.seg{
+  appearance:none; border:0; background:transparent; cursor:pointer;
+  min-width:48px; min-height:36px; padding:0 var(--s3);
+  font-family:inherit; font-size:14px; font-weight:600; color:var(--muted);
+  letter-spacing:.02em;
+}
+.seg[aria-checked="true"]{ background:var(--primary); color:#fff; }
+.seg:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; border-radius:999px; }
+
+/* ---------- Progress rail ---------- */
+.railwrap{ max-width:var(--maxw); margin-inline:auto; }
+.rail{ height:4px; background:var(--border); position:relative; overflow:hidden; }
+.rail-fill{ height:100%; width:0; background:var(--primary); transition:width var(--dur) var(--ease); }
+
+/* ---------- Layout ---------- */
+.wrap{ max-width:var(--maxw); margin-inline:auto; padding:0 var(--s4); }
+@media(min-width:600px){ .wrap{ border-left:1px solid var(--border); border-right:1px solid var(--border); min-height:60vh; } }
+.trust{ color:var(--muted); font-size:13px; margin:var(--s4) 0 0; }
+
+.question{
+  font-family:'Source Serif 4',Georgia,serif; font-weight:600; font-size:21px;
+  line-height:1.4; color:var(--text); margin:var(--s6) 0 var(--s4);
+}
+.prompt{ color:var(--muted); font-size:14px; margin:0 0 var(--s3); }
+
+/* ---------- Options ---------- */
+.options{ display:flex; flex-direction:column; gap:14px; margin:0; }
+.opt{
+  display:flex; align-items:center; gap:var(--s3);
+  width:100%; min-height:60px; padding:14px 16px;
+  border:1.5px solid var(--border); border-radius:14px; background:var(--surface);
+  color:var(--text); text-align:left; cursor:pointer;
+  font-family:inherit; font-size:17px; font-weight:500;
+  -webkit-tap-highlight-color:transparent;
+  transition:border-color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease), transform 100ms var(--ease);
+}
+.opt-badge{
+  flex:none; display:flex; align-items:center; justify-content:center;
+  width:28px; height:28px; border-radius:999px;
+  border:1.5px solid var(--border); color:var(--muted);
+  font-size:15px; font-weight:600; background:transparent;
+  transition:background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.opt-text{ line-height:1.45; }
+@media(hover:hover){
+  .opt:not([aria-disabled="true"]):hover{ border-color:var(--primary); background:var(--hover-bg); }
+}
+.opt:not([aria-disabled="true"]):active{ transform:scale(.985); }
+.opt:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; }
+.opt[aria-disabled="true"]{ cursor:default; pointer-events:none; }
+
+.opt.correct{ background:var(--ok-bg); border-color:var(--correct); color:var(--ok-text); }
+.opt.correct .opt-badge{ background:var(--correct); border-color:var(--correct); color:#fff; }
+.opt.incorrect{ background:var(--err-bg); border-color:var(--incorrect); color:var(--err-text); }
+.opt.incorrect .opt-badge{ background:var(--incorrect); border-color:var(--incorrect); color:#fff; }
+
+/* ---------- Explanation ---------- */
+.explain{
+  margin-top:var(--s4); background:var(--explain-bg);
+  border-radius:12px; padding:16px; border-left:3px solid var(--border);
+}
+.explain.ok{ border-left-color:var(--correct); }
+.explain.err{ border-left-color:var(--incorrect); }
+.explain.reveal{ animation:rise var(--dur) var(--ease); }
+@keyframes rise{ from{ opacity:0; transform:translateY(6px);} to{ opacity:1; transform:none;} }
+.exp-status{ font-size:16px; font-weight:700; display:flex; align-items:center; gap:8px; margin-bottom:var(--s2); }
+.explain.ok .exp-status{ color:var(--ok-text); }
+.explain.err .exp-status{ color:var(--err-text); }
+.exp-status .mark{ font-size:17px; }
+.exp-body{ font-size:16px; line-height:1.6; color:var(--text); margin:0 0 var(--s3); }
+.citation{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--citation-bg); color:var(--primary);
+  font-size:13px; font-weight:500; padding:4px 10px; border-radius:999px;
+}
+.citation svg{ width:13px; height:13px; }
+
+/* ---------- Next / footer ---------- */
+.nextbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:25;
+  background:linear-gradient(to top, var(--bg) 70%, transparent);
+  padding:var(--s3) var(--s4) calc(var(--s3) + env(safe-area-inset-bottom));
+}
+.nextbar-inner{ max-width:var(--maxw); margin-inline:auto; }
+.nextbtn{
+  appearance:none; border:0; width:100%; height:54px; border-radius:12px;
+  background:var(--primary); color:#fff; font-family:inherit; font-size:17px; font-weight:600;
+  cursor:pointer; transition:background-color var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease);
+}
+.nextbtn:hover{ background:var(--primary-strong); }
+.nextbtn:disabled{ opacity:.45; cursor:default; }
+.nextbtn:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; }
+
+/* ---------- End card ---------- */
+.endcard{ text-align:center; padding:var(--s8) 0; }
+.endseal{ width:64px; height:64px; color:var(--accent); margin:0 auto var(--s4); }
+.endhead{ font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:26px; margin:0 0 var(--s2); color:var(--text); }
+.endline{ color:var(--muted); font-size:16px; margin:0 0 var(--s6); }
+.endbtns{ display:flex; flex-direction:column; gap:var(--s3); max-width:340px; margin-inline:auto; }
+.btn-secondary{
+  appearance:none; width:100%; height:50px; border-radius:12px;
+  background:var(--surface); color:var(--primary); border:1.5px solid var(--border);
+  font-family:inherit; font-size:16px; font-weight:600; cursor:pointer;
+}
+.btn-secondary:hover{ border-color:var(--primary); }
+.btn-secondary:focus-visible{ outline:3px solid var(--focus-ring); outline-offset:2px; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  .explain.reveal{ animation:none; }
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="brand">
+    <svg class="seal" viewBox="0 0 22 26" aria-hidden="true" fill="currentColor"><path d="M11 0L22 4v9c0 7-4.6 11-11 13C4.6 24 0 20 0 13V4L11 0z" opacity=".15"/><path d="M11 2L20 5.2v7.8c0 5.9-3.8 9.3-9 11.1-5.2-1.8-9-5.2-9-11.1V5.2L11 2zm0 2.1L4 6.6v6.4c0 4.6 2.8 7.4 7 9 4.2-1.6 7-4.4 7-9V6.6L11 4.1z"/><path d="M11 7.5l1.6 3.3 3.6.5-2.6 2.5.6 3.6L11 15.7l-3.2 1.7.6-3.6L5.8 11.3l3.6-.5L11 7.5z"/></svg>
+    <span class="wordmark"><span class="full" id="wordmark-full"></span><span class="short" id="wordmark-short"></span></span>
+  </div>
+  <div class="meta">
+    <span class="counter" id="counter"></span>
+    <span class="tally" id="tally"></span>
+  </div>
+  <div class="langtoggle" role="radiogroup" id="langtoggle">
+    <button class="seg" type="button" id="seg-en" data-lang="en" role="radio" aria-checked="true">EN</button>
+    <button class="seg" type="button" id="seg-ru" data-lang="ru" role="radio" aria-checked="false">РУ</button>
+  </div>
+</header>
+
+<div class="railwrap"><div class="rail"><div class="rail-fill" id="railfill" role="progressbar" aria-valuemin="1"></div></div></div>
+
+<main class="wrap">
+  <p class="trust" id="trust"></p>
+
+  <section id="quizarea">
+    <h1 class="question" id="question" tabindex="-1"></h1>
+    <p class="prompt" id="prompt"></p>
+    <div class="options" id="options" role="radiogroup" aria-labelledby="question"></div>
+    <div class="explain" id="explain" hidden>
+      <div class="exp-status" id="exp-status"></div>
+      <p class="exp-body" id="exp-body"></p>
+      <span class="citation" id="citation">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 1.5A1.5 1.5 0 0 0 1.5 3v10A1.5 1.5 0 0 0 3 14.5h10a.5.5 0 0 0 0-1H3a.5.5 0 0 1-.5-.5h10A1.5 1.5 0 0 0 14 11.5V3A1.5 1.5 0 0 0 12.5 1.5H3zm9.5 1v9H3a1.5 1.5 0 0 0-.5.085V3a.5.5 0 0 1 .5-.5h9.5z"/></svg>
+        <span id="citation-text"></span>
+      </span>
+    </div>
+  </section>
+
+  <section id="endarea" hidden>
+    <div class="endcard">
+      <svg class="endseal" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="3" opacity=".35"/><path d="M20 33l8 8 16-18" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2 class="endhead" id="endhead"></h2>
+      <p class="endline" id="endline"></p>
+      <div class="endbtns">
+        <button class="btn-secondary" type="button" id="reviewbtn" hidden></button>
+        <button class="btn-secondary" type="button" id="restartbtn"></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="sronly" id="live" aria-live="polite" role="status"></div>
+</main>
+
+<div class="nextbar" id="nextbar">
+  <div class="nextbar-inner"><button class="nextbtn" type="button" id="nextbtn" disabled></button></div>
+</div>
+
+<script src="questions.js?v=1"></script>
+<script>
+(function(){
+  "use strict";
+  var LETTERS=["A","B","C","D"];
+  var state={ order:[], pos:0, lang:"en", answered:false, chosen:null, score:0, missed:[] };
+
+  function t(key,vars){
+    var s=(UI[key] && UI[key][state.lang]) || (UI[key] && UI[key].en) || "";
+    if(vars){ for(var k in vars){ s=s.replace("{"+k+"}", vars[k]); } }
+    return s;
+  }
+  function curQ(){ return QUESTIONS[ state.order[state.pos] ]; }
+  function L(field){ return field[state.lang]; }
+
+  // ---- boot language ----
+  function bootLang(){
+    var saved=null;
+    try{ saved=localStorage.getItem("moto_lang"); }catch(e){}
+    if(saved==="en"||saved==="ru"){ state.lang=saved; }
+    else if((navigator.language||"").toLowerCase().indexOf("ru")===0){ state.lang="ru"; }
+    document.documentElement.lang=state.lang;
+    document.body.setAttribute("lang",state.lang);
+  }
+
+  function setLang(lang){
+    if(lang!==state.lang){
+      state.lang=lang;
+      try{ localStorage.setItem("moto_lang",lang); }catch(e){}
+      document.documentElement.lang=lang;
+      document.body.setAttribute("lang",lang);
+    }
+    document.getElementById("seg-en").setAttribute("aria-checked", lang==="en");
+    document.getElementById("seg-ru").setAttribute("aria-checked", lang==="ru");
+    render();
+  }
+
+  // ---- static chrome ----
+  function paintChrome(){
+    document.getElementById("wordmark-full").textContent=t("app_title");
+    document.getElementById("wordmark-short").textContent=t("wordmark_short");
+    document.getElementById("trust").textContent=t("trust_strip");
+    document.getElementById("langtoggle").setAttribute("aria-label", t("lang_aria_label"));
+    document.getElementById("restartbtn").textContent=t("start_over");
+    document.getElementById("reviewbtn").textContent=t("review_missed");
+  }
+
+  // ---- render current question ----
+  function render(){
+    paintChrome();
+    if(state.pos>=state.order.length){ renderEnd(); return; }
+    document.getElementById("quizarea").hidden=false;
+    document.getElementById("endarea").hidden=true;
+    document.getElementById("nextbar").style.display="";
+
+    var q=curQ(), total=state.order.length, n=state.pos+1;
+    // header meta
+    document.getElementById("counter").textContent=t("progress_counter",{N:n,TOTAL:total});
+    document.getElementById("tally").textContent=t("tally",{N:state.score});
+    // rail
+    var fill=document.getElementById("railfill");
+    fill.style.width=(n/total*100)+"%";
+    fill.setAttribute("aria-valuenow",n);
+    fill.setAttribute("aria-valuemax",total);
+    fill.setAttribute("aria-valuetext",t("progress_spoken",{N:n,TOTAL:total}));
+    // question
+    var qEl=document.getElementById("question");
+    qEl.textContent=L(q.q); qEl.setAttribute("lang",state.lang);
+    document.getElementById("prompt").textContent=t("choose_prompt");
+    document.getElementById("prompt").style.display = state.answered ? "none" : "";
+
+    // options
+    var box=document.getElementById("options"); box.innerHTML="";
+    q.opts.forEach(function(opt,idx){
+      var b=document.createElement("button");
+      b.className="opt"; b.type="button"; b.setAttribute("role","radio");
+      b.setAttribute("lang",state.lang);
+      var badge=document.createElement("span"); badge.className="opt-badge";
+      var txt=document.createElement("span"); txt.className="opt-text"; txt.textContent=L(opt);
+      b.appendChild(badge); b.appendChild(txt);
+      if(!state.answered){
+        badge.textContent=LETTERS[idx];
+        b.setAttribute("aria-checked","false");
+        b.addEventListener("click",function(){ choose(idx); });
+      }else{
+        b.setAttribute("aria-disabled","true");
+        if(idx===q.answer){ b.classList.add("correct"); badge.textContent="✓"; }
+        else if(idx===state.chosen){ b.classList.add("incorrect"); badge.textContent="✗"; }
+        else{ badge.textContent=LETTERS[idx]; }
+        b.setAttribute("aria-checked", idx===state.chosen ? "true":"false");
+      }
+      box.appendChild(b);
+    });
+
+    // explanation
+    var exp=document.getElementById("explain");
+    if(state.answered){
+      var right=state.chosen===q.answer;
+      exp.hidden=false;
+      exp.className="explain "+(right?"ok":"err");
+      var st=document.getElementById("exp-status");
+      st.innerHTML="";
+      var mk=document.createElement("span"); mk.className="mark"; mk.textContent=right?"✓":"✗";
+      var lbl=document.createElement("span"); lbl.textContent=right?t("correct_label"):t("incorrect_label");
+      st.appendChild(mk); st.appendChild(lbl);
+      document.getElementById("exp-body").textContent=L(q.why);
+      document.getElementById("citation-text").textContent=t("citation_chip",{PAGE:q.page});
+    }else{
+      exp.hidden=true; exp.className="explain";
+    }
+
+    // next button
+    var nb=document.getElementById("nextbtn");
+    var last=state.pos===state.order.length-1;
+    nb.textContent=last?t("done_button"):t("next_button");
+    nb.disabled=!state.answered;
+  }
+
+  function choose(idx){
+    if(state.answered) return;
+    state.answered=true; state.chosen=idx;
+    var q=curQ(); var right=idx===q.answer;
+    if(right){ state.score++; } else { state.missed.push(state.order[state.pos]); }
+    render();
+    document.getElementById("explain").classList.add("reveal");
+    // announce
+    var letter=LETTERS[q.answer];
+    var line=(right?t("status_correct_full",{LETTER:letter}):t("status_incorrect_full",{LETTER:letter}))+" "+L(q.why);
+    document.getElementById("live").textContent=line;
+    // focus next for one-keystroke advance
+    var nb=document.getElementById("nextbtn");
+    setTimeout(function(){ nb.focus(); },50);
+  }
+
+  function next(){
+    if(!state.answered) return;
+    state.pos++; state.answered=false; state.chosen=null;
+    render();
+    if(state.pos<state.order.length){
+      document.getElementById("question").focus();
+      window.scrollTo({top:0,behavior:"auto"});
+    }
+  }
+
+  function renderEnd(){
+    document.getElementById("quizarea").hidden=true;
+    document.getElementById("endarea").hidden=false;
+    document.getElementById("nextbar").style.display="none";
+    var total=state.order.length;
+    document.getElementById("endhead").textContent=t("end_headline",{SCORE:state.score,TOTAL:total});
+    document.getElementById("endline").textContent=t("end_oneliner");
+    var rb=document.getElementById("reviewbtn");
+    rb.hidden=state.missed.length===0;
+    // rail full
+    var fill=document.getElementById("railfill"); fill.style.width="100%";
+    document.getElementById("counter").textContent=t("progress_counter",{N:total,TOTAL:total});
+    document.getElementById("tally").textContent=t("tally",{N:state.score});
+    document.getElementById("live").textContent=t("end_headline",{SCORE:state.score,TOTAL:total});
+  }
+
+  function startAll(){
+    state.order=QUESTIONS.map(function(_,i){return i;});
+    state.pos=0; state.answered=false; state.chosen=null; state.score=0; state.missed=[];
+    render(); window.scrollTo({top:0});
+  }
+  function reviewMissed(){
+    if(state.missed.length===0) return;
+    state.order=state.missed.slice();
+    state.pos=0; state.answered=false; state.chosen=null; state.score=0; state.missed=[];
+    render(); window.scrollTo({top:0});
+  }
+
+  // ---- events ----
+  document.getElementById("seg-en").addEventListener("click",function(){ setLang("en"); });
+  document.getElementById("seg-ru").addEventListener("click",function(){ setLang("ru"); });
+  document.getElementById("nextbtn").addEventListener("click",next);
+  document.getElementById("restartbtn").addEventListener("click",startAll);
+  document.getElementById("reviewbtn").addEventListener("click",reviewMissed);
+  document.addEventListener("keydown",function(e){
+    if(e.key>="1" && e.key<="4" && !state.answered && state.pos<state.order.length){
+      var idx=parseInt(e.key,10)-1; if(idx<curQ().opts.length){ choose(idx); }
+    }else if(e.key==="Enter" && state.answered){
+      next();
+    }
+  });
+
+  bootLang();
+  setLang(state.lang);
+  startAll();
+})();
+</script>
+</body>
+</html>
