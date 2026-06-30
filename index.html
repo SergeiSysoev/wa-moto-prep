@@ -303,7 +303,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
   <div class="sronly" id="live" aria-live="polite" role="status"></div>
 </main>
 
-<script src="questions.js?v=6"></script>
+<script src="questions.js?v=7"></script>
 <script>
 (function(){
   "use strict";
@@ -340,7 +340,12 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
       var poolSet={}; pool.forEach(function(i){ poolSet[i]=1; });
       // drop any stale/invalid indices from an older deploy's saved bag
       var bag=(Array.isArray(bags[t])?bags[t]:[]).filter(function(i){ return poolSet[i]===1; });
-      if(bag.length<want){ bag=bag.concat(shuffle(pool)); }   // refill (every pool >= its target)
+      if(bag.length<want){
+        // this topic ran low -> reset it: append a fresh random cycle of the whole topic,
+        // de-duped so no question can land twice in the same 25 (each topic resets independently)
+        var seen={}; bag.forEach(function(i){ seen[i]=1; });
+        shuffle(pool).forEach(function(i){ if(!seen[i]){ seen[i]=1; bag.push(i); } });
+      }
       var take=Math.min(want,bag.length);
       picked=picked.concat(bag.slice(0,take));
       bags[t]=bag.slice(take);
@@ -389,7 +394,7 @@ body[lang="ru"] .opt-text{ line-height:1.5; }
     getId("l-p2").textContent=t("landing_p2");
     getId("l-work").textContent=t("landing_work");
     var ul=getId("l-bullets"); ul.innerHTML="";
-    ["landing_b1","landing_b2","landing_b3","landing_b4"].forEach(function(k){
+    ["landing_b1","landing_b2","landing_b3","landing_b4","landing_b5"].forEach(function(k){
       var li=document.createElement("li"); li.textContent=t(k); ul.appendChild(li);
     });
     getId("l-p4").textContent=t("landing_p4");

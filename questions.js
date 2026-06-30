@@ -6526,6 +6526,10 @@ const UI = {
     "en": "Researched how exam questions split across topics and how each topic is weighted, and applied it: there's a large pool of questions, all tagged by topic, and every set of 25 is drawn in the correct proportions — like the real test.",
     "ru": "Изучил, как вопросы разбиваются по темам и с какими весами, и применил это: в общей базе много вопросов, все размечены по темам, и каждые 25 формируются в правильном соотношении — как на реальном экзамене."
   },
+  "landing_b5": {
+    "en": "Within each topic, you won't see a question again until you've worked through all of that topic's questions; topics with fewer questions simply reshuffle and start fresh. The more you practice, the more of the bank you cover.",
+    "ru": "Внутри каждой темы вопрос не повторится, пока вы не пройдёте все вопросы этой темы; темы с меньшим числом вопросов просто перемешиваются и начинаются заново. Чем больше тренируетесь — тем больше вопросов охватываете."
+  },
   "landing_p4": {
     "en": "I may have made mistakes and I give no guarantees — but I genuinely did my best. Good luck on your test!",
     "ru": "Я мог ошибиться и не даю никаких гарантий — но я честно старался. Удачи на экзамене!"
